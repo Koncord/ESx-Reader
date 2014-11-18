@@ -19,5 +19,5 @@ Dependencies
 
 GNU GCC 4.9.x
 
-[github]: <github.com/koncord/esx-reader>
-[vmp]: <github.com/foxtacles/vaultmp>
+[github]: <http://github.com/koncord/esx-reader>
+[vmp]: <http://github.com/foxtacles/vaultmp>
