@@ -19,8 +19,5 @@ Dependencies
 
 GNU GCC 4.9.x
 
-
-Copyright (c) 2014 Zhukov Stanislav
-
 [github]: <github.com/koncord/esx-reader>
 [vmp]: <github.com/foxtacles/vaultmp>
