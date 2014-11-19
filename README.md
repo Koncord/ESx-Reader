@@ -4,7 +4,7 @@
 Introduction
 ------------
 
-The ESP/ESM reader for the Bethesda video game the Fallout3. Part of the project
+The ESP/ESM reader for the Bethesda video game: the Fallout3. Part of the project
 [vaultmp][vmp]!
 
 ~~This code may damage your mind and eyes =D~~
