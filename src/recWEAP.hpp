@@ -10,6 +10,28 @@
 
 #include "Record.hpp"
 
+namespace WEAP
+{
+    struct Weap
+    {
+        uint64_t id;
+        std::string edid;
+        std::string full;
+        uint64_t scri;
+        //************* DATA ****************
+        int ItmValue;
+        int ItmMaxCondition;
+        float ItmWeight;
+        int16_t WeaponDamage;
+        uint8_t AmmoCapacity;
+        //************* CRDT ****************
+        uint16_t CritDmgBonus;
+        float CritChance;
+        uint8_t CritFlags;
+        uint32_t CritSPELid;
+    };
+}
+
 class recWEAP: public Record
 {
 public:
