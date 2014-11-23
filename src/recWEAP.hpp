@@ -19,16 +19,16 @@ namespace WEAP
         std::string full;
         uint64_t scri;
         //************* DATA ****************
-        int ItmValue;
-        int ItmMaxCondition;
-        float ItmWeight;
-        int16_t WeaponDamage;
-        uint8_t AmmoCapacity;
+        int Value;
+        int Health;
+        float Weight;
+        int16_t Damage;
+        uint8_t ClipRounds;
         //************* CRDT ****************
-        uint16_t CritDmgBonus;
-        float CritChance;
+        uint16_t CritDmg;
+        float CritMult;
         uint8_t CritFlags;
-        uint32_t CritSPELid;
+        uint32_t CritEffect;
     };
 }
 

@@ -34,7 +34,7 @@ void Record::parseSubRecord()
         {
             uint16_t size;
             esm->get(&size, 2);
-            cout << " stub";
+            cout << " skipping...";
             esm->ignoreBytes(size);
             t = true;
         }

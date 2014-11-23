@@ -92,10 +92,11 @@ Reader::Reader(std::string file)
             }
         }
         
-        if(t == false)
+        
+        if(t == false && esm.tellg() != -1)
         {
             stringstream sstr;
-            sstr << "unkown record: \""<< recName << "\" on position: 0x" << esm.tellg() << endl;
+            sstr << "unkown record: \""<< recName << "\" on position: " << esm.tellg() << endl;
             //throw runtime_error(sstr.str());
             cout << sstr.str();
         }

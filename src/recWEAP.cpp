@@ -59,11 +59,11 @@ namespace WEAP
             uint16_t size;
             esm->get(&size, 2);
             
-            esm->get(&weap.ItmValue, 4);
-            esm->get(&weap.ItmMaxCondition, 4);
-            esm->get(&weap.ItmWeight, 4);
-            esm->get(&weap.WeaponDamage, 2);
-            esm->get(&weap.AmmoCapacity, 1);
+            esm->get(&weap.Value, 4);
+            esm->get(&weap.Health, 4);
+            esm->get(&weap.Weight, 4);
+            esm->get(&weap.Damage, 2);
+            esm->get(&weap.ClipRounds, 1);
         }
         std::string recordName() {return "DATA";}
     };
@@ -75,12 +75,12 @@ namespace WEAP
             uint16_t size;
             esm->get(&size, 2);
             
-            esm->get(&weap.CritDmgBonus, 2);
+            esm->get(&weap.CritDmg, 2);
             esm->ignoreBytes(2);
-            esm->get(&weap.CritChance, 4);
+            esm->get(&weap.CritMult, 4);
             esm->get(&weap.CritFlags, 1);
             esm->ignoreBytes(3);
-            esm->get(&weap.CritSPELid, 4);
+            esm->get(&weap.CritEffect, 4);
         }
         std::string recordName() {return "CRDT";}
     };
@@ -106,14 +106,14 @@ void recWEAP::parseData()
     cout << "WEAP ID: 0x"<< hex << uppercase <<  weap.id
          << " EDID: " << weap.edid
          << " FULL: " << weap.full << endl
-         << dec << " ItmValue: " << weap.ItmValue << endl
-         << " ItmMaxCondition: " << weap.ItmMaxCondition << endl
-         << " ItmWeight: " << weap.ItmWeight << endl
-         << " WeaponDamage: " << weap.WeaponDamage << endl
-         << " AmmoCapacity: " << (int) weap.AmmoCapacity << endl
-         << " CritDmgBonus: " << weap.CritDmgBonus << endl
-         << " CritChance: " << weap.CritChance << endl
+         << dec << " Value: " << weap.Value << endl
+         << " Health: " << weap.Health << endl
+         << " Weight: " << weap.Weight << endl
+         << " Damage: " << weap.Damage << endl
+         << " ClipRounds: " << (int) weap.ClipRounds << endl
+         << " CritDmg: " << weap.CritDmg << endl
+         << " Crit % Mult: " << weap.CritMult << endl
          << " CritFlags: " << (int) weap.CritFlags << endl
-         << " CritSPELid: " << (int) weap.CritSPELid << endl;
+         << " CritEffect: " << weap.CritEffect << endl;
 //#endif
 }
