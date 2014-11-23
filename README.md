@@ -9,6 +9,16 @@ The ESP/ESM reader for the Bethesda video game: the Fallout3. Part of the projec
 
 ~~This code may damage your mind and eyes =D~~
 
+Changelog
+---------
+
+Implemented records:
+TES4 - basic Information of plugin
+
+Semi-implemented records:
+WEAP - weapons. Implemnted subrecords EDID, FULL, DATA, CRDT, need implement DNAM - damage data.
+
+
 Compiling
 ---------
 
