@@ -11,13 +11,14 @@
 #else
 #include <stdexcept>
 #endif
-
 #include <stdint.h>
-
+#include <memory>
 #include <sstream>
+
 #include "Reader.hpp"
 #include "recTES4.hpp"
 #include "recWEAP.hpp"
+
 using namespace std;
 
 template<> Reader* rwa::Singleton<Reader>::msSingleton = 0;
@@ -28,7 +29,7 @@ class recGRUP: public Record
 public:
     recGRUP()
     {
-        
+        records.emplace_back(make_unique<recWEAP>());
     }
     void parseData()
     {
@@ -47,32 +48,35 @@ public:
         esm->get(&flag3, 4);
         size -= 12;
         
-        if(groupname == "ARMO")
+        long long readed = esm->getPos();
+        
+        for (auto &rec : records)
         {
-            string record(esm->getRecName());
-            size -= 4;
-            #ifdef _DEBUG_
-                cout << "record: " << record << endl;
-            #endif
-            
-        }
-        if(groupname == "WEAP")
-        {
-            string record(esm->getRecName());
-            size -= 4;
-            #ifdef _DEBUG_
-                cout << "record: " << record << endl;
-            #endif
-            recWEAP *recw = new recWEAP;
-            recw->parseData();
-            
+            if(groupname == rec->recordName())
+            {
+                while(true)
+                {
+                    string record(esm->getRecName());
+                    if(record != rec->recordName())
+                    {
+                        esm->setPos(esm->getPos() - 4ll);
+                        break;
+                    }
+                    #ifdef _DEBUG_
+                         cout << " record: " << record << endl;
+                    #endif
+                    rec->parseData();
+                }
+                break;
+            }
         }
 
+        size -= esm->getPos() - readed;
         esm->ignoreBytes(size - 4);
-        
     }
+    
     std::string recordName() {return "GRUP";}
-    vector <Record*> records;
+    vector <unique_ptr<Record>> records;
     uint32_t size;
     uint32_t flag1, flag2, flag3;
 };
@@ -102,7 +106,7 @@ Reader::Reader(std::string file)
         }
         
         
-        if(t == false && esm.tellg() != -1)
+        if(!t && esm.tellg() != -1)
         {
             stringstream sstr;
             sstr << "unkown record: \""<< recName << "\" on position: " << esm.tellg() << endl;

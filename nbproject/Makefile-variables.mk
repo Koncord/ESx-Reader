@@ -22,6 +22,14 @@ CND_ARTIFACT_PATH_Release=dist/Release/MinGW-Windows/esx-reader
 CND_PACKAGE_DIR_Release=dist/Release/MinGW-Windows/package
 CND_PACKAGE_NAME_Release=esx-reader.tar
 CND_PACKAGE_PATH_Release=dist/Release/MinGW-Windows/package/esx-reader.tar
+# Debug_detail configuration
+CND_PLATFORM_Debug_detail=MinGW-Windows
+CND_ARTIFACT_DIR_Debug_detail=dist/Debug_detail/MinGW-Windows
+CND_ARTIFACT_NAME_Debug_detail=esx-reader
+CND_ARTIFACT_PATH_Debug_detail=dist/Debug_detail/MinGW-Windows/esx-reader
+CND_PACKAGE_DIR_Debug_detail=dist/Debug_detail/MinGW-Windows/package
+CND_PACKAGE_NAME_Debug_detail=esx-reader.tar
+CND_PACKAGE_PATH_Debug_detail=dist/Debug_detail/MinGW-Windows/package/esx-reader.tar
 #
 # include compiler specific variables
 #

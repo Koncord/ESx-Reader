@@ -23,9 +23,9 @@ void Record::parseSubRecord()
         t = false;
         recName = esm->getRecName();
         
-        if(recName == "") break;
+        if(recName == "" || recName == recordName() || recName == "GRUP") break;
         
-        #ifdef _DEBUG_
+        #ifdef _DEBUG_DETAIL
             cout << "SubRecord: " << recName;
         #endif
         for(auto &subRec : subRecs)
@@ -38,18 +38,18 @@ void Record::parseSubRecord()
             }
         }
         
-        if(!t && recName != "" && recName != "GRUP")
+        if(!t)
         {
             uint16_t size;
             esm->get(&size, 2);
             esm->ignoreBytes(size);
             t = true;
-            #ifdef _DEBUG_
+            #ifdef _DEBUG_DETAIL
                 cout << " skipping...";
             #endif
         }
         
-        #ifdef _DEBUG_
+        #ifdef _DEBUG_DETAIL
         cout << endl;
         #endif
         
@@ -59,5 +59,3 @@ void Record::parseSubRecord()
     
     esm->setPos(esm->getPos() - 4ll); // super crutch
 }
-
-

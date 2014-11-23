@@ -134,5 +134,49 @@
       <item path="src/recWEAP.hpp" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
+    <conf name="Debug_detail" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>../RWA-Lib/include</pElem>
+          </incDir>
+          <commandLine>-pedantic-errors -pedantic -Wfatal-errors -Wextra -Wall -std=gnu++1y -m32</commandLine>
+          <preprocessorList>
+            <Elem>_DEBUG_</Elem>
+            <Elem>_DEBUG_DETAIL</Elem>
+          </preprocessorList>
+        </ccTool>
+        <linkerTool>
+          <commandLine>-static</commandLine>
+        </linkerTool>
+      </compileType>
+      <item path="src/Reader.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Reader.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Record.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Record.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/recGMST.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/recGMST.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/recTES4.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/recTES4.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/recWEAP.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/recWEAP.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
   </confs>
 </configurationDescriptor>

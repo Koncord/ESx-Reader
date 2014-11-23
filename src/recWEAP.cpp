@@ -99,13 +99,13 @@ recWEAP::recWEAP()
 
 void recWEAP::parseData()
 {
-    uint64_t size;
+    uint32_t size;
     esm->get(&size, 8);
-    esm->get(&weap.id, 8);
-    esm->ignoreBytes(4);
+    esm->get(&weap.id, 4);
+    esm->ignoreBytes(8);
     parseSubRecord();
     
-#ifdef _DEBUG_
+#ifdef _DEBUG_DETAIL
     cout << "WEAP ID: 0x"<< hex << uppercase <<  weap.id
          << " EDID: " << weap.edid
          << " FULL: " << weap.full << endl
