@@ -5,12 +5,6 @@
  * Created on 20 Август 2014 г., 16:06
  */
 
-#include <cstdlib>
-#include <iosfwd>
-#include <fstream>
-#include <iostream>
-#include <vector>
-
 #include "Reader.hpp"
 
 using namespace std;

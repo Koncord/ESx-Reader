@@ -47,8 +47,8 @@ OBJECTFILES= \
 CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=
-CXXFLAGS=
+CCFLAGS=-pedantic-errors -pedantic -Wfatal-errors -Wextra -Wall -std=gnu++1y -m32
+CXXFLAGS=-pedantic-errors -pedantic -Wfatal-errors -Wextra -Wall -std=gnu++1y -m32
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -65,7 +65,7 @@ LDLIBSOPTIONS=
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/esx-reader.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/esx-reader ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/esx-reader ${OBJECTFILES} ${LDLIBSOPTIONS} -static
 
 ${OBJECTDIR}/src/Reader.o: src/Reader.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

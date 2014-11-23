@@ -5,10 +5,14 @@
  * Created on 25 Август 2014 г., 19:20
  */
 
-#include <stdexcept>
+
+#ifdef _DEBUG_
 #include <iostream>
+#else
+#include <stdexcept>
+#endif
+
 #include <stdint.h>
-#include <vector>
 
 #include <sstream>
 #include "Reader.hpp"
@@ -33,7 +37,9 @@ public:
         size -=4;
         
         string groupname = esm->getRecName();
-        cout << "groupname: " << groupname << endl;
+        #ifdef _DEBUG_
+            cout << "groupname: " << groupname << endl;
+        #endif
         size -=4;
         
         esm->get(&flag1, 4);
@@ -45,14 +51,18 @@ public:
         {
             string record(esm->getRecName());
             size -= 4;
-            cout << "record: " << record << endl;
+            #ifdef _DEBUG_
+                cout << "record: " << record << endl;
+            #endif
             
         }
         if(groupname == "WEAP")
         {
             string record(esm->getRecName());
             size -= 4;
-            cout << "record: " << record << endl;
+            #ifdef _DEBUG_
+                cout << "record: " << record << endl;
+            #endif
             recWEAP *recw = new recWEAP;
             recw->parseData();
             
@@ -71,9 +81,8 @@ Reader::Reader(std::string file)
 {
     
     esm.open(file, ifstream::binary);
-    
-    records.push_back(new recTES4);
-    records.push_back(new recGRUP);
+    records.emplace_back(make_unique<recTES4>());
+    records.emplace_back(make_unique<recGRUP>());
     
     bool t = true;
     while(t)
@@ -97,19 +106,23 @@ Reader::Reader(std::string file)
         {
             stringstream sstr;
             sstr << "unkown record: \""<< recName << "\" on position: " << esm.tellg() << endl;
-            //throw runtime_error(sstr.str());
-            cout << sstr.str();
+            #ifndef _DEBUG_
+                throw runtime_error(sstr.str());
+            #else
+                cout << sstr.str();
+            #endif
         }
     }
     
-    
-    cout << endl << "Author: " << data.Author << endl << "Description: " << data.Description << endl;
-    cout << endl << "master files: " << endl;
-    for(auto &master : data.masters)
-    {
-        cout<<master << + " ";
-    }
-    cout << endl;
+    #ifdef _DEBUG_
+        cout << endl << "Author: " << data.Author << endl << "Description: " << data.Description << endl;
+        cout << endl << "master files: " << endl;
+        for(auto &master : data.masters)
+        {
+            cout<<master << + " ";
+        }
+        cout << endl;
+    #endif
 }
 
 Reader::~Reader()

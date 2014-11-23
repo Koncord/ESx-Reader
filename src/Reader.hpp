@@ -12,6 +12,7 @@
 #include <vector>
 #include <string>
 #include <fstream>
+#include <memory>
 
 struct Data
 {
@@ -39,7 +40,7 @@ public:
     void ignoreBytes(std::streamsize ss){esm.ignore(ss);}
     virtual ~Reader();
     Data data;
-    std::vector<Record*> records;
+    std::vector<std::unique_ptr<Record>> records;
 private:
     std::ifstream esm;
     

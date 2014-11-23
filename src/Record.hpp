@@ -9,6 +9,7 @@
 #define	RECORD_HPP
 #include <vector>
 #include <string>
+#include <memory>
 
 class SubRecord
 {
@@ -22,14 +23,14 @@ class Record
 protected:
     void RegisterSubRecord(SubRecord* subRec)
     {
-        subRecs.push_back(subRec);
+        subRecs.emplace_back(subRec);
     }
     void parseSubRecord();
 public:
     virtual void parseData() = 0;
     virtual std::string recordName() {return "";}
 private:
-    std::vector <SubRecord*> subRecs;
+    std::vector <std::unique_ptr<SubRecord>> subRecs;
 };
 #endif	/* RECORD_HPP */
 

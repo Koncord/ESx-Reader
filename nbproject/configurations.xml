@@ -49,11 +49,13 @@
       </toolsSet>
       <compileType>
         <ccTool>
-          <standard>8</standard>
           <incDir>
             <pElem>../RWA-Lib/include</pElem>
           </incDir>
           <commandLine>-pedantic-errors -pedantic -Wfatal-errors -Wextra -Wall -std=gnu++1y -m32</commandLine>
+          <preprocessorList>
+            <Elem>_DEBUG_</Elem>
+          </preprocessorList>
         </ccTool>
         <linkerTool>
           <commandLine>-static</commandLine>
@@ -97,6 +99,7 @@
           <incDir>
             <pElem>../RWA-Lib/include</pElem>
           </incDir>
+          <commandLine>-pedantic-errors -pedantic -Wfatal-errors -Wextra -Wall -std=gnu++1y -m32</commandLine>
         </ccTool>
         <fortranCompilerTool>
           <developmentMode>5</developmentMode>
@@ -104,6 +107,9 @@
         <asmTool>
           <developmentMode>5</developmentMode>
         </asmTool>
+        <linkerTool>
+          <commandLine>-static</commandLine>
+        </linkerTool>
       </compileType>
       <item path="src/Reader.cpp" ex="false" tool="1" flavor2="0">
       </item>

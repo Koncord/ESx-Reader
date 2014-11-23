@@ -7,8 +7,12 @@
 
 #include "Record.hpp"
 #include "Reader.hpp"
+#ifdef _DEBUG_
 #include <iostream>
+#endif
+
 using namespace std;
+
 void Record::parseSubRecord()
 {
     bool t;
@@ -18,8 +22,12 @@ void Record::parseSubRecord()
     {
         t = false;
         recName = esm->getRecName();
+        
         if(recName == "") break;
-        cout << "SubRecord: " << recName;
+        
+        #ifdef _DEBUG_
+            cout << "SubRecord: " << recName;
+        #endif
         for(auto &subRec : subRecs)
         {
             if(subRec->recordName() == recName)
@@ -29,16 +37,21 @@ void Record::parseSubRecord()
                 break;
             }
         }
-        if(recName != "" && recName != "GRUP")
-        if(t == false)
+        
+        if(!t && recName != "" && recName != "GRUP")
         {
             uint16_t size;
             esm->get(&size, 2);
-            cout << " skipping...";
             esm->ignoreBytes(size);
             t = true;
+            #ifdef _DEBUG_
+                cout << " skipping...";
+            #endif
         }
+        
+        #ifdef _DEBUG_
         cout << endl;
+        #endif
         
     }
     while(t);
@@ -46,4 +59,5 @@ void Record::parseSubRecord()
     
     esm->setPos(esm->getPos() - 4ll); // super crutch
 }
+
 

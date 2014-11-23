@@ -70,32 +70,32 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/esx-reader.exe: ${OBJECTFILES}
 ${OBJECTDIR}/src/Reader.o: src/Reader.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../RWA-Lib/include -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Reader.o src/Reader.cpp
+	$(COMPILE.cc) -g -D_DEBUG_ -I../RWA-Lib/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Reader.o src/Reader.cpp
 
 ${OBJECTDIR}/src/Record.o: src/Record.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../RWA-Lib/include -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Record.o src/Record.cpp
+	$(COMPILE.cc) -g -D_DEBUG_ -I../RWA-Lib/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Record.o src/Record.cpp
 
 ${OBJECTDIR}/src/main.o: src/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../RWA-Lib/include -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
+	$(COMPILE.cc) -g -D_DEBUG_ -I../RWA-Lib/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
 
 ${OBJECTDIR}/src/recGMST.o: src/recGMST.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../RWA-Lib/include -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/recGMST.o src/recGMST.cpp
+	$(COMPILE.cc) -g -D_DEBUG_ -I../RWA-Lib/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/recGMST.o src/recGMST.cpp
 
 ${OBJECTDIR}/src/recTES4.o: src/recTES4.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../RWA-Lib/include -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/recTES4.o src/recTES4.cpp
+	$(COMPILE.cc) -g -D_DEBUG_ -I../RWA-Lib/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/recTES4.o src/recTES4.cpp
 
 ${OBJECTDIR}/src/recWEAP.o: src/recWEAP.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../RWA-Lib/include -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/recWEAP.o src/recWEAP.cpp
+	$(COMPILE.cc) -g -D_DEBUG_ -I../RWA-Lib/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/recWEAP.o src/recWEAP.cpp
 
 # Subprojects
 .build-subprojects:

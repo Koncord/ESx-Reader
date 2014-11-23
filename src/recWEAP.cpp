@@ -7,7 +7,10 @@
 
 #include "recWEAP.hpp"
 #include "Reader.hpp"
+
+#ifdef _DEBUG_
 #include <iostream>
+#endif
 
 using namespace std;
 
@@ -102,7 +105,7 @@ void recWEAP::parseData()
     esm->ignoreBytes(4);
     parseSubRecord();
     
-//#ifdef _DEBUG_
+#ifdef _DEBUG_
     cout << "WEAP ID: 0x"<< hex << uppercase <<  weap.id
          << " EDID: " << weap.edid
          << " FULL: " << weap.full << endl
@@ -115,5 +118,5 @@ void recWEAP::parseData()
          << " Crit % Mult: " << weap.CritMult << endl
          << " CritFlags: " << (int) weap.CritFlags << endl
          << " CritEffect: " << weap.CritEffect << endl;
-//#endif
+#endif
 }
