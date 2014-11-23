@@ -13,9 +13,11 @@ Changelog
 ---------
 
 Implemented records:
+
 TES4 - basic Information of plugin
 
 Semi-implemented records:
+
 WEAP - weapons. Implemnted subrecords EDID, FULL, DATA, CRDT, need implement DNAM - damage data.
 
 
