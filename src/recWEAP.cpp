@@ -99,10 +99,7 @@ recWEAP::recWEAP()
 
 void recWEAP::parseData()
 {
-    uint32_t size;
-    esm->get(&size, 8);
-    esm->get(&weap.id, 4);
-    esm->ignoreBytes(8);
+    weap.head = parseHead();
     parseSubRecord();
     esm->weapons.emplace_back(new WEAP::Weap(weap));
 #ifdef _DEBUG_DETAIL

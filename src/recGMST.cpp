@@ -74,10 +74,7 @@ recGMST::recGMST()
 
 void recGMST::parseData()
 {
-    uint32_t size;
-    esm->get(&size, 8);
-    esm->get(&gmst.id, 4);
-    esm->ignoreBytes(8);
+    gmst.head = parseHead();
     
     parseSubRecord();
     

@@ -20,7 +20,18 @@ class SubRecord
 
 class Record
 {
+public:
+    struct Header
+    {
+        uint32_t size;
+        uint32_t flags;
+        uint32_t formid;
+        uint32_t revision;
+        uint32_t version; 
+    };
 protected:
+    Header parseHead();
+
     void RegisterSubRecord(SubRecord* subRec)
     {
         subRecs.emplace_back(subRec);

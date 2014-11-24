@@ -14,6 +14,7 @@ namespace GMST
 {
     struct GMST
     {
+        Record::Header head;
         uint32_t id;
         std::string edid;
         std::string data;

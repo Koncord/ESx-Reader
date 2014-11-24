@@ -13,6 +13,16 @@
 
 using namespace std;
 
+Record::Header Record::parseHead()
+{
+    Reader *esm = Reader::getSingletonPtr();
+    Record::Header head;
+    
+    esm->get(&head, 20);
+    
+    return head;
+}
+
 void Record::parseSubRecord()
 {
     bool t;

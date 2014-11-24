@@ -24,30 +24,38 @@ using namespace std;
 
 template<> Reader* rwa::Singleton<Reader>::msSingleton = 0;
 
+namespace GRUP
+{
+    struct Header
+    {
+        uint32_t size;
+        char label[4];
+        uint32_t groupType;
+        uint32_t stamp; 
+        uint32_t version;
+    };
+}
 
 class recGRUP: public Record
 {
 public:
     recGRUP()
     {
+        esm = Reader::getSingletonPtr();
         records.emplace_back(make_unique<recWEAP>());
         records.emplace_back(make_unique<recGMST>());
     }
     void parseData()
     {
-        Reader *esm = Reader::getSingletonPtr();
-        long long readed = esm->getPos();
-        uint32_t size;
-        esm->get(&size, 4);
         
-        string groupname = esm->getRecName();
+        long long readed = esm->getPos();
+        
+        esm->get(&grup, 20);
+        
+        string groupname = grup.label;
         #ifdef _DEBUG_
             cout << "groupname: " << groupname << endl;
         #endif
-        
-        esm->get(&groupType, 4);
-        esm->get(&flag2, 4);
-        esm->get(&flag3, 4);
         
         for (auto &rec : records)
         {
@@ -69,16 +77,15 @@ public:
                 break;
             }
         }
-
-        size -= esm->getPos() - readed;
-        esm->ignoreBytes(size - 4);
+            
+        esm->ignoreBytes(grup.size - (esm->getPos() - readed) - 4);
     }
     
     std::string recordName() {return "GRUP";}
-
-    uint32_t groupType, flag2, flag3;
 private:
         vector <unique_ptr<Record>> records;
+        Reader *esm;
+        GRUP::Header grup;
 };
 
 Reader::Reader(std::string file)
@@ -139,7 +146,7 @@ Reader::~Reader()
 
 string Reader::getRecName()
 {
-    if(esm.eof()) return "";
+    if(esm.eof()) throw;
     char buf[5] = {0};
     esm.read(buf, 4);
     return buf;

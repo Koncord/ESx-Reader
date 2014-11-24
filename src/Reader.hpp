@@ -31,11 +31,9 @@ public:
     Reader(std::string);
     std::string getRecName();
     template<class T>
-    bool get(T *x, int size)
+    void get(T *x, int size)
     {
-        if(esm.eof()) return 0;
         esm.read((char*)x, size);
-        return 1;
     }
     void setPos(std::streampos ss) {esm.seekg(ss);}
     std::streampos getPos() { return esm.tellg();}

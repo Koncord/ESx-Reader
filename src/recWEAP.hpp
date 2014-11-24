@@ -14,6 +14,7 @@ namespace WEAP
 {
     struct Weap
     {
+        Record::Header head;
         uint64_t id;
         std::string edid;
         std::string full;
