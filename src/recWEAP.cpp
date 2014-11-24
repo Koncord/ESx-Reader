@@ -17,7 +17,7 @@ using namespace std;
 
 WEAP::Weap weap;
 
-Reader *esm = nullptr;
+static Reader *esm = nullptr;
 
 namespace WEAP
 {

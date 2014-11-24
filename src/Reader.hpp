@@ -14,6 +14,7 @@
 #include <fstream>
 #include <memory>
 #include "recWEAP.hpp"
+#include "recGMST.hpp"
 struct Data
 {
     std::string Name;
@@ -43,6 +44,7 @@ public:
     Data data;
     std::vector<std::unique_ptr<Record>> records;
     std::vector<std::unique_ptr<WEAP::Weap>> weapons;
+    std::vector<std::unique_ptr<GMST::GMST>> settings;
 private:
     std::ifstream esm;
     

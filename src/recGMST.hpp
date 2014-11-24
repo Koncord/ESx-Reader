@@ -10,6 +10,17 @@
 
 #include "Record.hpp"
 
+namespace GMST
+{
+    struct GMST
+    {
+        uint32_t id;
+        std::string edid;
+        std::string data;
+    };
+    
+}
+
 class recGMST: public Record
 {
 public:

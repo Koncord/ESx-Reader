@@ -18,6 +18,7 @@
 #include "Reader.hpp"
 #include "recTES4.hpp"
 #include "recWEAP.hpp"
+#include "recGMST.hpp"
 
 using namespace std;
 
@@ -30,6 +31,7 @@ public:
     recGRUP()
     {
         records.emplace_back(make_unique<recWEAP>());
+        records.emplace_back(make_unique<recGMST>());
     }
     void parseData()
     {
