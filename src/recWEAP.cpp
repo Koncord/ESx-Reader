@@ -104,7 +104,7 @@ void recWEAP::parseData()
     esm->get(&weap.id, 4);
     esm->ignoreBytes(8);
     parseSubRecord();
-    
+    esm->weapons.emplace_back(new WEAP::Weap(weap));
 #ifdef _DEBUG_DETAIL
     cout << "WEAP ID: 0x"<< hex << uppercase <<  weap.id
          << " EDID: " << weap.edid

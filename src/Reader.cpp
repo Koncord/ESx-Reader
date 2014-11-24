@@ -34,21 +34,18 @@ public:
     void parseData()
     {
         Reader *esm = Reader::getSingletonPtr();
+        long long readed = esm->getPos();
+        uint32_t size;
         esm->get(&size, 4);
-        size -=4;
         
         string groupname = esm->getRecName();
         #ifdef _DEBUG_
             cout << "groupname: " << groupname << endl;
         #endif
-        size -=4;
         
-        esm->get(&flag1, 4);
+        esm->get(&groupType, 4);
         esm->get(&flag2, 4);
         esm->get(&flag3, 4);
-        size -= 12;
-        
-        long long readed = esm->getPos();
         
         for (auto &rec : records)
         {
@@ -76,9 +73,10 @@ public:
     }
     
     std::string recordName() {return "GRUP";}
-    vector <unique_ptr<Record>> records;
-    uint32_t size;
-    uint32_t flag1, flag2, flag3;
+
+    uint32_t groupType, flag2, flag3;
+private:
+        vector <unique_ptr<Record>> records;
 };
 
 Reader::Reader(std::string file)
@@ -120,12 +118,15 @@ Reader::Reader(std::string file)
     
     #ifdef _DEBUG_
         cout << endl << "Author: " << data.Author << endl << "Description: " << data.Description << endl;
-        cout << endl << "master files: " << endl;
-        for(auto &master : data.masters)
+        if(data.masters.size() > 0)
         {
-            cout<<master << + " ";
+            cout << endl << "master files: " << endl;
+            for(auto &master : data.masters)
+            {
+                cout<<master << + " ";
+            }
+            cout << endl;
         }
-        cout << endl;
     #endif
 }
 

@@ -13,7 +13,7 @@
 #include <string>
 #include <fstream>
 #include <memory>
-
+#include "recWEAP.hpp"
 struct Data
 {
     std::string Name;
@@ -22,6 +22,7 @@ struct Data
     uint32_t records;
     std::vector<std::string> masters;
 };
+
 
 class Reader: public rwa::Singleton<Reader>
 {
@@ -41,6 +42,7 @@ public:
     virtual ~Reader();
     Data data;
     std::vector<std::unique_ptr<Record>> records;
+    std::vector<std::unique_ptr<WEAP::Weap>> weapons;
 private:
     std::ifstream esm;
     

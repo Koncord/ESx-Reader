@@ -32,6 +32,7 @@ int main(int argc, char** argv)
     //Reader read("weap.esp");
     
     speed_test("Fallout3.esm");
+  
     return 0;
 }
 
