@@ -69,14 +69,14 @@ public:
                 while(true)
                 {
                     string record(esm->getRecName());
-                    if(record == recordName()) // TODO: I do not know how to do it better. Maybe this not needed in vaultmp
+                    if(record == recordName() && grup.groupType != 0) // TODO: I do not know how to do it better. Maybe this not needed in vaultmp
                     {
                         GRUP::Header subgroup;
                         esm->get(&subgroup, 20);
                         continue;
                     }
                     #ifdef _DEBUG_
-                    if(record.size() > 0)
+                    else
                         cout << "record: " << record << endl;
                     #endif
                     if(record != rec->recordName())

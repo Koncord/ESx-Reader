@@ -20,11 +20,11 @@ namespace CELL
         struct DATA
         {
             uint8_t flags;
-            bool isInterior() { return flags & 0x0001;}
-            bool HasWatter() { return flags & 0x0002;}
-            bool CantTravel() { return flags & 0x0004;}
-            bool PublicArea() { return flags & 0x0020;}
-            bool HandChanged() { return flags & 0x0040;}
+            bool isInterior() const { return flags & 0x0001;}
+            bool HasWatter() const { return flags & 0x0002;}
+            bool CantTravel() const { return flags & 0x0004;}
+            bool PublicArea() const { return flags & 0x0020;}
+            bool HandChanged() const { return flags & 0x0040;}
         }DATA;
     };
 }
