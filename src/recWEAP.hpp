@@ -19,17 +19,37 @@ namespace WEAP
         std::string edid;
         std::string full;
         uint64_t scri;
-        //************* DATA ****************
-        int Value;
-        int Health;
-        float Weight;
-        int16_t Damage;
-        uint8_t ClipRounds;
-        //************* CRDT ****************
-        uint16_t CritDmg;
-        float CritMult;
-        uint8_t CritFlags;
-        uint32_t CritEffect;
+        struct DATA
+        {
+            int Value;
+            int Health;
+            float Weight;
+            int16_t Damage;
+            uint8_t ClipRounds;
+        } DATA;
+        struct CRDT
+        {
+            uint16_t CritDmg;
+            float CritMult;
+            uint8_t CritFlags;
+            uint32_t CritEffect;
+        } CRDT;
+        struct DNAM 
+        {
+            //uint8_t AnimType;
+            float Speed;
+            float Reach;
+            uint8_t Flags;
+            uint8_t AmmoUse;
+            float MinSpread;
+            float MaxSpread;
+            float MinRange;
+            float MaxRange;
+            uint32_t OnHit;
+            uint32_t Flags2;
+            float ReloadTime;
+        } DNAM;
+        
     };
 }
 

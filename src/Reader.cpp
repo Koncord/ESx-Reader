@@ -5,6 +5,9 @@
  * Created on 25 Август 2014 г., 19:20
  */
 
+#include "recCELL.hpp"
+
+
 
 #ifdef _DEBUG_
 #include <iostream>
@@ -19,6 +22,7 @@
 #include "recTES4.hpp"
 #include "recWEAP.hpp"
 #include "recGMST.hpp"
+#include "recCELL.hpp"
 
 using namespace std;
 
@@ -44,6 +48,7 @@ public:
         esm = Reader::getSingletonPtr();
         records.emplace_back(make_unique<recWEAP>());
         records.emplace_back(make_unique<recGMST>());
+        records.emplace_back(make_unique<recCELL>());
     }
     void parseData()
     {
@@ -64,14 +69,21 @@ public:
                 while(true)
                 {
                     string record(esm->getRecName());
+                    if(record == recordName()) // TODO: I do not know how to do it better. Maybe this not needed in vaultmp
+                    {
+                        GRUP::Header subgroup;
+                        esm->get(&subgroup, 20);
+                        continue;
+                    }
+                    #ifdef _DEBUG_
+                    if(record.size() > 0)
+                        cout << "record: " << record << endl;
+                    #endif
                     if(record != rec->recordName())
                     {
                         esm->setPos(esm->getPos() - 4ll);
                         break;
                     }
-                    #ifdef _DEBUG_
-                         cout << " record: " << record << endl;
-                    #endif
                     rec->parseData();
                 }
                 break;
@@ -146,7 +158,7 @@ Reader::~Reader()
 
 string Reader::getRecName()
 {
-    if(esm.eof()) throw;
+    if(esm.eof()) return "";
     char buf[5] = {0};
     esm.read(buf, 4);
     return buf;

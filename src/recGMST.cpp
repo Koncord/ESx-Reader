@@ -22,7 +22,7 @@ namespace GMST
         {
 
             uint16_t size;
-            esm->get(&size, 2);
+            esm->get(&size);
             
             char *str = new char[size];
             esm->get(str, size);
@@ -38,7 +38,7 @@ namespace GMST
         void parseData()
         {
             uint16_t size;
-            esm->get(&size, 2);
+            esm->get(&size);
             
             if(gmst.edid[0] == 's')
             {
@@ -50,13 +50,13 @@ namespace GMST
             else if(gmst.edid[0] == 'f')
             {
                 float data;
-                esm->get(&data, size);
+                esm->get(&data);
                 gmst.data = data;
             }
             else if(gmst.edid[0] == 'i')
             {
                 int data;
-                esm->get(&data, size);
+                esm->get(&data);
                 gmst.data = data;
             }
         }

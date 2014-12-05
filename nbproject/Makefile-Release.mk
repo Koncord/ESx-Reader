@@ -38,6 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/Reader.o \
 	${OBJECTDIR}/src/Record.o \
 	${OBJECTDIR}/src/main.o \
+	${OBJECTDIR}/src/recCELL.o \
 	${OBJECTDIR}/src/recGMST.o \
 	${OBJECTDIR}/src/recTES4.o \
 	${OBJECTDIR}/src/recWEAP.o
@@ -81,6 +82,11 @@ ${OBJECTDIR}/src/main.o: src/main.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -I../RWA-Lib/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
+
+${OBJECTDIR}/src/recCELL.o: src/recCELL.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../RWA-Lib/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/recCELL.o src/recCELL.cpp
 
 ${OBJECTDIR}/src/recGMST.o: src/recGMST.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

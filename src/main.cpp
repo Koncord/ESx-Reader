@@ -30,8 +30,9 @@ int main(int argc, char** argv)
     //Reader read("ThePitt.esm");
     //Reader read("Fallout3.esm");
     //Reader read("weap.esp");
+    Reader read("cell_test.esp");
     
-    speed_test("Fallout3.esm");
+    //speed_test("Fallout3.esm");
   
     return 0;
 }

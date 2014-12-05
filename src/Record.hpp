@@ -13,7 +13,7 @@
 
 class SubRecord
 {
-    public:
+public:
     virtual void parseData() = 0;
     virtual std::string recordName() {return "";}
 };

@@ -35,6 +35,11 @@ public:
     {
         esm.read((char*)x, size);
     }
+    template<class T>
+    void get(T *x)
+    {
+        esm.read((char*)x, sizeof(*(x)));
+    }
     void setPos(std::streampos ss) {esm.seekg(ss);}
     std::streampos getPos() { return esm.tellg();}
     void ignoreBytes(std::streamsize ss){esm.ignore(ss);}

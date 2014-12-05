@@ -18,10 +18,10 @@ class recHEDR: public SubRecord
         Reader *esm = Reader::getSingletonPtr();
 
         uint16_t size;
-        esm->get(&size, 2);
+        esm->get(&size);
         
         esm->ignoreBytes(4); // version (float)
-        esm->get(&esm->data.records, 4); // Record count
+        esm->get(&esm->data.records); // Record count
         esm->ignoreBytes(4); // nextObjId (int)
         
     }
@@ -36,7 +36,7 @@ class recCNAM : public SubRecord
             Reader *esm = Reader::getSingletonPtr();
 
             uint16_t size;
-            esm->get(&size, 2);
+            esm->get(&size);
 
             char *text = new char[size];
             esm->get(text, size);
@@ -54,7 +54,7 @@ class recSNAM: public SubRecord
         Reader *esm = Reader::getSingletonPtr();
 
         uint16_t size;
-        esm->get(&size, 2);
+        esm->get(&size);
         
         char *text = new char[size];
         esm->get(text, size);
@@ -72,7 +72,7 @@ class recMAST: public SubRecord
         Reader *esm = Reader::getSingletonPtr();
 
         uint16_t size;
-        esm->get(&size, 2);
+        esm->get(&size);
         
         char *text = new char[size];
         esm->get(text, size);
@@ -91,7 +91,7 @@ class recDATA: public SubRecord
         Reader *esm = Reader::getSingletonPtr();
 
         uint16_t size;
-        esm->get(&size, 2);
+        esm->get(&size);
         
         esm->ignoreBytes(size);
     }
@@ -106,7 +106,7 @@ class recONAM: public SubRecord // TODO: stub
         Reader *esm = Reader::getSingletonPtr();
 
         uint16_t size;
-        esm->get(&size, 2);
+        esm->get(&size);
         
         esm->ignoreBytes(size);
     }
