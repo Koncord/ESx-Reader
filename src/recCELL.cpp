@@ -75,16 +75,22 @@ void recCELL::parseData()
 {
     cell.head = parseHead();
     parseSubRecord();
-    //esm->cell.emplace_back(new CELL::CELL(cell));
+    esm->cells.emplace_back(new CELL::CELL(cell));
     #ifdef _DEBUG_DETAIL
         cout << "FORMID: 0x"<< hex << uppercase <<  cell.head.formid
              << " EDID: " << cell.edid
              << " FULL: " << cell.full << endl
-             << "\tFlags:" << endl
-             << "isInterior: " <<cell.DATA.isInterior() << endl
-             << "Has Watter: " <<cell.DATA.HasWatter() << endl
-             << "Can't travel: " <<cell.DATA.CantTravel() << endl
-             << "Public area: " <<cell.DATA.PublicArea() << endl
-             << "Hand changed: " <<cell.DATA.HandChanged() << endl;
+             << "Flags:";
+        if(cell.DATA.isInterior())
+            cout << " isInterior";
+        if(cell.DATA.HasWatter())
+            cout << " HasWatter";
+        if(cell.DATA.CantTravel())
+            cout << " CantTravel";
+        if(cell.DATA.PublicArea())
+            cout << " PublicArea";
+        if(cell.DATA.HandChanged())
+            cout << " HandChanged";
+        cout << endl;
     #endif // _DEBUG_DETAIL
 }

@@ -15,6 +15,7 @@
 #include <memory>
 #include "recWEAP.hpp"
 #include "recGMST.hpp"
+#include "recCELL.hpp"
 struct Data
 {
     std::string Name;
@@ -48,6 +49,7 @@ public:
     std::vector<std::unique_ptr<Record>> records;
     std::vector<std::unique_ptr<WEAP::Weap>> weapons;
     std::vector<std::unique_ptr<GMST::GMST>> settings;
+    std::vector<std::unique_ptr<CELL::CELL>> cells;
 private:
     std::ifstream esm;
     
