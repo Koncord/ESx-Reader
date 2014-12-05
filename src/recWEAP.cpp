@@ -94,7 +94,6 @@ namespace WEAP
         {
             uint16_t size;
             esm->get(&size, 2);
-            streampos pos = esm->getPos();
             esm->ignoreBytes(4); // Animation Type
             esm->get(&weap.DNAM.Speed); // Animation mult
             esm->get(&weap.DNAM.Reach);
@@ -171,6 +170,8 @@ void recWEAP::parseData()
          << " CritFlags: " << (int) weap.CRDT.CritFlags << endl
          << " CritEffect: " << weap.CRDT.CritEffect << endl
          << "isAutomatic: " << (weap.DNAM.Flags == 0x02 ? "true" : "false") << endl
-         << "MinRange: " << weap.DNAM.MinRange << endl;
+         << "MinRange: " << weap.DNAM.MinRange << endl
+         << "MaxRange: " << weap.DNAM.MaxRange << endl;
+    getchar();
 #endif
 }

@@ -16,6 +16,8 @@
 #include "recWEAP.hpp"
 #include "recGMST.hpp"
 #include "recCELL.hpp"
+#include "recGLOB.hpp"
+#include "recAMMO.hpp"
 struct Data
 {
     std::string Name;
@@ -50,6 +52,8 @@ public:
     std::vector<std::unique_ptr<WEAP::Weap>> weapons;
     std::vector<std::unique_ptr<GMST::GMST>> settings;
     std::vector<std::unique_ptr<CELL::CELL>> cells;
+    std::vector<std::unique_ptr<GLOB::GLOB>> globals;
+    std::vector<std::unique_ptr<AMMO::AMMO>> ammo;
 private:
     std::ifstream esm;
     

@@ -38,7 +38,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/Reader.o \
 	${OBJECTDIR}/src/Record.o \
 	${OBJECTDIR}/src/main.o \
+	${OBJECTDIR}/src/recAMMO.o \
 	${OBJECTDIR}/src/recCELL.o \
+	${OBJECTDIR}/src/recGLOB.o \
 	${OBJECTDIR}/src/recGMST.o \
 	${OBJECTDIR}/src/recTES4.o \
 	${OBJECTDIR}/src/recWEAP.o
@@ -83,10 +85,20 @@ ${OBJECTDIR}/src/main.o: src/main.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -D_DEBUG_ -D_DEBUG_DETAIL -I../RWA-Lib/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
 
+${OBJECTDIR}/src/recAMMO.o: src/recAMMO.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -D_DEBUG_ -D_DEBUG_DETAIL -I../RWA-Lib/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/recAMMO.o src/recAMMO.cpp
+
 ${OBJECTDIR}/src/recCELL.o: src/recCELL.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -D_DEBUG_ -D_DEBUG_DETAIL -I../RWA-Lib/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/recCELL.o src/recCELL.cpp
+
+${OBJECTDIR}/src/recGLOB.o: src/recGLOB.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -D_DEBUG_ -D_DEBUG_DETAIL -I../RWA-Lib/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/recGLOB.o src/recGLOB.cpp
 
 ${OBJECTDIR}/src/recGMST.o: src/recGMST.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

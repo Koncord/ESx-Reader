@@ -18,7 +18,7 @@ Record::Header Record::parseHead()
     Reader *esm = Reader::getSingletonPtr();
     Record::Header head;
     
-    esm->get(&head, 20);
+    esm->get(&head);
     
     return head;
 }
@@ -51,7 +51,7 @@ void Record::parseSubRecord()
         if(!t)
         {
             uint16_t size;
-            esm->get(&size, 2);
+            esm->get(&size);
             esm->ignoreBytes(size);
             t = true;
             #ifdef _DEBUG_DETAIL

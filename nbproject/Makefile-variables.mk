@@ -15,13 +15,13 @@ CND_PACKAGE_DIR_Debug=dist/Debug/MinGW-Windows/package
 CND_PACKAGE_NAME_Debug=esx-reader.tar
 CND_PACKAGE_PATH_Debug=dist/Debug/MinGW-Windows/package/esx-reader.tar
 # Release configuration
-CND_PLATFORM_Release=MinGW-Windows
-CND_ARTIFACT_DIR_Release=dist/Release/MinGW-Windows
+CND_PLATFORM_Release=MinGW64-Windows
+CND_ARTIFACT_DIR_Release=dist/Release/MinGW64-Windows
 CND_ARTIFACT_NAME_Release=esx-reader
-CND_ARTIFACT_PATH_Release=dist/Release/MinGW-Windows/esx-reader
-CND_PACKAGE_DIR_Release=dist/Release/MinGW-Windows/package
+CND_ARTIFACT_PATH_Release=dist/Release/MinGW64-Windows/esx-reader
+CND_PACKAGE_DIR_Release=dist/Release/MinGW64-Windows/package
 CND_PACKAGE_NAME_Release=esx-reader.tar
-CND_PACKAGE_PATH_Release=dist/Release/MinGW-Windows/package/esx-reader.tar
+CND_PACKAGE_PATH_Release=dist/Release/MinGW64-Windows/package/esx-reader.tar
 # Debug_detail configuration
 CND_PLATFORM_Debug_detail=MinGW-Windows
 CND_ARTIFACT_DIR_Debug_detail=dist/Debug_detail/MinGW-Windows

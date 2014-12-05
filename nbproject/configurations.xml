@@ -5,8 +5,11 @@
                    displayName="Исходные файлы"
                    projectFiles="true">
       <itemPath>src/Reader.cpp</itemPath>
+      <itemPath>src/Record.cpp</itemPath>
       <itemPath>src/main.cpp</itemPath>
+      <itemPath>src/recAMMO.cpp</itemPath>
       <itemPath>src/recCELL.cpp</itemPath>
+      <itemPath>src/recGLOB.cpp</itemPath>
       <itemPath>src/recGMST.cpp</itemPath>
       <itemPath>src/recTES4.cpp</itemPath>
       <itemPath>src/recWEAP.cpp</itemPath>
@@ -15,9 +18,10 @@
                    displayName="Файлы заголовков"
                    projectFiles="true">
       <itemPath>src/Reader.hpp</itemPath>
-      <itemPath>src/Record.cpp</itemPath>
       <itemPath>src/Record.hpp</itemPath>
+      <itemPath>src/recAMMO.hpp</itemPath>
       <itemPath>src/recCELL.hpp</itemPath>
+      <itemPath>src/recGLOB.hpp</itemPath>
       <itemPath>src/recGMST.hpp</itemPath>
       <itemPath>src/recTES4.hpp</itemPath>
       <itemPath>src/recWEAP.hpp</itemPath>
@@ -73,9 +77,17 @@
       </item>
       <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/recAMMO.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/recAMMO.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/recCELL.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/recCELL.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/recGLOB.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/recGLOB.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/recGMST.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -92,7 +104,7 @@
     </conf>
     <conf name="Release" type="1">
       <toolsSet>
-        <compilerSet>default</compilerSet>
+        <compilerSet>MinGW64|MinGW</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
@@ -105,7 +117,7 @@
           <incDir>
             <pElem>../RWA-Lib/include</pElem>
           </incDir>
-          <commandLine>-pedantic-errors -pedantic -Wfatal-errors -Wextra -Wall -std=gnu++1y -m32</commandLine>
+          <commandLine>-pedantic-errors -pedantic -Wfatal-errors -Wextra -Wall -std=gnu++1y</commandLine>
         </ccTool>
         <fortranCompilerTool>
           <developmentMode>5</developmentMode>
@@ -127,9 +139,17 @@
       </item>
       <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/recAMMO.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/recAMMO.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/recCELL.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/recCELL.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/recGLOB.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/recGLOB.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/recGMST.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -175,9 +195,17 @@
       </item>
       <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/recAMMO.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/recAMMO.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/recCELL.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/recCELL.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/recGLOB.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/recGLOB.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/recGMST.cpp" ex="false" tool="1" flavor2="0">
       </item>

@@ -21,7 +21,7 @@ FC=gfortran
 AS=as
 
 # Macros
-CND_PLATFORM=MinGW-Windows
+CND_PLATFORM=MinGW64-Windows
 CND_DLIB_EXT=dll
 CND_CONF=Release
 CND_DISTDIR=dist
@@ -38,7 +38,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/Reader.o \
 	${OBJECTDIR}/src/Record.o \
 	${OBJECTDIR}/src/main.o \
+	${OBJECTDIR}/src/recAMMO.o \
 	${OBJECTDIR}/src/recCELL.o \
+	${OBJECTDIR}/src/recGLOB.o \
 	${OBJECTDIR}/src/recGMST.o \
 	${OBJECTDIR}/src/recTES4.o \
 	${OBJECTDIR}/src/recWEAP.o
@@ -48,8 +50,8 @@ OBJECTFILES= \
 CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=-pedantic-errors -pedantic -Wfatal-errors -Wextra -Wall -std=gnu++1y -m32
-CXXFLAGS=-pedantic-errors -pedantic -Wfatal-errors -Wextra -Wall -std=gnu++1y -m32
+CCFLAGS=-pedantic-errors -pedantic -Wfatal-errors -Wextra -Wall -std=gnu++1y
+CXXFLAGS=-pedantic-errors -pedantic -Wfatal-errors -Wextra -Wall -std=gnu++1y
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -83,10 +85,20 @@ ${OBJECTDIR}/src/main.o: src/main.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -I../RWA-Lib/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
 
+${OBJECTDIR}/src/recAMMO.o: src/recAMMO.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../RWA-Lib/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/recAMMO.o src/recAMMO.cpp
+
 ${OBJECTDIR}/src/recCELL.o: src/recCELL.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -I../RWA-Lib/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/recCELL.o src/recCELL.cpp
+
+${OBJECTDIR}/src/recGLOB.o: src/recGLOB.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../RWA-Lib/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/recGLOB.o src/recGLOB.cpp
 
 ${OBJECTDIR}/src/recGMST.o: src/recGMST.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

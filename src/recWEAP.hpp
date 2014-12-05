@@ -21,8 +21,8 @@ namespace WEAP
         uint64_t scri;
         struct DATA
         {
-            int Value;
-            int Health;
+            int32_t Value;
+            int32_t Health;
             float Weight;
             int16_t Damage;
             uint8_t ClipRounds;

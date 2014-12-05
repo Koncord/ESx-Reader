@@ -23,7 +23,7 @@
 #include "recWEAP.hpp"
 #include "recGMST.hpp"
 #include "recCELL.hpp"
-
+#include "recGLOB.hpp"
 using namespace std;
 
 template<> Reader* rwa::Singleton<Reader>::msSingleton = 0;
@@ -49,6 +49,8 @@ public:
         records.emplace_back(make_unique<recWEAP>());
         records.emplace_back(make_unique<recGMST>());
         records.emplace_back(make_unique<recCELL>());
+        records.emplace_back(make_unique<recGLOB>());
+        records.emplace_back(make_unique<recAMMO>());
     }
     void parseData()
     {
@@ -75,15 +77,15 @@ public:
                         esm->get(&subgroup, 20);
                         continue;
                     }
-                    #ifdef _DEBUG_
-                    else
-                        cout << "record: " << record << endl;
-                    #endif
                     if(record != rec->recordName())
                     {
                         esm->setPos(esm->getPos() - 4ll);
                         break;
                     }
+                    #ifdef _DEBUG_DETAIL
+                    else
+                        cout << "record: " << record << endl;
+                    #endif
                     rec->parseData();
                 }
                 break;
