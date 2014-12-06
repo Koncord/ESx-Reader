@@ -12,7 +12,7 @@
 
 namespace WEAP
 {
-    struct Weap
+    struct WEAP
     {
         Record::Header head;
         uint64_t id;

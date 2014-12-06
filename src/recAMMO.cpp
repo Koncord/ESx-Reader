@@ -60,6 +60,7 @@ namespace AMMO
         }
         std::string recordName() {return "ONAM";}
     };
+    
     class recDATA: public SubRecord // ingame short name
     {
         public:

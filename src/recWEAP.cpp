@@ -15,7 +15,7 @@
 using namespace std;
 
 
-WEAP::Weap weap;
+WEAP::WEAP weap;
 
 static Reader *esm = nullptr;
 
@@ -155,7 +155,7 @@ void recWEAP::parseData()
 {
     weap.head = parseHead();
     parseSubRecord();
-    esm->weapons.emplace_back(new WEAP::Weap(weap));
+    esm->weapons.emplace_back(new WEAP::WEAP(weap));
 #ifdef _DEBUG_DETAIL
     cout << "WEAP ID: 0x"<< hex << uppercase <<  weap.head.formid
          << " EDID: " << weap.edid

@@ -20,10 +20,7 @@
 
 #include "Reader.hpp"
 #include "recTES4.hpp"
-#include "recWEAP.hpp"
-#include "recGMST.hpp"
-#include "recCELL.hpp"
-#include "recGLOB.hpp"
+
 using namespace std;
 
 template<> Reader* rwa::Singleton<Reader>::msSingleton = 0;
@@ -51,6 +48,7 @@ public:
         records.emplace_back(make_unique<recCELL>());
         records.emplace_back(make_unique<recGLOB>());
         records.emplace_back(make_unique<recAMMO>());
+        records.emplace_back(make_unique<recKEYM>());
     }
     void parseData()
     {

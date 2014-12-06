@@ -18,6 +18,8 @@
 #include "recCELL.hpp"
 #include "recGLOB.hpp"
 #include "recAMMO.hpp"
+#include "recKEYM.hpp"
+
 struct Data
 {
     std::string Name;
@@ -49,11 +51,13 @@ public:
     virtual ~Reader();
     Data data;
     std::vector<std::unique_ptr<Record>> records;
-    std::vector<std::unique_ptr<WEAP::Weap>> weapons;
+    std::vector<std::unique_ptr<WEAP::WEAP>> weapons;
     std::vector<std::unique_ptr<GMST::GMST>> settings;
     std::vector<std::unique_ptr<CELL::CELL>> cells;
     std::vector<std::unique_ptr<GLOB::GLOB>> globals;
     std::vector<std::unique_ptr<AMMO::AMMO>> ammo;
+    std::vector<std::unique_ptr<KEYM::KEYM>> keys;
+
 private:
     std::ifstream esm;
     

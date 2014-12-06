@@ -42,6 +42,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/recCELL.o \
 	${OBJECTDIR}/src/recGLOB.o \
 	${OBJECTDIR}/src/recGMST.o \
+	${OBJECTDIR}/src/recKEYM.o \
 	${OBJECTDIR}/src/recTES4.o \
 	${OBJECTDIR}/src/recWEAP.o
 
@@ -104,6 +105,11 @@ ${OBJECTDIR}/src/recGMST.o: src/recGMST.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -D_DEBUG_ -I../RWA-Lib/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/recGMST.o src/recGMST.cpp
+
+${OBJECTDIR}/src/recKEYM.o: src/recKEYM.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -D_DEBUG_ -I../RWA-Lib/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/recKEYM.o src/recKEYM.cpp
 
 ${OBJECTDIR}/src/recTES4.o: src/recTES4.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

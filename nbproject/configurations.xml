@@ -11,6 +11,7 @@
       <itemPath>src/recCELL.cpp</itemPath>
       <itemPath>src/recGLOB.cpp</itemPath>
       <itemPath>src/recGMST.cpp</itemPath>
+      <itemPath>src/recKEYM.cpp</itemPath>
       <itemPath>src/recTES4.cpp</itemPath>
       <itemPath>src/recWEAP.cpp</itemPath>
     </logicalFolder>
@@ -23,6 +24,7 @@
       <itemPath>src/recCELL.hpp</itemPath>
       <itemPath>src/recGLOB.hpp</itemPath>
       <itemPath>src/recGMST.hpp</itemPath>
+      <itemPath>src/recKEYM.hpp</itemPath>
       <itemPath>src/recTES4.hpp</itemPath>
       <itemPath>src/recWEAP.hpp</itemPath>
     </logicalFolder>
@@ -93,6 +95,10 @@
       </item>
       <item path="src/recGMST.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/recKEYM.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/recKEYM.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/recTES4.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/recTES4.hpp" ex="false" tool="3" flavor2="0">
@@ -155,6 +161,10 @@
       </item>
       <item path="src/recGMST.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/recKEYM.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/recKEYM.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/recTES4.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/recTES4.hpp" ex="false" tool="3" flavor2="0">
@@ -210,6 +220,10 @@
       <item path="src/recGMST.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/recGMST.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/recKEYM.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/recKEYM.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/recTES4.cpp" ex="false" tool="1" flavor2="0">
       </item>
