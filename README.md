@@ -15,8 +15,11 @@ Compiling
 ---------
 
 Project file for NetBeans 8
+
 GNU GCC 4.9.x
+
 zlib 1.2.8
+
 boost >= 1.55.0 (boost::variant)
 
 gtest 1.7 for tests
