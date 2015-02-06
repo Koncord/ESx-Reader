@@ -1,0 +1,6 @@
+build
+dist
+data/Fallout3.esm
+/nbproject/private
+error.log
+failed.rec

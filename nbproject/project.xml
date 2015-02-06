@@ -3,7 +3,7 @@
     <type>org.netbeans.modules.cnd.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>ESx-Reader</name>
+            <name>ESx-Reader2</name>
             <c-extensions/>
             <cpp-extensions>cpp</cpp-extensions>
             <header-extensions>hpp</header-extensions>
@@ -15,15 +15,11 @@
             <confList>
                 <confElem>
                     <name>Debug</name>
-                    <type>1</type>
+                    <type>3</type>
                 </confElem>
                 <confElem>
                     <name>Release</name>
-                    <type>1</type>
-                </confElem>
-                <confElem>
-                    <name>Debug_detail</name>
-                    <type>1</type>
+                    <type>3</type>
                 </confElem>
             </confList>
             <formatting>

@@ -4,29 +4,77 @@
     <logicalFolder name="SourceFiles"
                    displayName="Исходные файлы"
                    projectFiles="true">
+      <logicalFolder name="f2" displayName="Records" projectFiles="true">
+        <itemPath>src/Records/ALCH.cpp</itemPath>
+        <itemPath>src/Records/AMMO.cpp</itemPath>
+        <itemPath>src/Records/ARMA.cpp</itemPath>
+        <itemPath>src/Records/ARMO.cpp</itemPath>
+        <itemPath>src/Records/BOOK.cpp</itemPath>
+        <itemPath>src/Records/CLAS.cpp</itemPath>
+        <itemPath>src/Records/CONT.cpp</itemPath>
+        <itemPath>src/Records/EXPL.cpp</itemPath>
+        <itemPath>src/Records/EXPL.hpp</itemPath>
+        <itemPath>src/Records/FACT.cpp</itemPath>
+        <itemPath>src/Records/FLST.cpp</itemPath>
+        <itemPath>src/Records/GLOB.cpp</itemPath>
+        <itemPath>src/Records/GMST.cpp</itemPath>
+        <itemPath>src/Records/KEYM.cpp</itemPath>
+        <itemPath>src/Records/KEYM.hpp</itemPath>
+        <itemPath>src/Records/MISC.cpp</itemPath>
+        <itemPath>src/Records/NPC_.cpp</itemPath>
+        <itemPath>src/Records/REFR.cpp</itemPath>
+        <itemPath>src/Records/SCPT.cpp</itemPath>
+        <itemPath>src/Records/TERM.cpp</itemPath>
+        <itemPath>src/Records/TES4.cpp</itemPath>
+        <itemPath>src/Records/WEAP.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f1" displayName="SubRecords" projectFiles="true">
+        <itemPath>src/Subrecords/subEDID.cpp</itemPath>
+      </logicalFolder>
+      <itemPath>src/Group.cpp</itemPath>
       <itemPath>src/Reader.cpp</itemPath>
       <itemPath>src/Record.cpp</itemPath>
-      <itemPath>src/main.cpp</itemPath>
-      <itemPath>src/recAMMO.cpp</itemPath>
-      <itemPath>src/recCELL.cpp</itemPath>
-      <itemPath>src/recGLOB.cpp</itemPath>
-      <itemPath>src/recGMST.cpp</itemPath>
-      <itemPath>src/recKEYM.cpp</itemPath>
-      <itemPath>src/recTES4.cpp</itemPath>
-      <itemPath>src/recWEAP.cpp</itemPath>
+      <itemPath>src/SubRecord.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="HeaderFiles"
                    displayName="Файлы заголовков"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="Records" projectFiles="true">
+        <itemPath>src/Records/ALCH.hpp</itemPath>
+        <itemPath>src/Records/AMMO.hpp</itemPath>
+        <itemPath>src/Records/ARMA.hpp</itemPath>
+        <itemPath>src/Records/ARMO.hpp</itemPath>
+        <itemPath>src/Records/BOOK.hpp</itemPath>
+        <itemPath>src/Records/CLAS.hpp</itemPath>
+        <itemPath>src/Records/CONT.hpp</itemPath>
+        <itemPath>src/Records/FACT.hpp</itemPath>
+        <itemPath>src/FLST.hpp</itemPath>
+        <itemPath>src/Records/FLST.hpp</itemPath>
+        <itemPath>src/Records/GLOB.hpp</itemPath>
+        <itemPath>src/Records/GMST.hpp</itemPath>
+        <itemPath>src/Records/MISC.hpp</itemPath>
+        <itemPath>src/Records/NPC_.hpp</itemPath>
+        <itemPath>src/Records/REFR.hpp</itemPath>
+        <itemPath>src/Records/SCPT.hpp</itemPath>
+        <itemPath>src/Records/TERM.hpp</itemPath>
+        <itemPath>src/Records/TES4.hpp</itemPath>
+        <itemPath>src/Records/WEAP.hpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="SubRecords" projectFiles="true">
+        <itemPath>src/Subrecords/subACBS.hpp</itemPath>
+        <itemPath>src/Subrecords/subAIDT.hpp</itemPath>
+        <itemPath>src/Subrecords/subBMDT.hpp</itemPath>
+        <itemPath>src/Subrecords/subEDID.hpp</itemPath>
+        <itemPath>src/Subrecords/subETYP.hpp</itemPath>
+        <itemPath>src/Subrecords/subSNAM.hpp</itemPath>
+        <itemPath>src/Subrecords/subXNAM.hpp</itemPath>
+      </logicalFolder>
+      <itemPath>src/Animations.hpp</itemPath>
+      <itemPath>src/Group.hpp</itemPath>
       <itemPath>src/Reader.hpp</itemPath>
       <itemPath>src/Record.hpp</itemPath>
-      <itemPath>src/recAMMO.hpp</itemPath>
-      <itemPath>src/recCELL.hpp</itemPath>
-      <itemPath>src/recGLOB.hpp</itemPath>
-      <itemPath>src/recGMST.hpp</itemPath>
-      <itemPath>src/recKEYM.hpp</itemPath>
-      <itemPath>src/recTES4.hpp</itemPath>
-      <itemPath>src/recWEAP.hpp</itemPath>
+      <itemPath>src/SubRecord.hpp</itemPath>
+      <itemPath>src/Types.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Файлы ресурсов"
@@ -49,7 +97,7 @@
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
-    <conf name="Debug" type="1">
+    <conf name="Debug" type="3">
       <toolsSet>
         <compilerSet>default</compilerSet>
         <dependencyChecking>true</dependencyChecking>
@@ -58,17 +106,21 @@
       <compileType>
         <ccTool>
           <incDir>
-            <pElem>../RWA-Lib/include</pElem>
+            <pElem>F:/SDK/boost_1_55_0</pElem>
           </incDir>
-          <commandLine>-pedantic-errors -pedantic -Wfatal-errors -Wextra -Wall -std=gnu++1y -m32</commandLine>
-          <preprocessorList>
-            <Elem>_DEBUG_</Elem>
-          </preprocessorList>
+          <commandLine>-pedantic-errors -pedantic -Wfatal-errors -Wextra -Wall -std=gnu++1y -m32 -DDEBUG</commandLine>
         </ccTool>
-        <linkerTool>
-          <commandLine>-static</commandLine>
-        </linkerTool>
+        <archiverTool>
+        </archiverTool>
       </compileType>
+      <item path="src/Animations.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/FLST.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Group.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Group.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Reader.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Reader.hpp" ex="false" tool="3" flavor2="0">
@@ -77,40 +129,112 @@
       </item>
       <item path="src/Record.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/ALCH.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/recAMMO.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/ALCH.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/recAMMO.hpp" ex="false" tool="3" flavor2="0">
+      <item path="src/Records/AMMO.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/recCELL.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/AMMO.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/recCELL.hpp" ex="false" tool="3" flavor2="0">
+      <item path="src/Records/ARMA.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/recGLOB.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/ARMA.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/recGLOB.hpp" ex="false" tool="3" flavor2="0">
+      <item path="src/Records/ARMO.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/recGMST.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/ARMO.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/recGMST.hpp" ex="false" tool="3" flavor2="0">
+      <item path="src/Records/BOOK.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/recKEYM.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/BOOK.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/recKEYM.hpp" ex="false" tool="3" flavor2="0">
+      <item path="src/Records/CLAS.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/recTES4.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/CLAS.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/recTES4.hpp" ex="false" tool="3" flavor2="0">
+      <item path="src/Records/CONT.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/recWEAP.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/CONT.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/recWEAP.hpp" ex="false" tool="3" flavor2="0">
+      <item path="src/Records/EXPL.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/EXPL.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/FACT.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/FACT.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/FLST.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/FLST.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/GLOB.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/GLOB.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/GMST.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/GMST.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/KEYM.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/KEYM.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/MISC.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/MISC.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/NPC_.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/NPC_.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/REFR.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/REFR.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/SCPT.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/SCPT.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/TERM.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/TERM.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/TES4.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/TES4.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/WEAP.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/WEAP.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/SubRecord.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SubRecord.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Subrecords/subACBS.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Subrecords/subAIDT.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Subrecords/subBMDT.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Subrecords/subEDID.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Subrecords/subEDID.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Subrecords/subETYP.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Subrecords/subSNAM.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Subrecords/subXNAM.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Types.hpp" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
-    <conf name="Release" type="1">
+    <conf name="Release" type="3">
       <toolsSet>
-        <compilerSet>MinGW64|MinGW</compilerSet>
+        <compilerSet>MinGW|MinGW</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
@@ -121,9 +245,9 @@
         <ccTool>
           <developmentMode>5</developmentMode>
           <incDir>
-            <pElem>../RWA-Lib/include</pElem>
+            <pElem>F:/SDK/boost_1_55_0</pElem>
           </incDir>
-          <commandLine>-pedantic-errors -pedantic -Wfatal-errors -Wextra -Wall -std=gnu++1y</commandLine>
+          <commandLine>-pedantic-errors -pedantic -Wfatal-errors -Wextra -Wall -std=gnu++1y -m32</commandLine>
         </ccTool>
         <fortranCompilerTool>
           <developmentMode>5</developmentMode>
@@ -131,10 +255,17 @@
         <asmTool>
           <developmentMode>5</developmentMode>
         </asmTool>
-        <linkerTool>
-          <commandLine>-static</commandLine>
-        </linkerTool>
+        <archiverTool>
+        </archiverTool>
       </compileType>
+      <item path="src/Animations.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/FLST.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Group.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Group.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Reader.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Reader.hpp" ex="false" tool="3" flavor2="0">
@@ -143,95 +274,107 @@
       </item>
       <item path="src/Record.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/ALCH.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/recAMMO.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/ALCH.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/recAMMO.hpp" ex="false" tool="3" flavor2="0">
+      <item path="src/Records/AMMO.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/recCELL.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/AMMO.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/recCELL.hpp" ex="false" tool="3" flavor2="0">
+      <item path="src/Records/ARMA.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/recGLOB.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/ARMA.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/recGLOB.hpp" ex="false" tool="3" flavor2="0">
+      <item path="src/Records/ARMO.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/recGMST.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/ARMO.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/recGMST.hpp" ex="false" tool="3" flavor2="0">
+      <item path="src/Records/BOOK.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/recKEYM.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/BOOK.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/recKEYM.hpp" ex="false" tool="3" flavor2="0">
+      <item path="src/Records/CLAS.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/recTES4.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/CLAS.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/recTES4.hpp" ex="false" tool="3" flavor2="0">
+      <item path="src/Records/CONT.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/recWEAP.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/CONT.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/recWEAP.hpp" ex="false" tool="3" flavor2="0">
+      <item path="src/Records/EXPL.cpp" ex="false" tool="1" flavor2="0">
       </item>
-    </conf>
-    <conf name="Debug_detail" type="1">
-      <toolsSet>
-        <compilerSet>default</compilerSet>
-        <dependencyChecking>true</dependencyChecking>
-        <rebuildPropChanged>false</rebuildPropChanged>
-      </toolsSet>
-      <compileType>
-        <ccTool>
-          <incDir>
-            <pElem>../RWA-Lib/include</pElem>
-          </incDir>
-          <commandLine>-pedantic-errors -pedantic -Wfatal-errors -Wextra -Wall -std=gnu++1y -m32</commandLine>
-          <preprocessorList>
-            <Elem>_DEBUG_</Elem>
-            <Elem>_DEBUG_DETAIL</Elem>
-          </preprocessorList>
-        </ccTool>
-        <linkerTool>
-          <commandLine>-static</commandLine>
-        </linkerTool>
-      </compileType>
-      <item path="src/Reader.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/EXPL.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/Reader.hpp" ex="false" tool="3" flavor2="0">
+      <item path="src/Records/FACT.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/Record.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/FACT.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/Record.hpp" ex="false" tool="3" flavor2="0">
+      <item path="src/Records/FLST.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/FLST.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/recAMMO.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/GLOB.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/recAMMO.hpp" ex="false" tool="3" flavor2="0">
+      <item path="src/Records/GLOB.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/recCELL.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/GMST.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/recCELL.hpp" ex="false" tool="3" flavor2="0">
+      <item path="src/Records/GMST.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/recGLOB.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/KEYM.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/recGLOB.hpp" ex="false" tool="3" flavor2="0">
+      <item path="src/Records/KEYM.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/recGMST.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/MISC.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/recGMST.hpp" ex="false" tool="3" flavor2="0">
+      <item path="src/Records/MISC.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/recKEYM.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/NPC_.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/recKEYM.hpp" ex="false" tool="3" flavor2="0">
+      <item path="src/Records/NPC_.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/recTES4.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/REFR.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/recTES4.hpp" ex="false" tool="3" flavor2="0">
+      <item path="src/Records/REFR.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/recWEAP.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Records/SCPT.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/recWEAP.hpp" ex="false" tool="3" flavor2="0">
+      <item path="src/Records/SCPT.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/TERM.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/TERM.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/TES4.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/TES4.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/WEAP.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/WEAP.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/SubRecord.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SubRecord.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Subrecords/subACBS.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Subrecords/subAIDT.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Subrecords/subBMDT.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Subrecords/subEDID.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Subrecords/subEDID.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Subrecords/subETYP.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Subrecords/subSNAM.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Subrecords/subXNAM.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Types.hpp" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>

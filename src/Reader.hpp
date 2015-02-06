@@ -1,67 +1,79 @@
-/* 
- * File:   Reader.hpp
- * Author: Koncord
- *
- * Created on 25 Август 2014 г., 19:20
- */
-
 #ifndef READER_HPP
-#define	READER_HPP
-#include<Singleton.hpp>
-#include "Record.hpp"
-#include <vector>
-#include <string>
+#define READER_HPP
+
 #include <fstream>
-#include <memory>
-#include "recWEAP.hpp"
-#include "recGMST.hpp"
-#include "recCELL.hpp"
-#include "recGLOB.hpp"
-#include "recAMMO.hpp"
-#include "recKEYM.hpp"
 
-struct Data
-{
-    std::string Name;
-    std::string Author;
-    std::string Description;
-    uint32_t records;
-    std::vector<std::string> masters;
-};
+#include "Types.hpp"
 
-
-class Reader: public rwa::Singleton<Reader>
+#include "Records/GMST.hpp"
+#include "Records/TES4.hpp"
+#include "Records/WEAP.hpp"
+#include "Records/GLOB.hpp"
+#include "Records/CONT.hpp"
+#include "Records/AMMO.hpp"
+#include "Records/TERM.hpp"
+#include "Records/SCPT.hpp"
+#include "Records/BOOK.hpp"
+#include "Records/NPC_.hpp"
+#include "Records/MISC.hpp"
+#include "Records/ALCH.hpp"
+#include "Records/FACT.hpp"
+#include "Records/CLAS.hpp"
+#include "Records/ARMO.hpp"
+#include "Records/ARMA.hpp"
+#include "Records/FLST.hpp"
+#include "Records/REFR.hpp"
+#include "Records/KEYM.hpp"
+#include "Records/EXPL.hpp"
+class Reader
 {
 public:
-    Reader(std::string);
-    std::string getRecName();
     template<class T>
-    void get(T *x, int size)
+    T ReadRaw()
     {
-        esm.read((char*)x, size);
+        T tmp;
+        file.read((char*)&tmp, sizeof(T));
+        return tmp;
     }
-    template<class T>
-    void get(T *x)
-    {
-        esm.read((char*)x, sizeof(*(x)));
-    }
-    void setPos(std::streampos ss) {esm.seekg(ss);}
-    std::streampos getPos() { return esm.tellg();}
-    void ignoreBytes(std::streamsize ss){esm.ignore(ss);}
-    virtual ~Reader();
-    Data data;
-    std::vector<std::unique_ptr<Record>> records;
-    std::vector<std::unique_ptr<WEAP::WEAP>> weapons;
-    std::vector<std::unique_ptr<GMST::GMST>> settings;
-    std::vector<std::unique_ptr<CELL::CELL>> cells;
-    std::vector<std::unique_ptr<GLOB::GLOB>> globals;
-    std::vector<std::unique_ptr<AMMO::AMMO>> ammo;
-    std::vector<std::unique_ptr<KEYM::KEYM>> keys;
+    
+    uint8_t *ReadData(uint8_t *data, size_t size);
+    void Load(std::string file);
+    ~Reader();
+    float GetFileVersion() { return data.hedr.version; }
+    std::string GetFileAuthor() { return data.author; }
+    std::string GetFileDescription() { return data.description; }
 
 private:
-    std::ifstream esm;
+    Reader();
+    RecordTES4::DATA data;
     
+public:
+    std::ifstream file;
+public:
+    static Reader *GetSelf();
+    static Reader *Create();
+    static void Destroy();
+    
+public:
+    IDHash<RecordGMST::DATA> gameSettings;
+    IDHash<RecordWEAP::DATA> weapons;
+    IDHash<RecordGLOB::DATA> globals;
+    IDHash<RecordCONT::DATA> containers;
+    IDHash<RecordAMMO::DATA> ammo;
+    IDHash<RecordTERM::DATA> terminals;
+    IDHash<RecordSCPT::DATA> scripts;
+    IDHash<RecordBOOK::DATA> books;
+    IDHash<RecordNPC_::DATA> npcs;
+    IDHash<RecordMISC::DATA> miscItems;
+    IDHash<RecordALCH::DATA> ingestibles;
+    IDHash<RecordFACT::DATA> factions;
+    IDHash<RecordCLAS::DATA> classes;
+    IDHash<RecordARMO::DATA> armors;
+    IDHash<RecordARMA::DATA> armorAddons;
+    IDHash<RecordFLST::DATA> formIdLists;
+    IDHash<RecordREFR::DATA> placedObjects;
+    IDHash<RecordKEYM::DATA> keys;
+    IDHash<RecordEXPL::DATA> explosions;
 };
 
-#endif	/* READER_HPP */
-
+#endif // READER_HPP

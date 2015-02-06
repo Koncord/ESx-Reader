@@ -5,31 +5,22 @@ Introduction
 ------------
 
 The ESP/ESM reader for the Bethesda video game: the Fallout3. Part of the project
-[vaultmp][vmp]!
+[vaultmp][vmp].
 
 ~~This code may damage your mind and eyes =D~~
 
-Changelog
----------
-
-Implemented records:
-
-TES4 - basic Information of plugin
-
-Semi-implemented records:
-
-WEAP - weapons. Implemnted subrecords EDID, FULL, DATA, CRDT, need implement DNAM - damage data.
-
+Based on https://github.com/WrinklyNinja/fopdoc
 
 Compiling
 ---------
 
 Project file for NetBeans 8
-
-Dependencies
-------------
-
 GNU GCC 4.9.x
+zlib 1.2.8
+boost >= 1.55.0 (boost::variant)
+
+gtest 1.7 for tests
+
 
 [github]: <http://github.com/koncord/esx-reader>
 [vmp]: <http://github.com/foxtacles/vaultmp>
