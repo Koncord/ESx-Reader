@@ -36,6 +36,7 @@
 #include "Records/TACT.hpp"
 #include "Records/STAT.hpp"
 #include "Records/IDLM.hpp"
+#include "Records/ANIO.hpp"
 
 
 class Reader
@@ -96,6 +97,7 @@ public:
     IDHash<RecordTACT::DATA> talkingActivators;
     IDHash<RecordSTAT::DATA> staticObjects;
     IDHash<RecordIDLM::DATA> idleMarker;
+    IDHash<RecordANIO::DATA> animatedObject;
 };
 
 #endif // READER_HPP
