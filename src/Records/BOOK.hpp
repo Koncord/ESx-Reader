@@ -21,7 +21,7 @@ public:
         std::string description;
         DESTRUCTION destruction;
         formid scriptId;
-         #pragma pack(push, 1)
+        #pragma pack(push, 1)
         struct OBND 
         {
             uint16_t x1, y1, z1;
@@ -31,7 +31,8 @@ public:
         struct _DATA
         {
           uint8_t flags;
-          int8_t skill; // enum values (CTDA ???)
+          //NOTE("enum values (CTDA ?)")
+          int8_t skill;
           int32_t value;
           float weight;
         } data;

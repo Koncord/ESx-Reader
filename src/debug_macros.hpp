@@ -16,20 +16,20 @@
 #define _QUOTE(x) # x
 #define QUOTE(x) _QUOTE(x)
 #define __FILE__LINE__ __FILE__ "(" QUOTE(__LINE__) ") : "
-#define Message(x) DO_PRAGMA(message(__FILE__LINE__ x))
+#define __Message(x) DO_PRAGMA(message(__FILE__LINE__ x))
 
-#define NOTE( x ) Message( x )
+#define NOTE( x ) __Message( #x )
 
-#define TODO( x ) Message( "\n" \
+#define TODO( x ) __Message( "\n" \
 	" ------------------------------------------------\n" \
 	"| TODO : " #x "\n" \
 	" -------------------------------------------------\n")
-#define FIXME( x ) Message( "\n" \
+#define FIXME( x ) __Message( "\n" \
 	" ------------------------------------------------\n" \
 	"| FIXME : " #x "\n" \
 	" -------------------------------------------------\n")
-#define todo( x ) Message( " TODO : " #x "\n" ) 
-#define fixme( x ) Message( " FIXME: " #x "\n" ) 
+#define todo( x ) __Message( " TODO : " #x "\n" ) 
+#define fixme( x ) __Message( " FIXME: " #x "\n" )
 
 
 #endif	/* DEBUG_MACROS_HPP */

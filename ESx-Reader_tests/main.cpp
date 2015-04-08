@@ -4,11 +4,11 @@
  *
  * Created on 27 Январь 2015 г., 19:16
  */
-#include <gtest/gtest.h>
+
 #include <Reader.hpp>
 #include <iostream>
 #include <Record.hpp>
-
+#include <gtest/gtest.h>
 using namespace std;
 
 string hexAlign(uint32_t value)

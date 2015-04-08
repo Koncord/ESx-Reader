@@ -5,6 +5,8 @@
 
 #include "Types.hpp"
 
+#include "debug_macros.hpp"
+
 #include "Records/GMST.hpp"
 #include "Records/TES4.hpp"
 #include "Records/WEAP.hpp"
@@ -25,8 +27,16 @@
 #include "Records/REFR.hpp"
 #include "Records/KEYM.hpp"
 #include "Records/EXPL.hpp"
+#include "Records/PERK.hpp"
+#include "Records/DOOR.hpp"
+#include "Records/ECZN.hpp"
+#include "Records/CPTH.hpp"
+#include "Records/RADS.hpp"
+#include "Records/ACTI.hpp"
+#include "Records/TACT.hpp"
+#include "Records/STAT.hpp"
+#include "Records/IDLM.hpp"
 
-#include "debug_macros.hpp"
 
 class Reader
 {
@@ -77,6 +87,15 @@ public:
     IDHash<RecordREFR::DATA> placedObjects;
     IDHash<RecordKEYM::DATA> keys;
     IDHash<RecordEXPL::DATA> explosions;
+    IDHash<RecordPERK::DATA> perks;
+    IDHash<RecordDOOR::DATA> doors;
+    IDHash<RecordECZN::DATA> encounterZones;
+    IDHash<RecordCPTH::DATA> cameraPaths;
+    IDHash<RecordRADS::DATA> radStages;
+    IDHash<RecordACTI::DATA> activators;
+    IDHash<RecordTACT::DATA> talkingActivators;
+    IDHash<RecordSTAT::DATA> staticObjects;
+    IDHash<RecordIDLM::DATA> idleMarker;
 };
 
 #endif // READER_HPP
