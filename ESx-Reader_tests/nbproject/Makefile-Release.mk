@@ -52,7 +52,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L/F/SDK/gtest-bin/lib -L/F/SDK/zlib-bin/lib -L../dist/Release/MinGW-Windows -lgtest_main -lgtest -lesx-reader2 -lzlibstatic
+LDLIBSOPTIONS=-L/F/SDK/gtest-bin/lib -L/F/SDK/zlib-bin/lib -L../dist/Release/MinGW-Windows -lgtest_main -lgtest -lesx-reader -lzlibstatic
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -65,7 +65,7 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/esx-reader_tests.exe: ${OBJECTFILES}
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -s -I/F/SDK/gtest-bin/include/ -I../../RWA-Lib/include -I../ESx-Reader2/src -I/F/SDK/zlib-bin/include -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -O2 -s -I/F/SDK/gtest-bin/include/ -I../src -I/F/SDK/zlib-bin/include -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:

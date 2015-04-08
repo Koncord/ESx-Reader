@@ -92,8 +92,7 @@
           <stripSymbols>true</stripSymbols>
           <incDir>
             <pElem>F:/SDK/gtest-bin/include/</pElem>
-            <pElem>../../RWA-Lib/include</pElem>
-            <pElem>../ESx-Reader2/src</pElem>
+            <pElem>../src</pElem>
             <pElem>F:/SDK/zlib-bin/include</pElem>
             <pElem>F:/SDK/boost_1_55_0</pElem>
           </incDir>
@@ -115,7 +114,7 @@
           <linkerLibItems>
             <linkerLibLibItem>gtest_main</linkerLibLibItem>
             <linkerLibLibItem>gtest</linkerLibLibItem>
-            <linkerLibLibItem>esx-reader2</linkerLibLibItem>
+            <linkerLibLibItem>esx-reader</linkerLibLibItem>
             <linkerLibLibItem>zlibstatic</linkerLibLibItem>
           </linkerLibItems>
           <commandLine>-static</commandLine>

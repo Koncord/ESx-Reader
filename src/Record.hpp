@@ -6,6 +6,8 @@
 #include "Group.hpp"
 #include "SubRecord.hpp"
 
+#include "debug_macros.hpp"
+
 typedef uint32_t formid;
 
 typedef enum

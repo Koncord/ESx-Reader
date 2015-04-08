@@ -75,6 +75,7 @@
       <itemPath>src/Record.hpp</itemPath>
       <itemPath>src/SubRecord.hpp</itemPath>
       <itemPath>src/Types.hpp</itemPath>
+      <itemPath>src/debug_macros.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Файлы ресурсов"
@@ -231,6 +232,8 @@
       </item>
       <item path="src/Types.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/debug_macros.hpp" ex="false" tool="3" flavor2="0">
+      </item>
     </conf>
     <conf name="Release" type="3">
       <toolsSet>
@@ -247,7 +250,7 @@
           <incDir>
             <pElem>F:/SDK/boost_1_55_0</pElem>
           </incDir>
-          <commandLine>-pedantic-errors -pedantic -Wfatal-errors -Wextra -Wall -std=gnu++1y -m32</commandLine>
+          <commandLine>-pedantic-errors -pedantic -Wfatal-errors -Wextra -Wall -std=gnu++1y</commandLine>
         </ccTool>
         <fortranCompilerTool>
           <developmentMode>5</developmentMode>
@@ -375,6 +378,8 @@
       <item path="src/Subrecords/subXNAM.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Types.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/debug_macros.hpp" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>

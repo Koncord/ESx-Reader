@@ -25,6 +25,9 @@
 #include "Records/REFR.hpp"
 #include "Records/KEYM.hpp"
 #include "Records/EXPL.hpp"
+
+#include "debug_macros.hpp"
+
 class Reader
 {
 public:

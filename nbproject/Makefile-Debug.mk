@@ -80,13 +80,13 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libesx-reader2.a
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libesx-reader.a
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libesx-reader2.a: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libesx-reader.a: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libesx-reader2.a
-	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libesx-reader2.a ${OBJECTFILES} 
-	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libesx-reader2.a
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libesx-reader.a
+	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libesx-reader.a ${OBJECTFILES} 
+	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libesx-reader.a
 
 ${OBJECTDIR}/src/Group.o: src/Group.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
@@ -219,7 +219,7 @@ ${OBJECTDIR}/src/Subrecords/subEDID.o: src/Subrecords/subEDID.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libesx-reader2.a
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libesx-reader.a
 
 # Subprojects
 .clean-subprojects:

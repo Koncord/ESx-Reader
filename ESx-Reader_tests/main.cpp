@@ -25,7 +25,7 @@ TEST(ReaderTest, testReaderESM)
         Reader::Create();
     Reader *reader = Reader::GetSelf();
     ASSERT_TRUE(nullptr != reader);
-    reader->Load("data/Fallout3.esm");
+    reader->Load("data//Fallout3.esm");
     
     
     ASSERT_EQ (reader->weapons.size(), 160);
