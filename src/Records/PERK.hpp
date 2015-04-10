@@ -45,7 +45,7 @@ public:
                 int8_t unused[3];
             };
             
-            struct EntryPoint
+            struct EntryPointData
             {
                 uint8_t entryPoint;
                 uint8_t function;
@@ -91,7 +91,7 @@ public:
                     ModifyEnemyCriticalHitChance
                 };
             };
-            boost::variant<QuestAndStageData, formid, EntryPoint> data;
+            boost::variant<QuestAndStageData, formid, EntryPointData> data;
             
             struct PerkCondtitionCollection
             {
@@ -121,7 +121,7 @@ public:
         std::vector<Effect> effects;
         
         #pragma pack(push, 1)
-        CTDA conditions;
+        std::vector<CTDA> conditions;
         struct _DATA
         {
           uint8_t trait; // bool

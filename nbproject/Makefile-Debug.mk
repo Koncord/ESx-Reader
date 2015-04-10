@@ -41,9 +41,11 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/Records/ACTI.o \
 	${OBJECTDIR}/src/Records/ALCH.o \
 	${OBJECTDIR}/src/Records/AMMO.o \
+	${OBJECTDIR}/src/Records/ANIO.o \
 	${OBJECTDIR}/src/Records/ARMA.o \
 	${OBJECTDIR}/src/Records/ARMO.o \
 	${OBJECTDIR}/src/Records/BOOK.o \
+	${OBJECTDIR}/src/Records/CELL.o \
 	${OBJECTDIR}/src/Records/CLAS.o \
 	${OBJECTDIR}/src/Records/CONT.o \
 	${OBJECTDIR}/src/Records/CPTH.o \
@@ -127,6 +129,11 @@ ${OBJECTDIR}/src/Records/AMMO.o: src/Records/AMMO.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/AMMO.o src/Records/AMMO.cpp
 
+${OBJECTDIR}/src/Records/ANIO.o: src/Records/ANIO.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Records
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/ANIO.o src/Records/ANIO.cpp
+
 ${OBJECTDIR}/src/Records/ARMA.o: src/Records/ARMA.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Records
 	${RM} "$@.d"
@@ -141,6 +148,11 @@ ${OBJECTDIR}/src/Records/BOOK.o: src/Records/BOOK.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/Records
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/BOOK.o src/Records/BOOK.cpp
+
+${OBJECTDIR}/src/Records/CELL.o: src/Records/CELL.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Records
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/CELL.o src/Records/CELL.cpp
 
 ${OBJECTDIR}/src/Records/CLAS.o: src/Records/CLAS.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Records

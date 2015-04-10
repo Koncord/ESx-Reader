@@ -9,6 +9,7 @@
 
 bool RecordREFR::DoParse()
 {
+    TODO(RecordREFR::DoParse)
     std::string subType = GetLabel();
     if(subType == "EDID")
         data.edid = GetString();

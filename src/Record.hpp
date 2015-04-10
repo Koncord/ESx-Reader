@@ -546,6 +546,16 @@ protected:
         return str;
     }
     
+    std::vector<uint8_t> GetRawData()
+    {
+        uint8_t *t = (uint8_t*)&rawdata.data.get()[rawdata.pos];
+        std::vector<uint8_t> tmp(t, t+subhead.dataSize);
+        
+        rawdata.pos += subhead.dataSize;
+        
+        return tmp;
+    }
+    
     const std::string GetLabel() {return std::string(subhead.type, 4);}
     void ParseHead(const RecHeader &head);
     void ReadSubHeader();

@@ -8,9 +8,11 @@
         <itemPath>src/Records/ACTI.cpp</itemPath>
         <itemPath>src/Records/ALCH.cpp</itemPath>
         <itemPath>src/Records/AMMO.cpp</itemPath>
+        <itemPath>src/Records/ANIO.cpp</itemPath>
         <itemPath>src/Records/ARMA.cpp</itemPath>
         <itemPath>src/Records/ARMO.cpp</itemPath>
         <itemPath>src/Records/BOOK.cpp</itemPath>
+        <itemPath>src/Records/CELL.cpp</itemPath>
         <itemPath>src/Records/CLAS.cpp</itemPath>
         <itemPath>src/Records/CONT.cpp</itemPath>
         <itemPath>src/Records/CPTH.cpp</itemPath>
@@ -50,9 +52,11 @@
         <itemPath>src/Records/ACTI.hpp</itemPath>
         <itemPath>src/Records/ALCH.hpp</itemPath>
         <itemPath>src/Records/AMMO.hpp</itemPath>
+        <itemPath>src/Records/ANIO.hpp</itemPath>
         <itemPath>src/Records/ARMA.hpp</itemPath>
         <itemPath>src/Records/ARMO.hpp</itemPath>
         <itemPath>src/Records/BOOK.hpp</itemPath>
+        <itemPath>src/Records/CELL.hpp</itemPath>
         <itemPath>src/Records/CLAS.hpp</itemPath>
         <itemPath>src/Records/CONT.hpp</itemPath>
         <itemPath>src/Records/CPTH.hpp</itemPath>
@@ -168,6 +172,10 @@
       </item>
       <item path="src/Records/AMMO.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Records/ANIO.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/ANIO.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Records/ARMA.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Records/ARMA.hpp" ex="false" tool="3" flavor2="0">
@@ -179,6 +187,10 @@
       <item path="src/Records/BOOK.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Records/BOOK.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/CELL.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/CELL.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Records/CLAS.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -347,6 +359,10 @@
       </item>
       <item path="src/Records/AMMO.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Records/ANIO.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/ANIO.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Records/ARMA.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Records/ARMA.hpp" ex="false" tool="3" flavor2="0">
@@ -358,6 +374,10 @@
       <item path="src/Records/BOOK.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Records/BOOK.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/CELL.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/CELL.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Records/CLAS.cpp" ex="false" tool="1" flavor2="0">
       </item>
