@@ -19,8 +19,7 @@ string hexAlign(uint32_t value)
     return sstr.str();
 }
 
-//TEST(ReaderTest, testReaderESM)
-void te()
+TEST(ReaderTest, testReaderESM)
 {
     freopen("error.log", "w", stderr);
     if(Reader::GetSelf() == nullptr)
@@ -56,34 +55,6 @@ void te()
     Reader::Destroy();
     reader = nullptr;
 }
-
-class m_vis : public boost::static_visitor<>
-{
-public:
-    float operator()(float i) const
-    {
-        return i;
-    }
-    formid operator()(formid i) const
-    {
-        return i;
-    }
-    using eff = RecordPERK::DATA::Effect;
-    
-    eff::EPFD_2 operator()(eff::EPFD_2 i) const
-    {
-        return i;
-    }
-    eff::EPFD_5 operator()(eff::EPFD_5 i) const
-    {
-        return i;
-    }
-    std::vector<uint8_t> operator ()(std::vector<uint8_t> i) const
-    {
-        return i;
-    }
-    
-};
 
 TEST(ReaderTest, testPerk)
 {
@@ -124,12 +95,6 @@ TEST(ReaderTest, testPerk)
         }
     }
     
-    
-   
-    
-    //EXPECT_STREQ("TEST_ARMOR", reader->GetFileAuthor().c_str());
-    //EXPECT_STREQ("TEST DESCRIPTION", reader->GetFileDescription().c_str()); 
-    //ASSERT_FLOAT_EQ(0.94, reader->GetFileVersion());
     Reader::Destroy();
 }
 
