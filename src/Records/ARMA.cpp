@@ -13,12 +13,12 @@ bool RecordARMA::DoParse()
     if (subType == "EDID")
         data.edid = GetString();
     else if(subType == "OBND")
-        data.obnd = GetData<DATA::OBND>();
+        data.objectBounds = GetData<OBND>();
     else if (subType == "FULL")
         data.name = GetString();
     else if(subType == "BMDT")
         data.bipedData = GetData<BMDT>();
-    else if(SkipModelData()) {}
+    else if(ModelCollection()) {}
     else if(subType == "ICON" || subType == "MICO" || subType == "ICO2" || subType == "MIC2")
         IgnoreSubRecord();
     else if(subType == "ETYP")

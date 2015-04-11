@@ -27,15 +27,9 @@ public:
             MinimalUse = 0x08,
             SlidingDoor = 0x10
         };
-        DESTRUCTION destruction;
+        Destruction destruction;
         formid scriptId;
-        #pragma pack(push, 1)
-        struct OBND 
-        {
-            uint16_t x1, y1, z1;
-            uint16_t x2, y2, z2;
-        } obnd;
-        #pragma pack(pop)
+        OBND objectBounds;
     } data;
 
     explicit RecordDOOR(const RecHeader &head) : Record(head) { Parse(); }

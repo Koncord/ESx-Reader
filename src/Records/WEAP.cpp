@@ -20,13 +20,13 @@ bool RecordWEAP::DoParse()
     }
     else if(subType == "OBND")
     {
-        data.obnd = GetData<DATA::OBND>();
+        data.objectBounds = GetData<OBND>();
     }
     else if(subType == "FULL")
     {
         data.name = GetString();
     }
-    else if(SkipModelData()) { }
+    else if(ModelCollection()) { }
     else if(subType == "EITM")
         data.objectEffectId = GetData<uint32_t>();
     else if(subType == "EAMT")

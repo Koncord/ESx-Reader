@@ -23,6 +23,7 @@ public:
                                    // ARMO, AMMO, LVLN, LVLC, MISC, WEAP, BOOK,
                                    // KEYM, ALCH, LIGH, GRAS, ASPC, IDLM, ARMA,
                                    //MSTT, NOTE, PWAT, SCOL, TACT, TERM or TXST record.
+        OBND objectBounds;
         #pragma pack(push, 1)
         struct _DATA
         {
@@ -40,11 +41,6 @@ public:
           float radiationRadius;
           uint32_t sndLevel;
         } data;
-        struct OBND 
-        {
-            uint16_t x1, y1, z1;
-            uint16_t x2, y2, z2;
-        } obnd;
         #pragma pack(pop)
     } data;
 

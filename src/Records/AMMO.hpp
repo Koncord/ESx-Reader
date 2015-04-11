@@ -19,14 +19,10 @@ public:
         std::string edid;
         std::string name;
         std::string shortName;
-        DESTRUCTION destruction;
+        Destruction destruction;
         
         #pragma pack(push, 1)
-        struct OBND 
-        {
-            uint16_t x1, y1, z1;
-            uint16_t x2, y2, z2;
-        } obnd;
+        OBND objectBounds;
         struct _DATA
         {
             float speed;

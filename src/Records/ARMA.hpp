@@ -23,11 +23,7 @@ public:
         BMDT bipedData;
         ETYP equipmentType;
         #pragma pack(push, 1)
-        struct OBND 
-        {
-            uint16_t x1, y1, z1;
-            uint16_t x2, y2, z2;
-        } obnd;
+        OBND objectBounds;
         struct _DATA
         {
             int32_t value;

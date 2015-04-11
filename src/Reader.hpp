@@ -37,6 +37,19 @@
 #include "Records/STAT.hpp"
 #include "Records/IDLM.hpp"
 #include "Records/ANIO.hpp"
+#include "Records/CAMS.hpp"
+#include "Records/FURN.hpp"
+#include "Records/INGR.hpp"
+#include "Records/MGEF.hpp"
+#include "Records/ENCH.hpp"
+#include "Records/SPEL.hpp"
+#include "Records/LIGH.hpp"
+#include "Records/SCOL.hpp"
+#include "Records/MSTT.hpp"
+#include "Records/PWAT.hpp"
+#include "Records/COBJ.hpp"
+#include "Records/LVLN_LVLC.hpp"
+#include "Records/LVLI.hpp"
 
 
 class Reader
@@ -98,6 +111,20 @@ public:
     IDHash<RecordSTAT::DATA> staticObjects;
     IDHash<RecordIDLM::DATA> idleMarker;
     IDHash<RecordANIO::DATA> animatedObject;
+    IDHash<RecordCAMS::DATA> cameraShots;
+    IDHash<RecordFURN::DATA> furniture;
+    IDHash<RecordINGR::DATA> ingredients;
+    IDHash<RecordMGEF::DATA> magicEffects;
+    IDHash<RecordENCH::DATA> objectEffects;
+    IDHash<RecordSPEL::DATA> actorEffects;
+    IDHash<RecordLIGH::DATA> light;
+    IDHash<RecordSCOL::DATA> staticCollections;
+    IDHash<RecordMSTT::DATA> movableStaticObjects;
+    IDHash<RecordPWAT::DATA> placeableWaters;
+    IDHash<RecordCOBJ::DATA> constructibleObjects;
+    IDHash<RecordLVLN_LVLC::DATA> leveledNPCs;
+    IDHash<RecordLVLN_LVLC::DATA> leveledCreatures;
+    IDHash<RecordLVLI::DATA> leveledItems;
 };
 
 #endif // READER_HPP

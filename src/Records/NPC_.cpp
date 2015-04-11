@@ -17,10 +17,10 @@ bool RecordNPC_::DoParse()
     if(subType == "EDID")
         data.edid = GetString();
     else if(subType == "OBND")
-        data.obnd = GetData<DATA::OBND>();
+        data.objectBounds = GetData<OBND>();
     else if(subType == "FULL")
         data.name = GetString();
-    else if(SkipModelData()) {}
+    else if(ModelCollection()) {}
     else if(subType == "ACBS")
         data.configuration = GetData<ACBS>();
     else if(subType == "SNAM")
@@ -40,7 +40,7 @@ bool RecordNPC_::DoParse()
     else if(subType == "SCRI")
         data.scriptId = GetData<formid>();
     else if(DestructionData(&data.destruction)) {}
-    else if(SubItemCollection(&data.items)) { }
+    else if(ItemCollection(&data.items)) { }
     else if(subType == "AIDT")
         data.aiData = GetData<AIDT>();
     else if(subType == "PKID")

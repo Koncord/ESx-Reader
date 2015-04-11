@@ -11,26 +11,16 @@ bool RecordAMMO::DoParse()
 {
     std::string subType = GetLabel();
     if(subType == "EDID")
-    {
         data.edid = GetString();
-    }
     else if(subType == "OBND")
-    {
-        data.obnd = GetData<DATA::OBND>();
-    }
+        data.objectBounds = GetData<OBND>();
     else if(subType == "FULL")
-    {
         data.name = GetString();
-    }
     else if(subType == "ONAM")
-    {
         data.shortName = GetString();
-    }
     else if(subType == "DATA")
-    {
         data.data = GetData<DATA::_DATA>();
-    }
-    else if(SkipModelData()) {}
+    else if(ModelCollection()) {}
     else if(DestructionData(&data.destruction)) {}
     else if(subType == "ICON" || subType == "MICO" || subType == "YNAM" || subType == "ZNAM")
         IgnoreSubRecord(); // ignore icons and sounds;

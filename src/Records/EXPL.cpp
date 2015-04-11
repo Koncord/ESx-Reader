@@ -13,10 +13,10 @@ bool RecordEXPL::DoParse()
     if(subType == "EDID")
         data.edid = GetString();
     else if(subType == "OBND")
-        data.obnd = GetData<DATA::OBND>();
+        data.objectBounds = GetData<OBND>();
     else if(subType == "FULL")
         data.name = GetString();
-    else if(SkipModelData()) {}
+    else if(ModelCollection()) {}
     else if(subType == "EITM")
         data.objectEffectId = GetData<formid>();
     else if(subType == "MNAM")

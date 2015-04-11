@@ -21,7 +21,7 @@ bool RecordPERK::DoParse()
             data.edid = GetString();
         else if(subType == "FULL")
             data.name = GetString();
-        else if(SkipModelData()) {}
+        else if(ModelCollection()) {}
         else if(subType == "MICO" || subType == "ICON") 
             IgnoreSubRecord();
         else if(subType == "DESC")

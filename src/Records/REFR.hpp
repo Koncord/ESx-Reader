@@ -46,7 +46,7 @@ public:
         uint8_t flags; // Activate parents.
         uint32_t actionFlag;
         
-        SCRIPT script;
+        Script script;
         // XPWR
         struct XNDP
         {

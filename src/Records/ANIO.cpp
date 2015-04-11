@@ -16,7 +16,7 @@ bool RecordANIO::DoParse()
         data.edid = GetString();
     else if(subType == "DATA")
         data.animation = GetData<formid>();
-    else if(SkipModelData()) {}
+    else if(ModelCollection()) {}
     else return false;
     return true;
 }

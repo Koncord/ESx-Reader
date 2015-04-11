@@ -17,7 +17,7 @@ public:
     struct DATA
     {
         std::string edid;
-        SCRIPT script;
+        Script script;
     } data;
 
     explicit RecordSCPT(const RecHeader &head) : Record(head) { Parse(); }

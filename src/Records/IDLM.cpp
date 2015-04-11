@@ -15,7 +15,7 @@ bool RecordIDLM::DoParse()
     if(subType == "EDID")
         data.edid = GetString();
     else if(subType == "OBND")
-        data.obnd = GetData<DATA::OBND>();
+        data.objectBounds = GetData<OBND>();
     else if(subType == "IDLF")
         data.flags = GetData<uint8_t>();
     else if(subType == "IDLC")

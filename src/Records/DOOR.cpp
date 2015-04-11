@@ -15,10 +15,10 @@ bool RecordDOOR::DoParse()
     if(subType == "EDID")
         data.edid = GetString();
     else if(subType == "OBND")
-        data.obnd = GetData<DATA::OBND>();
+        data.objectBounds = GetData<OBND>();
     else if(subType == "FULL")
         data.name = GetString();
-    else if(SkipModelData()) {}
+    else if(ModelCollection()) {}
     else if(DestructionData(&data.destruction)) {}
     else if(subType == "SCRI")
         data.scriptId = GetData<formid>();

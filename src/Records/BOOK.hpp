@@ -19,14 +19,10 @@ public:
         std::string edid;
         std::string name;
         std::string description;
-        DESTRUCTION destruction;
+        Destruction destruction;
         formid scriptId;
+        OBND objectBounds;
         #pragma pack(push, 1)
-        struct OBND 
-        {
-            uint16_t x1, y1, z1;
-            uint16_t x2, y2, z2;
-        } obnd;
 
         struct _DATA
         {

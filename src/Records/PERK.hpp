@@ -116,7 +116,7 @@ public:
             {
                 RunImmediately = 0x0001
             };
-            SCRIPT script;
+            Script script;
         };
         std::vector<Effect> effects;
         

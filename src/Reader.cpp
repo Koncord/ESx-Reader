@@ -106,33 +106,33 @@ void Reader::Load(std::string path)
             PARSE_GROUP(RecordSTAT, "STAT", staticObjects);
             PARSE_GROUP(RecordIDLM, "IDLM", idleMarker);
             PARSE_GROUP(RecordANIO, "ANIO", animatedObject);
+            PARSE_GROUP(RecordCAMS, "CAMS", cameraShots);
+            PARSE_GROUP(RecordFURN, "FURN", furniture);
+            PARSE_GROUP(RecordINGR, "INGR", ingredients);
+            PARSE_GROUP(RecordMGEF, "MGEF", magicEffects);
+            PARSE_GROUP(RecordENCH, "ENCH", objectEffects);
+            PARSE_GROUP(RecordSPEL, "SPEL", actorEffects);
+            PARSE_GROUP(RecordLIGH, "LIGH", light);
+            PARSE_GROUP(RecordSCOL, "SCOL", staticCollections);
+            PARSE_GROUP(RecordMSTT, "MSTT", movableStaticObjects);
+            PARSE_GROUP(RecordPWAT, "PWAT", placeableWaters)
+            PARSE_GROUP(RecordCOBJ, "COBJ", constructibleObjects);
+            PARSE_GROUP(RecordLVLN_LVLC, "LVLN", leveledNPCs);
+            PARSE_GROUP(RecordLVLN_LVLC, "LVLC", leveledCreatures);
+            PARSE_GROUP(RecordLVLI, "LVLI", leveledItems);
+            
             todo(RecordRACE)
-            todo(RecordMGEF)
-            todo(RecordENCH)
-            todo(RecordSPEL)
-            todo(RecordINGR)
-            todo(RecordLIGH)
-            todo(RecordSTAT)
-            todo(RecordSCOL)
-            todo(RecordMSTT)
-            todo(RecordPWAT)        
-            todo(RecordFURN)     
             todo(RecordCREA)
-            todo(RecordLVLC)
-            todo(RecordLVLN)      
             todo(RecordPROJ)
-            todo(RecordLVLI)
-            todo(RecordCOBJ)
             todo(RecordREGN)
             todo(RecordNAVI)
-            todo(RecordDIAL)
+            todo(RecordNAVM)
             todo(RecordQUST)
             todo(RecordIDLE)
             todo(RecordPACK)
             todo(RecordCSTY)
             todo(RecordWATR)
             todo(RecordBPTD)
-            todo(RecordCAMS)
             todo(RecordDOBJ)
             
             NOTE(-----------------------------------------------------------)
@@ -163,6 +163,7 @@ void Reader::Load(std::string path)
             todo(RecordSOUN)
         
             NOTE(controversial records)
+            todo(RecordDIAL)
             todo(RecordTREE)
             todo(RecordMESG)
             todo(RecordDEBR)

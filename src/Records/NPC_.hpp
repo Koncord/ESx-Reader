@@ -22,10 +22,10 @@ public:
     {
         std::string edid;
         std::string name;
-        DESTRUCTION destruction;
+        Destruction destruction;
         ACBS configuration;
         std::vector<SNAM> factions;
-        ITEMCOL items;
+        Items items;
         AIDT aiData;
         float height;
         float weight;
@@ -65,12 +65,8 @@ public:
         uint16_t unarmedAttackAnimation;
         uint16_t unknown;
         formid scriptId;
+        OBND objectBounds;
     #pragma pack(push, 1)
-    struct OBND
-    {
-        uint16_t x1, y1, z1;
-        uint16_t x2, y2, z2;
-    } obnd; 
     struct _DATA
     {
         int32_t baseHealth;

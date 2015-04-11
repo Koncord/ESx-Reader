@@ -12,25 +12,36 @@
         <itemPath>src/Records/ARMA.cpp</itemPath>
         <itemPath>src/Records/ARMO.cpp</itemPath>
         <itemPath>src/Records/BOOK.cpp</itemPath>
+        <itemPath>src/Records/CAMS.cpp</itemPath>
         <itemPath>src/Records/CELL.cpp</itemPath>
         <itemPath>src/Records/CLAS.cpp</itemPath>
         <itemPath>src/Records/CONT.cpp</itemPath>
         <itemPath>src/Records/CPTH.cpp</itemPath>
         <itemPath>src/Records/DOOR.cpp</itemPath>
         <itemPath>src/Records/ECZN.cpp</itemPath>
+        <itemPath>src/Records/ENCH.cpp</itemPath>
         <itemPath>src/Records/EXPL.cpp</itemPath>
         <itemPath>src/Records/FACT.cpp</itemPath>
         <itemPath>src/Records/FLST.cpp</itemPath>
+        <itemPath>src/Records/FURN.cpp</itemPath>
         <itemPath>src/Records/GLOB.cpp</itemPath>
         <itemPath>src/Records/GMST.cpp</itemPath>
         <itemPath>src/Records/IDLM.cpp</itemPath>
+        <itemPath>src/Records/INGR.cpp</itemPath>
         <itemPath>src/Records/KEYM.cpp</itemPath>
+        <itemPath>src/Records/LIGH.cpp</itemPath>
+        <itemPath>src/Records/LVLN_LVLC.cpp</itemPath>
+        <itemPath>src/Records/MGEF.cpp</itemPath>
         <itemPath>src/Records/MISC.cpp</itemPath>
+        <itemPath>src/Records/MSTT.cpp</itemPath>
         <itemPath>src/Records/NPC_.cpp</itemPath>
         <itemPath>src/Records/PERK.cpp</itemPath>
+        <itemPath>src/Records/PWAT.cpp</itemPath>
         <itemPath>src/Records/RADS.cpp</itemPath>
         <itemPath>src/Records/REFR.cpp</itemPath>
+        <itemPath>src/Records/SCOL.cpp</itemPath>
         <itemPath>src/Records/SCPT.cpp</itemPath>
+        <itemPath>src/Records/SPEL.cpp</itemPath>
         <itemPath>src/Records/STAT.cpp</itemPath>
         <itemPath>src/Records/TACT.cpp</itemPath>
         <itemPath>src/Records/TERM.cpp</itemPath>
@@ -38,9 +49,17 @@
         <itemPath>src/Records/WEAP.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="SubRecords" projectFiles="true">
+        <itemPath>src/Subrecords/CollectionEffect.cpp</itemPath>
+        <itemPath>src/Subrecords/ConditionCollection.cpp</itemPath>
+        <itemPath>src/Subrecords/DestructionCollection.cpp</itemPath>
+        <itemPath>src/Subrecords/ItemCollection.cpp</itemPath>
+        <itemPath>src/Subrecords/ModelCollection.cpp</itemPath>
+        <itemPath>src/Subrecords/ScriptCollection.cpp</itemPath>
         <itemPath>src/Subrecords/subEDID.cpp</itemPath>
       </logicalFolder>
+      <itemPath>src/Records/COBJ.cpp</itemPath>
       <itemPath>src/Group.cpp</itemPath>
+      <itemPath>src/Records/LVLI.cpp</itemPath>
       <itemPath>src/Reader.cpp</itemPath>
       <itemPath>src/Record.cpp</itemPath>
       <itemPath>src/SubRecord.cpp</itemPath>
@@ -56,25 +75,36 @@
         <itemPath>src/Records/ARMA.hpp</itemPath>
         <itemPath>src/Records/ARMO.hpp</itemPath>
         <itemPath>src/Records/BOOK.hpp</itemPath>
+        <itemPath>src/Records/CAMS.hpp</itemPath>
         <itemPath>src/Records/CELL.hpp</itemPath>
         <itemPath>src/Records/CLAS.hpp</itemPath>
         <itemPath>src/Records/CONT.hpp</itemPath>
         <itemPath>src/Records/CPTH.hpp</itemPath>
         <itemPath>src/Records/DOOR.hpp</itemPath>
         <itemPath>src/Records/ECZN.hpp</itemPath>
+        <itemPath>src/Records/ENCH.hpp</itemPath>
         <itemPath>src/Records/EXPL.hpp</itemPath>
         <itemPath>src/Records/FACT.hpp</itemPath>
         <itemPath>src/Records/FLST.hpp</itemPath>
+        <itemPath>src/Records/FURN.hpp</itemPath>
         <itemPath>src/Records/GLOB.hpp</itemPath>
         <itemPath>src/Records/GMST.hpp</itemPath>
         <itemPath>src/Records/IDLM.hpp</itemPath>
+        <itemPath>src/Records/INGR.hpp</itemPath>
         <itemPath>src/Records/KEYM.hpp</itemPath>
+        <itemPath>src/Records/LIGH.hpp</itemPath>
+        <itemPath>src/Records/LVLN_LVLC.hpp</itemPath>
+        <itemPath>src/Records/MGEF.hpp</itemPath>
         <itemPath>src/Records/MISC.hpp</itemPath>
+        <itemPath>src/Records/MSTT.hpp</itemPath>
         <itemPath>src/Records/NPC_.hpp</itemPath>
         <itemPath>src/Records/PERK.hpp</itemPath>
+        <itemPath>src/Records/PWAT.hpp</itemPath>
         <itemPath>src/Records/RADS.hpp</itemPath>
         <itemPath>src/Records/REFR.hpp</itemPath>
+        <itemPath>src/Records/SCOL.hpp</itemPath>
         <itemPath>src/Records/SCPT.hpp</itemPath>
+        <itemPath>src/Records/SPEL.hpp</itemPath>
         <itemPath>src/Records/STAT.hpp</itemPath>
         <itemPath>src/Records/TACT.hpp</itemPath>
         <itemPath>src/Records/TERM.hpp</itemPath>
@@ -82,6 +112,12 @@
         <itemPath>src/Records/WEAP.hpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="SubRecords" projectFiles="true">
+        <itemPath>src/Subrecords/CollectionEffect.hpp</itemPath>
+        <itemPath>src/Subrecords/ConditionCollection.hpp</itemPath>
+        <itemPath>src/Subrecords/DestructionCollection.hpp</itemPath>
+        <itemPath>src/Subrecords/ItemCollection.hpp</itemPath>
+        <itemPath>src/Subrecords/ModelCollection.hpp</itemPath>
+        <itemPath>src/Subrecords/ScriptCollection.hpp</itemPath>
         <itemPath>src/Subrecords/subACBS.hpp</itemPath>
         <itemPath>src/Subrecords/subAIDT.hpp</itemPath>
         <itemPath>src/Subrecords/subBMDT.hpp</itemPath>
@@ -90,12 +126,16 @@
         <itemPath>src/Subrecords/subSNAM.hpp</itemPath>
         <itemPath>src/Subrecords/subXNAM.hpp</itemPath>
       </logicalFolder>
+      <itemPath>src/ActorValues.hpp</itemPath>
       <itemPath>src/Animations.hpp</itemPath>
+      <itemPath>src/Records/COBJ.hpp</itemPath>
       <itemPath>src/Group.hpp</itemPath>
+      <itemPath>src/Records/LVLI.hpp</itemPath>
       <itemPath>src/Reader.hpp</itemPath>
       <itemPath>src/Record.hpp</itemPath>
       <itemPath>src/SubRecord.hpp</itemPath>
       <itemPath>src/Types.hpp</itemPath>
+      <itemPath>src/debug_macros.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Файлы ресурсов"
@@ -146,6 +186,8 @@
         <archiverTool>
         </archiverTool>
       </compileType>
+      <item path="src/ActorValues.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Animations.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Group.cpp" ex="false" tool="1" flavor2="0">
@@ -188,6 +230,10 @@
       </item>
       <item path="src/Records/BOOK.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Records/CAMS.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/CAMS.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Records/CELL.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Records/CELL.hpp" ex="false" tool="3" flavor2="0">
@@ -195,6 +241,10 @@
       <item path="src/Records/CLAS.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Records/CLAS.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/COBJ.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/COBJ.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Records/CONT.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -212,6 +262,10 @@
       </item>
       <item path="src/Records/ECZN.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Records/ENCH.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/ENCH.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Records/EXPL.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Records/EXPL.hpp" ex="false" tool="3" flavor2="0">
@@ -223,6 +277,10 @@
       <item path="src/Records/FLST.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Records/FLST.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/FURN.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/FURN.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Records/GLOB.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -236,13 +294,37 @@
       </item>
       <item path="src/Records/IDLM.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Records/INGR.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/INGR.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Records/KEYM.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Records/KEYM.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Records/LIGH.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/LIGH.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/LVLI.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/LVLI.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/LVLN_LVLC.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/LVLN_LVLC.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/MGEF.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/MGEF.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Records/MISC.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Records/MISC.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/MSTT.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/MSTT.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Records/NPC_.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -252,6 +334,10 @@
       </item>
       <item path="src/Records/PERK.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Records/PWAT.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/PWAT.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Records/RADS.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Records/RADS.hpp" ex="false" tool="3" flavor2="0">
@@ -260,9 +346,17 @@
       </item>
       <item path="src/Records/REFR.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Records/SCOL.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/SCOL.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Records/SCPT.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Records/SCPT.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/SPEL.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/SPEL.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Records/STAT.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -288,6 +382,54 @@
       </item>
       <item path="src/SubRecord.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Subrecords/CollectionEffect.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/Subrecords/CollectionEffect.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/Subrecords/ConditionCollection.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/Subrecords/ConditionCollection.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/Subrecords/DestructionCollection.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/Subrecords/DestructionCollection.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/Subrecords/ItemCollection.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Subrecords/ItemCollection.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Subrecords/ModelCollection.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Subrecords/ModelCollection.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Subrecords/ScriptCollection.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/Subrecords/ScriptCollection.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="src/Subrecords/subACBS.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Subrecords/subAIDT.hpp" ex="false" tool="3" flavor2="0">
@@ -305,6 +447,8 @@
       <item path="src/Subrecords/subXNAM.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Types.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/debug_macros.hpp" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="3">
@@ -333,6 +477,8 @@
         <archiverTool>
         </archiverTool>
       </compileType>
+      <item path="src/ActorValues.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Animations.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Group.cpp" ex="false" tool="1" flavor2="0">
@@ -375,6 +521,10 @@
       </item>
       <item path="src/Records/BOOK.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Records/CAMS.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/CAMS.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Records/CELL.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Records/CELL.hpp" ex="false" tool="3" flavor2="0">
@@ -382,6 +532,10 @@
       <item path="src/Records/CLAS.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Records/CLAS.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/COBJ.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/COBJ.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Records/CONT.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -399,6 +553,10 @@
       </item>
       <item path="src/Records/ECZN.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Records/ENCH.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/ENCH.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Records/EXPL.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Records/EXPL.hpp" ex="false" tool="3" flavor2="0">
@@ -410,6 +568,10 @@
       <item path="src/Records/FLST.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Records/FLST.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/FURN.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/FURN.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Records/GLOB.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -423,13 +585,37 @@
       </item>
       <item path="src/Records/IDLM.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Records/INGR.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/INGR.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Records/KEYM.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Records/KEYM.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Records/LIGH.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/LIGH.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/LVLI.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/LVLI.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/LVLN_LVLC.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/LVLN_LVLC.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/MGEF.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/MGEF.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Records/MISC.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Records/MISC.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/MSTT.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/MSTT.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Records/NPC_.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -439,6 +625,10 @@
       </item>
       <item path="src/Records/PERK.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Records/PWAT.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/PWAT.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Records/RADS.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Records/RADS.hpp" ex="false" tool="3" flavor2="0">
@@ -447,9 +637,17 @@
       </item>
       <item path="src/Records/REFR.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Records/SCOL.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/SCOL.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Records/SCPT.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Records/SCPT.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/SPEL.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/SPEL.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Records/STAT.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -475,6 +673,54 @@
       </item>
       <item path="src/SubRecord.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Subrecords/CollectionEffect.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/Subrecords/CollectionEffect.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/Subrecords/ConditionCollection.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/Subrecords/ConditionCollection.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/Subrecords/DestructionCollection.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/Subrecords/DestructionCollection.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/Subrecords/ItemCollection.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Subrecords/ItemCollection.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Subrecords/ModelCollection.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Subrecords/ModelCollection.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Subrecords/ScriptCollection.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/Subrecords/ScriptCollection.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="src/Subrecords/subACBS.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Subrecords/subAIDT.hpp" ex="false" tool="3" flavor2="0">
@@ -492,6 +738,8 @@
       <item path="src/Subrecords/subXNAM.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Types.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/debug_macros.hpp" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>

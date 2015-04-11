@@ -21,13 +21,9 @@ public:
         std::string description;
         formid scriptId;
         formid passwordNoteId;
-        DESTRUCTION destruction;
+        Destruction destruction;
+        OBND objectBounds;
         #pragma pack(push, 1)
-        struct OBND 
-        {
-            uint16_t x1, y1, z1;
-            uint16_t x2, y2, z2;
-        } obnd;
         struct DNAM
         {
             uint8_t baseHackDifficulty;
@@ -71,7 +67,7 @@ public:
             uint8_t flags;
             formid displayNoteId; // NOTE record.
             formid subMenuId; // TERM record.
-            SCRIPT script;
+            Script script;
             CTDA conditions;
         };
         std::vector<MENUITM> items;
