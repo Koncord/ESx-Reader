@@ -15,8 +15,10 @@
         <itemPath>src/Records/CAMS.cpp</itemPath>
         <itemPath>src/Records/CELL.cpp</itemPath>
         <itemPath>src/Records/CLAS.cpp</itemPath>
+        <itemPath>src/Records/COBJ.cpp</itemPath>
         <itemPath>src/Records/CONT.cpp</itemPath>
         <itemPath>src/Records/CPTH.cpp</itemPath>
+        <itemPath>src/Records/DOBJ.cpp</itemPath>
         <itemPath>src/Records/DOOR.cpp</itemPath>
         <itemPath>src/Records/ECZN.cpp</itemPath>
         <itemPath>src/Records/ENCH.cpp</itemPath>
@@ -30,13 +32,16 @@
         <itemPath>src/Records/INGR.cpp</itemPath>
         <itemPath>src/Records/KEYM.cpp</itemPath>
         <itemPath>src/Records/LIGH.cpp</itemPath>
+        <itemPath>src/Records/LVLI.cpp</itemPath>
         <itemPath>src/Records/LVLN_LVLC.cpp</itemPath>
         <itemPath>src/Records/MGEF.cpp</itemPath>
         <itemPath>src/Records/MISC.cpp</itemPath>
         <itemPath>src/Records/MSTT.cpp</itemPath>
         <itemPath>src/Records/NPC_.cpp</itemPath>
         <itemPath>src/Records/PERK.cpp</itemPath>
+        <itemPath>src/Records/PROJ.cpp</itemPath>
         <itemPath>src/Records/PWAT.cpp</itemPath>
+        <itemPath>src/Records/QUST.cpp</itemPath>
         <itemPath>src/Records/RADS.cpp</itemPath>
         <itemPath>src/Records/REFR.cpp</itemPath>
         <itemPath>src/Records/SCOL.cpp</itemPath>
@@ -57,9 +62,7 @@
         <itemPath>src/Subrecords/ScriptCollection.cpp</itemPath>
         <itemPath>src/Subrecords/subEDID.cpp</itemPath>
       </logicalFolder>
-      <itemPath>src/Records/COBJ.cpp</itemPath>
       <itemPath>src/Group.cpp</itemPath>
-      <itemPath>src/Records/LVLI.cpp</itemPath>
       <itemPath>src/Reader.cpp</itemPath>
       <itemPath>src/Record.cpp</itemPath>
       <itemPath>src/SubRecord.cpp</itemPath>
@@ -78,8 +81,10 @@
         <itemPath>src/Records/CAMS.hpp</itemPath>
         <itemPath>src/Records/CELL.hpp</itemPath>
         <itemPath>src/Records/CLAS.hpp</itemPath>
+        <itemPath>src/Records/COBJ.hpp</itemPath>
         <itemPath>src/Records/CONT.hpp</itemPath>
         <itemPath>src/Records/CPTH.hpp</itemPath>
+        <itemPath>src/Records/DOBJ.hpp</itemPath>
         <itemPath>src/Records/DOOR.hpp</itemPath>
         <itemPath>src/Records/ECZN.hpp</itemPath>
         <itemPath>src/Records/ENCH.hpp</itemPath>
@@ -93,13 +98,16 @@
         <itemPath>src/Records/INGR.hpp</itemPath>
         <itemPath>src/Records/KEYM.hpp</itemPath>
         <itemPath>src/Records/LIGH.hpp</itemPath>
+        <itemPath>src/Records/LVLI.hpp</itemPath>
         <itemPath>src/Records/LVLN_LVLC.hpp</itemPath>
         <itemPath>src/Records/MGEF.hpp</itemPath>
         <itemPath>src/Records/MISC.hpp</itemPath>
         <itemPath>src/Records/MSTT.hpp</itemPath>
         <itemPath>src/Records/NPC_.hpp</itemPath>
         <itemPath>src/Records/PERK.hpp</itemPath>
+        <itemPath>src/Records/PROJ.hpp</itemPath>
         <itemPath>src/Records/PWAT.hpp</itemPath>
+        <itemPath>src/Records/QUST.hpp</itemPath>
         <itemPath>src/Records/RADS.hpp</itemPath>
         <itemPath>src/Records/REFR.hpp</itemPath>
         <itemPath>src/Records/SCOL.hpp</itemPath>
@@ -128,9 +136,7 @@
       </logicalFolder>
       <itemPath>src/ActorValues.hpp</itemPath>
       <itemPath>src/Animations.hpp</itemPath>
-      <itemPath>src/Records/COBJ.hpp</itemPath>
       <itemPath>src/Group.hpp</itemPath>
-      <itemPath>src/Records/LVLI.hpp</itemPath>
       <itemPath>src/Reader.hpp</itemPath>
       <itemPath>src/Record.hpp</itemPath>
       <itemPath>src/SubRecord.hpp</itemPath>
@@ -254,6 +260,10 @@
       </item>
       <item path="src/Records/CPTH.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Records/DOBJ.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/DOBJ.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Records/DOOR.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Records/DOOR.hpp" ex="false" tool="3" flavor2="0">
@@ -334,9 +344,17 @@
       </item>
       <item path="src/Records/PERK.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Records/PROJ.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/PROJ.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Records/PWAT.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Records/PWAT.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/QUST.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/QUST.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Records/RADS.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -545,6 +563,10 @@
       </item>
       <item path="src/Records/CPTH.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Records/DOBJ.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/DOBJ.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Records/DOOR.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Records/DOOR.hpp" ex="false" tool="3" flavor2="0">
@@ -625,9 +647,17 @@
       </item>
       <item path="src/Records/PERK.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Records/PROJ.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/PROJ.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Records/PWAT.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Records/PWAT.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Records/QUST.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Records/QUST.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Records/RADS.cpp" ex="false" tool="1" flavor2="0">
       </item>

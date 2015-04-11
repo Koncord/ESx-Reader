@@ -50,7 +50,9 @@
 #include "Records/COBJ.hpp"
 #include "Records/LVLN_LVLC.hpp"
 #include "Records/LVLI.hpp"
-
+#include "Records/DOBJ.hpp"
+#include "Records/PROJ.hpp"
+#include "Records/QUST.hpp"
 
 class Reader
 {
@@ -125,6 +127,9 @@ public:
     IDHash<RecordLVLN_LVLC::DATA> leveledNPCs;
     IDHash<RecordLVLN_LVLC::DATA> leveledCreatures;
     IDHash<RecordLVLI::DATA> leveledItems;
+    IDHash<RecordDOBJ::DATA> defaultObjectManager;
+    IDHash<RecordPROJ::DATA> projectiles;
+    IDHash<RecordQUST::DATA> quests;
 };
 
 #endif // READER_HPP

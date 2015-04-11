@@ -51,6 +51,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/Records/COBJ.o \
 	${OBJECTDIR}/src/Records/CONT.o \
 	${OBJECTDIR}/src/Records/CPTH.o \
+	${OBJECTDIR}/src/Records/DOBJ.o \
 	${OBJECTDIR}/src/Records/DOOR.o \
 	${OBJECTDIR}/src/Records/ECZN.o \
 	${OBJECTDIR}/src/Records/ENCH.o \
@@ -71,7 +72,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/Records/MSTT.o \
 	${OBJECTDIR}/src/Records/NPC_.o \
 	${OBJECTDIR}/src/Records/PERK.o \
+	${OBJECTDIR}/src/Records/PROJ.o \
 	${OBJECTDIR}/src/Records/PWAT.o \
+	${OBJECTDIR}/src/Records/QUST.o \
 	${OBJECTDIR}/src/Records/RADS.o \
 	${OBJECTDIR}/src/Records/REFR.o \
 	${OBJECTDIR}/src/Records/SCOL.o \
@@ -198,6 +201,11 @@ ${OBJECTDIR}/src/Records/CPTH.o: src/Records/CPTH.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/CPTH.o src/Records/CPTH.cpp
 
+${OBJECTDIR}/src/Records/DOBJ.o: src/Records/DOBJ.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Records
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/DOBJ.o src/Records/DOBJ.cpp
+
 ${OBJECTDIR}/src/Records/DOOR.o: src/Records/DOOR.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Records
 	${RM} "$@.d"
@@ -298,10 +306,20 @@ ${OBJECTDIR}/src/Records/PERK.o: src/Records/PERK.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/PERK.o src/Records/PERK.cpp
 
+${OBJECTDIR}/src/Records/PROJ.o: src/Records/PROJ.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Records
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/PROJ.o src/Records/PROJ.cpp
+
 ${OBJECTDIR}/src/Records/PWAT.o: src/Records/PWAT.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Records
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/PWAT.o src/Records/PWAT.cpp
+
+${OBJECTDIR}/src/Records/QUST.o: src/Records/QUST.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Records
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/QUST.o src/Records/QUST.cpp
 
 ${OBJECTDIR}/src/Records/RADS.o: src/Records/RADS.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Records

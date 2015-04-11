@@ -24,6 +24,7 @@ public:
             CalculateFromAllLevels = 0x01, // player's level
             CalculateForEachItemInCount = 0x02
         };
+    #pragma pack(push, 1)
         struct LeveledListEntry
         {
             struct BaseData
@@ -45,6 +46,7 @@ public:
                 float itemCondition;
             } extraData;
         };
+    #pragma pack(pop)
         std::vector<LeveledListEntry> leveledListEntry;
     } data;
 

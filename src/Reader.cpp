@@ -56,7 +56,7 @@ uint8_t *Reader::ReadData(uint8_t *data, size_t size)
 void Reader::Load(std::string path)
 {
     
-    if(file.is_open()) throw std::runtime_error("At one point in time may e read only one file");
+    if(file.is_open()) throw std::runtime_error("At one point in the ESx-Reader time may read only one file");
     file.open(path, ifstream::binary);
     
     if(!file.is_open()) throw std::runtime_error("file can\'t be opened!");
@@ -120,20 +120,22 @@ void Reader::Load(std::string path)
             PARSE_GROUP(RecordLVLN_LVLC, "LVLN", leveledNPCs);
             PARSE_GROUP(RecordLVLN_LVLC, "LVLC", leveledCreatures);
             PARSE_GROUP(RecordLVLI, "LVLI", leveledItems);
+            PARSE_GROUP(RecordDOBJ, "DOBJ", defaultObjectManager);
+            PARSE_GROUP(RecordPROJ, "PROJ", projectiles);
+            PARSE_GROUP(RecordQUST, "QUST", quests);
             
             todo(RecordRACE)
             todo(RecordCREA)
-            todo(RecordPROJ)
             todo(RecordREGN)
-            todo(RecordNAVI)
-            todo(RecordNAVM)
-            todo(RecordQUST)
             todo(RecordIDLE)
             todo(RecordPACK)
             todo(RecordCSTY)
             todo(RecordWATR)
             todo(RecordBPTD)
-            todo(RecordDOBJ)
+            
+            NOTE(long term)
+            todo(RecordNAVI)
+            todo(RecordNAVM)
             
             NOTE(-----------------------------------------------------------)
             NOTE(the following records may not be needed for multiplayer)

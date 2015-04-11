@@ -26,6 +26,7 @@ public:
             CalculateForEachItemInCount = 0x02,
             UseAll = 0x04
         };
+        #pragma pack(push, 1)
         struct LeveledListEntry
         {
             struct BaseData
@@ -47,6 +48,7 @@ public:
                 float itemCondition;
             } extraData;
         };
+        #pragma pack(pop)
         std::vector<LeveledListEntry> leveledListEntry;
     } data;
 
