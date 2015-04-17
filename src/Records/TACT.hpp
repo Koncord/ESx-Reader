@@ -20,7 +20,7 @@ public:
         std::string name;
         formid script;
         Destruction destruction;
-        OBND objectBounds;
+        ObjectBounds objectBounds;
     } data;
 
     explicit RecordTACT(const RecHeader &head) : Record(head) { Parse(); }

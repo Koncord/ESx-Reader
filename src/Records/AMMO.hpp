@@ -22,7 +22,7 @@ public:
         Destruction destruction;
         
         #pragma pack(push, 1)
-        OBND objectBounds;
+        ObjectBounds objectBounds;
         struct _DATA
         {
             float speed;

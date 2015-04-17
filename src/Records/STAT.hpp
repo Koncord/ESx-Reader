@@ -17,7 +17,7 @@ public:
     struct DATA
     {
         std::string edid;
-        OBND objectBounds;
+        ObjectBounds objectBounds;
     } data;
 
     explicit RecordSTAT(const RecHeader &head) : Record(head) { Parse(); }

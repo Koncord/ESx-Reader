@@ -9,7 +9,7 @@
 #define	SUBXNAM_HPP
 
 #pragma pack(push, 1)
-struct XNAM
+struct Relation
 {
     formid factionId;
     int32_t modifier;

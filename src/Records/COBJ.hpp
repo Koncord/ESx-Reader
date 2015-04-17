@@ -17,7 +17,7 @@ public:
     {
         std::string edid;
         std::string name;
-        OBND objectBounds;
+        ObjectBounds objectBounds;
         formid script; // FormID of a SCPT record.
 #pragma pack(push, 1)
         struct _DATA

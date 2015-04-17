@@ -45,12 +45,15 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/Records/ARMA.o \
 	${OBJECTDIR}/src/Records/ARMO.o \
 	${OBJECTDIR}/src/Records/BOOK.o \
+	${OBJECTDIR}/src/Records/BPTD.o \
 	${OBJECTDIR}/src/Records/CAMS.o \
 	${OBJECTDIR}/src/Records/CELL.o \
 	${OBJECTDIR}/src/Records/CLAS.o \
 	${OBJECTDIR}/src/Records/COBJ.o \
 	${OBJECTDIR}/src/Records/CONT.o \
 	${OBJECTDIR}/src/Records/CPTH.o \
+	${OBJECTDIR}/src/Records/CREA.o \
+	${OBJECTDIR}/src/Records/CSTY.o \
 	${OBJECTDIR}/src/Records/DOBJ.o \
 	${OBJECTDIR}/src/Records/DOOR.o \
 	${OBJECTDIR}/src/Records/ECZN.o \
@@ -61,6 +64,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/Records/FURN.o \
 	${OBJECTDIR}/src/Records/GLOB.o \
 	${OBJECTDIR}/src/Records/GMST.o \
+	${OBJECTDIR}/src/Records/IDLE.o \
 	${OBJECTDIR}/src/Records/IDLM.o \
 	${OBJECTDIR}/src/Records/INGR.o \
 	${OBJECTDIR}/src/Records/KEYM.o \
@@ -71,12 +75,15 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/Records/MISC.o \
 	${OBJECTDIR}/src/Records/MSTT.o \
 	${OBJECTDIR}/src/Records/NPC_.o \
+	${OBJECTDIR}/src/Records/PACK.o \
 	${OBJECTDIR}/src/Records/PERK.o \
 	${OBJECTDIR}/src/Records/PROJ.o \
 	${OBJECTDIR}/src/Records/PWAT.o \
 	${OBJECTDIR}/src/Records/QUST.o \
+	${OBJECTDIR}/src/Records/RACE.o \
 	${OBJECTDIR}/src/Records/RADS.o \
 	${OBJECTDIR}/src/Records/REFR.o \
+	${OBJECTDIR}/src/Records/REGN.o \
 	${OBJECTDIR}/src/Records/SCOL.o \
 	${OBJECTDIR}/src/Records/SCPT.o \
 	${OBJECTDIR}/src/Records/SPEL.o \
@@ -84,6 +91,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/Records/TACT.o \
 	${OBJECTDIR}/src/Records/TERM.o \
 	${OBJECTDIR}/src/Records/TES4.o \
+	${OBJECTDIR}/src/Records/WATR.o \
 	${OBJECTDIR}/src/Records/WEAP.o \
 	${OBJECTDIR}/src/SubRecord.o \
 	${OBJECTDIR}/src/Subrecords/CollectionEffect.o \
@@ -171,6 +179,11 @@ ${OBJECTDIR}/src/Records/BOOK.o: src/Records/BOOK.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/BOOK.o src/Records/BOOK.cpp
 
+${OBJECTDIR}/src/Records/BPTD.o: src/Records/BPTD.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Records
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/BPTD.o src/Records/BPTD.cpp
+
 ${OBJECTDIR}/src/Records/CAMS.o: src/Records/CAMS.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Records
 	${RM} "$@.d"
@@ -200,6 +213,16 @@ ${OBJECTDIR}/src/Records/CPTH.o: src/Records/CPTH.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/Records
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/CPTH.o src/Records/CPTH.cpp
+
+${OBJECTDIR}/src/Records/CREA.o: src/Records/CREA.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Records
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/CREA.o src/Records/CREA.cpp
+
+${OBJECTDIR}/src/Records/CSTY.o: src/Records/CSTY.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Records
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/CSTY.o src/Records/CSTY.cpp
 
 ${OBJECTDIR}/src/Records/DOBJ.o: src/Records/DOBJ.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Records
@@ -251,6 +274,11 @@ ${OBJECTDIR}/src/Records/GMST.o: src/Records/GMST.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/GMST.o src/Records/GMST.cpp
 
+${OBJECTDIR}/src/Records/IDLE.o: src/Records/IDLE.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Records
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/IDLE.o src/Records/IDLE.cpp
+
 ${OBJECTDIR}/src/Records/IDLM.o: src/Records/IDLM.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Records
 	${RM} "$@.d"
@@ -301,6 +329,11 @@ ${OBJECTDIR}/src/Records/NPC_.o: src/Records/NPC_.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/NPC_.o src/Records/NPC_.cpp
 
+${OBJECTDIR}/src/Records/PACK.o: src/Records/PACK.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Records
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/PACK.o src/Records/PACK.cpp
+
 ${OBJECTDIR}/src/Records/PERK.o: src/Records/PERK.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Records
 	${RM} "$@.d"
@@ -321,6 +354,11 @@ ${OBJECTDIR}/src/Records/QUST.o: src/Records/QUST.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/QUST.o src/Records/QUST.cpp
 
+${OBJECTDIR}/src/Records/RACE.o: src/Records/RACE.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Records
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/RACE.o src/Records/RACE.cpp
+
 ${OBJECTDIR}/src/Records/RADS.o: src/Records/RADS.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Records
 	${RM} "$@.d"
@@ -330,6 +368,11 @@ ${OBJECTDIR}/src/Records/REFR.o: src/Records/REFR.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/Records
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/REFR.o src/Records/REFR.cpp
+
+${OBJECTDIR}/src/Records/REGN.o: src/Records/REGN.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Records
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/REGN.o src/Records/REGN.cpp
 
 ${OBJECTDIR}/src/Records/SCOL.o: src/Records/SCOL.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Records
@@ -365,6 +408,11 @@ ${OBJECTDIR}/src/Records/TES4.o: src/Records/TES4.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/Records
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/TES4.o src/Records/TES4.cpp
+
+${OBJECTDIR}/src/Records/WATR.o: src/Records/WATR.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Records
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/WATR.o src/Records/WATR.cpp
 
 ${OBJECTDIR}/src/Records/WEAP.o: src/Records/WEAP.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Records

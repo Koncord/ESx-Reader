@@ -17,7 +17,7 @@ bool RecordMSTT::DoParse()
     else if(subType == "FULL")
         data.name = GetString();
     else if(subType == "OBND")
-        data.objectBounds = GetData<OBND>();
+        data.objectBounds = GetData<ObjectBounds>();
     else if(subType == "DATA")
         data.unknown = GetData<uint8_t>();
     else if(subType == "SNAM")

@@ -17,7 +17,7 @@ public:
     struct DATA
     {
         std::string edid;
-        OBND objectBounds;
+        ObjectBounds objectBounds;
         std::string name;
         formid script;
         Destruction destruction;

@@ -23,7 +23,7 @@ public:
                                    // ARMO, AMMO, LVLN, LVLC, MISC, WEAP, BOOK,
                                    // KEYM, ALCH, LIGH, GRAS, ASPC, IDLM, ARMA,
                                    //MSTT, NOTE, PWAT, SCOL, TACT, TERM or TXST record.
-        OBND objectBounds;
+        ObjectBounds objectBounds;
         #pragma pack(push, 1)
         struct _DATA
         {

@@ -17,7 +17,7 @@ bool RecordTACT::DoParse()
     else if(subType == "FULL")
         data.name = GetString();
     else if(subType == "OBND")
-        data.objectBounds = GetData<OBND>();
+        data.objectBounds = GetData<ObjectBounds>();
     else if(ModelCollection()) {}
     else if(subType == "SCRI")
         data.script = GetData<formid>();

@@ -12,7 +12,7 @@ template <typename V>
 using IDHash = std::unordered_map<formid, V>;
 
 #pragma pack(push, 1)
-struct OBND 
+struct ObjectBounds 
 {
     uint16_t x1, y1, z1;
     uint16_t x2, y2, z2;

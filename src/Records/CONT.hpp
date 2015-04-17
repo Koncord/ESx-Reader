@@ -21,7 +21,7 @@ public:
         uint32_t scriptId;
         Items items;
         Destruction destruction;
-        OBND objectBounds;
+        ObjectBounds objectBounds;
 #pragma pack(push, 1)
         struct _DATA
         {

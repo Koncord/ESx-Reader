@@ -17,7 +17,7 @@ public:
     {
         std::string edid;
         std::string name;
-        OBND objectBounds;
+        ObjectBounds objectBounds;
         Destruction destruction;
         uint32_t soundLevel;
         enum soundLevel

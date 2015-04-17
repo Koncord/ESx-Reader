@@ -29,7 +29,7 @@ public:
         };
         Destruction destruction;
         formid scriptId;
-        OBND objectBounds;
+        ObjectBounds objectBounds;
     } data;
 
     explicit RecordDOOR(const RecHeader &head) : Record(head) { Parse(); }

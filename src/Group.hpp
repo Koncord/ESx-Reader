@@ -3,20 +3,7 @@
 
 #include <cstdint>
 
-enum GroupType
-{
-    TopLevel = 0,
-    WorldChildren,
-    InteriorCellBlock,
-    InteriorCellSubBlock,
-    ExteriorCellBlock,
-    ExteriorCellSubBlock,
-    CellChildren,
-    TopicChildren,
-    CellPersistentChildren,
-    CellTemporaryChildren,
-    CellVisibleDistantChildren
-};
+
 
 struct GroupHeader
 {
@@ -26,6 +13,20 @@ struct GroupHeader
     uint32_t groupType;
     uint16_t stamp;
     char unknown_bytes[6];
+    enum Type
+    {
+        TopLevel = 0,
+        WorldChildren,
+        InteriorCellBlock,
+        InteriorCellSubBlock,
+        ExteriorCellBlock,
+        ExteriorCellSubBlock,
+        CellChildren,
+        TopicChildren,
+        CellPersistentChildren,
+        CellTemporaryChildren,
+        CellVisibleDistantChildren
+    };
 };
 
 class Group

@@ -16,7 +16,7 @@ public:
     struct DATA
     {
         std::string edid;
-        OBND objectBounds;
+        ObjectBounds objectBounds;
         #pragma pack(push, 1)
         struct _DATA
         {

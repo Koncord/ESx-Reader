@@ -19,7 +19,7 @@ public:
     {
         std::string edid;
         std::string name;
-        OBND objectBounds;
+        ObjectBounds objectBounds;
         formid script;
         int32_t equipmentType;
         float weight;

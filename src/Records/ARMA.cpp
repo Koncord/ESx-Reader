@@ -13,7 +13,7 @@ bool RecordARMA::DoParse()
     if (subType == "EDID")
         data.edid = GetString();
     else if(subType == "OBND")
-        data.objectBounds = GetData<OBND>();
+        data.objectBounds = GetData<ObjectBounds>();
     else if (subType == "FULL")
         data.name = GetString();
     else if(subType == "BMDT")

@@ -23,7 +23,7 @@ public:
         Destruction destruction;
         Effect effect;
         float weight;
-        OBND objectBounds;
+        ObjectBounds objectBounds;
     #pragma pack(push, 1)
         struct ENIT
         {

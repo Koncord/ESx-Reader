@@ -15,7 +15,7 @@ bool RecordFACT::DoParse()
     else if (subType == "FULL")
         data.name = GetString();
     else if(subType == "XNAM")
-        data.relation.push_back(GetData<XNAM>());
+        data.relation.push_back(GetData<Relation>());
     else if(subType == "DATA")
     {
         data.data.flags1 = GetData<uint8_t>();

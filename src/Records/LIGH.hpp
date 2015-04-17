@@ -17,7 +17,7 @@ public:
     {
         std::string edid;
         std::string name;
-        OBND objectBounds;
+        ObjectBounds objectBounds;
         formid script;
         float fadeValue;
         formid sound;

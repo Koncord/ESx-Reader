@@ -17,7 +17,7 @@ bool RecordPROJ::DoParse()
     else if(subType == "FULL")
         data.name = GetString();
     else if(subType == "OBND")
-        data.objectBounds = GetData<OBND>();
+        data.objectBounds = GetData<ObjectBounds>();
     else if(subType == "DATA")
         data.data = GetData<DATA::_DATA>();
     else if(subType == "NAM1" || subType == "NAM2")

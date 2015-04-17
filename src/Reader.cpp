@@ -76,7 +76,7 @@ void Reader::Load(std::string path)
     while(!file.eof())
     {
         GroupHeader ghead = Group::ReadHeader();
-        if(ghead.groupType == GroupType::TopLevel)
+        if(ghead.groupType == GroupHeader::Type::TopLevel)
         {
             PARSE_GROUP(RecordGMST, "GMST", gameSettings);
             PARSE_GROUP(RecordWEAP, "WEAP", weapons);
@@ -123,15 +123,15 @@ void Reader::Load(std::string path)
             PARSE_GROUP(RecordDOBJ, "DOBJ", defaultObjectManager);
             PARSE_GROUP(RecordPROJ, "PROJ", projectiles);
             PARSE_GROUP(RecordQUST, "QUST", quests);
-            
-            todo(RecordRACE)
-            todo(RecordCREA)
-            todo(RecordREGN)
-            todo(RecordIDLE)
+            PARSE_GROUP(RecordIDLE, "IDLE", idleAnimations);
+            PARSE_GROUP(RecordBPTD, "BPTD", bodyPartData);
+            PARSE_GROUP(RecordCSTY, "CSTY", combatStyles);
+            PARSE_GROUP(RecordRACE, "RACE", race);
+            PARSE_GROUP(RecordCREA, "CREA", creatures);
+            PARSE_GROUP(RecordREGN, "REGN", regions);
+            PARSE_GROUP(RecordWATR, "WATR", water);
+                    
             todo(RecordPACK)
-            todo(RecordCSTY)
-            todo(RecordWATR)
-            todo(RecordBPTD)
             
             NOTE(long term)
             todo(RecordNAVI)
@@ -176,16 +176,13 @@ void Reader::Load(std::string path)
                 WHILE_BY_GRUP(ghead, endBlockGroup)
                 {
                     GroupHeader gBlockHead = Group::ReadHeader();
-                    if(gBlockHead.groupType == GroupType::InteriorCellBlock)
+                    if(gBlockHead.groupType == GroupHeader::Type::InteriorCellBlock)
                     {
-                        //uint32_t cellBlock = *(reinterpret_cast<uint32_t*> (gBlockHead.label));
-                        
                         WHILE_BY_GRUP(gBlockHead, endSubBlockGroup)
                         {
                             GroupHeader gSubBlockHead = Group::ReadHeader();
-                            if(gSubBlockHead.groupType == GroupType::InteriorCellSubBlock)
+                            if(gSubBlockHead.groupType == GroupHeader::Type::InteriorCellSubBlock)
                             {
-                                //uint32_t cellSubBlock = *(reinterpret_cast<uint32_t*> (gSubBlockHead.label));
                                 
                                 WHILE_BY_GRUP(gSubBlockHead, gSubEnd)
                                 {
@@ -200,23 +197,25 @@ void Reader::Load(std::string path)
                                     {
                                         FIXME(ugly hack)
                                         GroupHeader h = *(reinterpret_cast<GroupHeader*>(&head));
-                                        if(h.groupType == GroupType::CellPersistentChildren)
+                                        if(h.groupType == GroupHeader::Type::CellPersistentChildren)
                                         {
+                                           todo(CellPersistentChildren)
                                            file.ignore(h.size - sizeof(GroupHeader));
                                         }
-                                        else if(h.groupType == GroupType::CellTemporaryChildren)
+                                        else if(h.groupType == GroupHeader::Type::CellTemporaryChildren)
                                         {
+                                            todo(CellTemporaryChildren)
                                             file.ignore(h.size - sizeof(GroupHeader));
                                         }
-                                        else if(h.groupType == GroupType::CellChildren)
+                                        else if(h.groupType == GroupHeader::Type::CellChildren)
                                         {
+                                            todo(CellChildren)
                                             file.ignore(h.size - sizeof(GroupHeader));
                                         }
                                         else
                                         {
                                             throw runtime_error (to_string(file.tellg()) + " Unknown type: " + to_string(h.groupType));
                                         }
-                                        //cout << "POS: " << file.tellg() << endl;
                                         continue;
                                     }
                                 }

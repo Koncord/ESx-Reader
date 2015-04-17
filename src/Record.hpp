@@ -49,7 +49,7 @@ struct RecHeader
     uint32_t flags;
     formid id;
     uint32_t revision;
-    uint16_t version;
+    uint32_t version;
 };
 
 class Record

@@ -17,7 +17,7 @@ bool RecordCOBJ::DoParse()
     else if(subType == "FULL")
         data.name = GetString();
     else if(subType == "OBND")
-        data.objectBounds = GetData<OBND>();
+        data.objectBounds = GetData<ObjectBounds>();
     else if(subType == "ICON" || subType == "MICO")
         IgnoreSubRecord();
     else if(subType == "SCRI")

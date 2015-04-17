@@ -22,7 +22,7 @@ public:
         formid scriptId;
         formid passwordNoteId;
         Destruction destruction;
-        OBND objectBounds;
+        ObjectBounds objectBounds;
         #pragma pack(push, 1)
         struct DNAM
         {

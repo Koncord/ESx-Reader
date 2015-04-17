@@ -8,7 +8,7 @@
 #ifndef SUBSNAM_HPP
 #define	SUBSNAM_HPP
 
-struct SNAM
+struct Faction
 {
     formid faction;
     uint8_t rank;

@@ -27,7 +27,7 @@ public:
         uint32_t animationCount;
         float idleTimerSetting;
         std::vector<formid> animation; // FormID of a IDLE record, or null.
-        OBND objectBounds;
+        ObjectBounds objectBounds;
     } data;
 
     explicit RecordIDLM(const RecHeader &head) : Record(head) { Parse(); }

@@ -20,7 +20,7 @@ bool RecordWEAP::DoParse()
     }
     else if(subType == "OBND")
     {
-        data.objectBounds = GetData<OBND>();
+        data.objectBounds = GetData<ObjectBounds>();
     }
     else if(subType == "FULL")
     {

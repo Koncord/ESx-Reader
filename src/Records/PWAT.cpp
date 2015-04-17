@@ -15,7 +15,7 @@ bool RecordPWAT::DoParse()
     if(subType == "EDID")
         data.edid = GetString();
     else if(subType == "OBND")
-        data.objectBounds = GetData<OBND>();
+        data.objectBounds = GetData<ObjectBounds>();
     else if(subType == "DNAM")
         data.data = GetData<DATA::_DATA>();
     else if(ModelCollection()) {}

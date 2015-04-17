@@ -22,7 +22,7 @@ public:
         formid radioStation;
         formid waterType;
         Destruction destruction;
-        OBND objectBounds;
+        ObjectBounds objectBounds;
     } data;
 
     explicit RecordACTI(const RecHeader &head) : Record(head) { Parse(); }

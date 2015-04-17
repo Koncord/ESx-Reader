@@ -21,7 +21,7 @@ public:
         std::string description;
         Destruction destruction;
         formid scriptId;
-        OBND objectBounds;
+        ObjectBounds objectBounds;
         #pragma pack(push, 1)
 
         struct _DATA

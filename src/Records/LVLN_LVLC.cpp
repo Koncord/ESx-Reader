@@ -16,7 +16,7 @@ bool RecordLVLN_LVLC::DoParse()
     if(subType == "EDID")
         data.edid = GetString();
     else if(subType == "OBND")
-        data.objectBounds = GetData<OBND>();
+        data.objectBounds = GetData<ObjectBounds>();
     else if(subType == "LVLD")
         data.chanceNone = GetData<uint8_t>();
     else if(subType == "LVLF")

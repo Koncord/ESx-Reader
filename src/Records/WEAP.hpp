@@ -27,7 +27,7 @@ public:
         uint32_t repairLstId;
         ETYP etyp; // equipType
         std::string embeddedWeaponNode;
-        OBND objectBounds;
+        ObjectBounds objectBounds;
         uint32_t soundLevel;
 #pragma pack(push, 1)
         struct _DATA

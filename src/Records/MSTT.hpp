@@ -9,6 +9,7 @@
 #define	MSTT_HPP
 
 #include "../Record.hpp"
+
 class RecordMSTT : public Record
 {
 public:
@@ -17,7 +18,7 @@ public:
     {
         std::string edid;
         std::string name;
-        OBND objectBounds;
+        ObjectBounds objectBounds;
         Destruction destruction;
         formid sound;
         uint8_t unknown;
@@ -28,7 +29,6 @@ public:
     RecordMSTT() : Record() { Parse(); }
     virtual bool DoParse();
 };
-
 
 #endif	/* MSTT_HPP */
 

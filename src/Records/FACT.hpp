@@ -19,7 +19,7 @@ public:
     {
         std::string edid;
         std::string name;
-        std::vector<XNAM> relation;
+        std::vector<Relation> relation;
         float unused;
         #pragma pack(push, 1)
         struct _DATA

@@ -17,14 +17,14 @@ bool RecordNPC_::DoParse()
     if(subType == "EDID")
         data.edid = GetString();
     else if(subType == "OBND")
-        data.objectBounds = GetData<OBND>();
+        data.objectBounds = GetData<ObjectBounds>();
     else if(subType == "FULL")
         data.name = GetString();
     else if(ModelCollection()) {}
     else if(subType == "ACBS")
-        data.configuration = GetData<ACBS>();
+        data.configuration = GetData<Configuration>();
     else if(subType == "SNAM")
-        data.factions.push_back(GetData<SNAM>());
+        data.factions.push_back(GetData<Faction>());
     else if(subType == "INAM")
         data.deathItemId = GetData<formid>();
     else if(subType == "VTCK")
@@ -42,7 +42,7 @@ bool RecordNPC_::DoParse()
     else if(DestructionData(&data.destruction)) {}
     else if(ItemCollection(&data.items)) { }
     else if(subType == "AIDT")
-        data.aiData = GetData<AIDT>();
+        data.aiData = GetData<AIData>();
     else if(subType == "PKID")
         data.packages.push_back(GetData<formid>());
     else if(subType == "CNAM")

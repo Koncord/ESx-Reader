@@ -53,6 +53,13 @@
 #include "Records/DOBJ.hpp"
 #include "Records/PROJ.hpp"
 #include "Records/QUST.hpp"
+#include "Records/IDLE.hpp"
+#include "Records/BPTD.hpp"
+#include "Records/CSTY.hpp"
+#include "Records/RACE.hpp"
+#include "Records/CREA.hpp"
+#include "Records/REGN.hpp"
+#include "Records/WATR.hpp"
 
 class Reader
 {
@@ -130,6 +137,13 @@ public:
     IDHash<RecordDOBJ::DATA> defaultObjectManager;
     IDHash<RecordPROJ::DATA> projectiles;
     IDHash<RecordQUST::DATA> quests;
+    IDHash<RecordIDLE::DATA> idleAnimations;
+    IDHash<RecordBPTD::DATA> bodyPartData;
+    IDHash<RecordCSTY::DATA> combatStyles;
+    IDHash<RecordRACE::DATA> race;
+    IDHash<RecordCREA::DATA> creatures;
+    IDHash<RecordREGN::DATA> regions;
+    IDHash<RecordWATR::DATA> water;
 };
 
 #endif // READER_HPP

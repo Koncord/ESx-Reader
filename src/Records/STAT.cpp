@@ -15,7 +15,7 @@ bool RecordSTAT::DoParse()
     if(subType == "EDID")
         data.edid = GetString();
     else if(subType == "OBND")
-        data.objectBounds = GetData<OBND>();
+        data.objectBounds = GetData<ObjectBounds>();
     else if(ModelCollection()) {}
     else return false;
     return true;

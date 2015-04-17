@@ -23,10 +23,10 @@ public:
         std::string edid;
         std::string name;
         Destruction destruction;
-        ACBS configuration;
-        std::vector<SNAM> factions;
+        Configuration configuration;
+        std::vector<Faction> factions;
         Items items;
-        AIDT aiData;
+        AIData aiData;
         float height;
         float weight;
         std::vector<formid> packages;
@@ -65,7 +65,7 @@ public:
         uint16_t unarmedAttackAnimation;
         uint16_t unknown;
         formid scriptId;
-        OBND objectBounds;
+        ObjectBounds objectBounds;
     #pragma pack(push, 1)
     struct _DATA
     {

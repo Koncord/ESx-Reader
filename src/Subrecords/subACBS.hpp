@@ -9,7 +9,7 @@
 #define	SUBACBS_HPP
 
 #pragma pack(push, 1)
-struct ACBS
+struct Configuration
 {
     uint32_t flags;
     uint16_t fatigue;
@@ -26,7 +26,7 @@ struct ACBS
     int16_t dispositionBase;
     uint16_t templateFlags;
     
-    enum FLAGS_CREA
+    enum class FLAG_CREA : uint32_t
     {
         Biped = 0x00000001,
         Essential = 0x00000002,
@@ -56,23 +56,23 @@ struct ACBS
         NoRotatingToHeadTrack = 0x40000000,
         Invulnerable = 0x80000000
     };
-    enum FLAGS_NPC_
+    enum class FLAG_NPC : uint32_t
     {
         Female = 0x00000001,
-        //Essential = 0x00000002,
+        Essential = 0x00000002,
         IsCharGenFacePreset = 0x00000004,
-        //Respawn = 0x00000008,
+        Respawn = 0x00000008,
         AutocalcStats = 0x00000010,
         PCLevelMult = 0x00000080,
         UseTemplate = 0x00000100,
-        //NoLowLevelProcessing = 0x00000200,
-        //NoBloodSpray = 0x00000800,
-        //NoBloodDecal = 0x00001000,
-        //NoVATSMelee = 0x00100000,
+        NoLowLevelProcessing = 0x00000200,
+        NoBloodSpray = 0x00000800,
+        NoBloodDecal = 0x00001000,
+        NoVATSMelee = 0x00100000,
         CanBeAllRaces = 0x00400000,
-        //NoKnockdowns = 0x04000000,
-        //NotPushable = 0x08000000,
-        //NoRotatingToHeadTrack = 0x40000000
+        NoKnockdowns = 0x04000000,
+        NotPushable = 0x08000000,
+        NoRotatingToHeadTrack = 0x40000000
     };
     enum TEMPLATEFLAGS
     {

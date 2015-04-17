@@ -16,7 +16,7 @@ public:
     struct DATA
     {
         std::string edid;
-        OBND objectBounds;
+        ObjectBounds objectBounds;
         uint8_t chanceNone;
         uint8_t flags;
         enum Flag

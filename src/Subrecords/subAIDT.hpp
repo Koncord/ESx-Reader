@@ -9,7 +9,7 @@
 #define	SUBAIDT_HPP
 
 #pragma pack(push, 1)
-struct AIDT
+struct AIData
 {
     uint8_t aggression;
     uint8_t confidence;

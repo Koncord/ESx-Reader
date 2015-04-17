@@ -27,7 +27,7 @@ public:
         formid bipedModelListId; // FLST record.
         BMDT bipedData;
         ETYP equipmentType;
-        OBND objectBounds;
+        ObjectBounds objectBounds;
         #pragma pack(push, 1)
         struct _DATA
         {
