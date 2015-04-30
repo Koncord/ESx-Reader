@@ -57,7 +57,7 @@ bool RecordCREA::DoParse()
         data.bodyPartData = GetData<formid>();
     else if(subType == "TNAM")
         data.turningSpeed = GetData<float>();
-    else if(subType == "TNAM")
+    else if(subType == "BNAM")
         data.baseScale = GetData<float>();
     else if(subType == "WNAM")
         data.footWeight = GetData<float>();
