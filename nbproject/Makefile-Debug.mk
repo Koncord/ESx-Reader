@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/_ext/1169888464/GroupCELL.o \
 	${OBJECTDIR}/src/Group.o \
 	${OBJECTDIR}/src/Reader.o \
 	${OBJECTDIR}/src/Record.o \
@@ -128,6 +129,11 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libesx-reader.a: ${OBJECTFILES}
 	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libesx-reader.a
 	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libesx-reader.a ${OBJECTFILES} 
 	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libesx-reader.a
+
+${OBJECTDIR}/_ext/1169888464/GroupCELL.o: /H/RWA\ Studio/ESx-Reader/src/Groups/GroupCELL.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1169888464
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I/F/SDK/boost_1_55_0 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1169888464/GroupCELL.o /H/RWA\ Studio/ESx-Reader/src/Groups/GroupCELL.cpp
 
 ${OBJECTDIR}/src/Group.o: src/Group.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

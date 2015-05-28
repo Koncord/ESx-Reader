@@ -5,6 +5,7 @@
  * Created on 27 Январь 2015 г., 19:16
  */
 
+#include <Groups/GroupCell.hpp>
 #include <Reader.hpp>
 #include <iostream>
 #include <Record.hpp>

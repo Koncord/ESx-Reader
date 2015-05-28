@@ -4,6 +4,9 @@
     <logicalFolder name="SourceFiles"
                    displayName="Исходные файлы"
                    projectFiles="true">
+      <logicalFolder name="f3" displayName="Groups" projectFiles="true">
+        <itemPath>H:/RWA Studio/ESx-Reader/src/Groups/GroupCELL.cpp</itemPath>
+      </logicalFolder>
       <logicalFolder name="f2" displayName="Records" projectFiles="true">
         <itemPath>src/Records/ACTI.cpp</itemPath>
         <itemPath>src/Records/ALCH.cpp</itemPath>
@@ -78,6 +81,9 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Файлы заголовков"
                    projectFiles="true">
+      <logicalFolder name="f3" displayName="Groups" projectFiles="true">
+        <itemPath>H:/RWA Studio/ESx-Reader/src/Groups/GroupCELL.hpp</itemPath>
+      </logicalFolder>
       <logicalFolder name="f1" displayName="Records" projectFiles="true">
         <itemPath>src/Records/ACTI.hpp</itemPath>
         <itemPath>src/Records/ALCH.hpp</itemPath>
@@ -209,6 +215,16 @@
         <archiverTool>
         </archiverTool>
       </compileType>
+      <item path="H:/RWA Studio/ESx-Reader/src/Groups/GroupCELL.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="H:/RWA Studio/ESx-Reader/src/Groups/GroupCELL.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="H:/RWA Studio/ESx-Reader/src/ObjectTypes.hpp"
             ex="false"
             tool="3"
@@ -546,6 +562,16 @@
         <archiverTool>
         </archiverTool>
       </compileType>
+      <item path="H:/RWA Studio/ESx-Reader/src/Groups/GroupCELL.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="H:/RWA Studio/ESx-Reader/src/Groups/GroupCELL.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="H:/RWA Studio/ESx-Reader/src/ObjectTypes.hpp"
             ex="false"
             tool="3"

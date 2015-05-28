@@ -55,7 +55,6 @@ uint8_t *Reader::ReadData(uint8_t *data, size_t size)
 
 void Reader::Load(std::string path)
 {
-
     if(file.is_open()) throw std::runtime_error("At one point in the ESx-Reader time may read only one file");
     file.open(path, ifstream::binary);
 
@@ -72,7 +71,7 @@ void Reader::Load(std::string path)
     }
     else
         throw runtime_error("unkown file type: " + type);
-
+    
     while(!file.eof())
     {
         GroupHeader ghead = Group::ReadHeader();
@@ -177,22 +176,24 @@ void Reader::Load(std::string path)
                     GroupHeader gBlockHead = Group::ReadHeader();
                     if(gBlockHead.groupType == GroupHeader::Type::InteriorCellBlock)
                     {
-                        //uint32_t cellBlock = *(reinterpret_cast<uint32_t*> (gBlockHead.label));
+                        uint32_t cellBlock = *(reinterpret_cast<uint32_t*> (gBlockHead.label));
 
                         WHILE_BY_GRUP(gBlockHead, endSubBlockGroup)
                         {
                             GroupHeader gSubBlockHead = Group::ReadHeader();
                             if(gSubBlockHead.groupType == GroupHeader::Type::InteriorCellSubBlock)
                             {
-                                //uint32_t cellSubBlock = *(reinterpret_cast<uint32_t*> (gSubBlockHead.label));
-
+                                uint32_t cellSubBlock = *(reinterpret_cast<uint32_t*> (gSubBlockHead.label));
+                                
+                                IDHash<GroupCELL::DATA> gcells;
                                 WHILE_BY_GRUP(gSubBlockHead, gSubEnd)
                                 {
                                     RecHeader head = Record::ReadHeader();
+                                    
                                     if(string(head.type, 4) == "CELL")
                                     {
-                                        todo(RecordCELL)
-                                        file.ignore(head.dataSize);
+                                        RecordCELL rec(head);
+                                        gcells[rec.head.id].cell = rec.data;
                                         continue;
                                     }
 
@@ -216,6 +217,7 @@ void Reader::Load(std::string path)
                                         throw runtime_error (to_string(file.tellg()) + " Unknown type: " + to_string(h.groupType));
                                     }
                                 }
+                                mapCells[Block(cellBlock, cellSubBlock)] = gcells;
                             }
                         }
                     }
