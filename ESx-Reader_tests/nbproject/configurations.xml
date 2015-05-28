@@ -91,7 +91,7 @@
     </conf>
     <conf name="Release" type="1">
       <toolsSet>
-        <compilerSet>default</compilerSet>
+        <compilerSet>MinGW|MinGW</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
@@ -105,8 +105,6 @@
           <incDir>
             <pElem>F:/SDK/gtest-bin/include/</pElem>
             <pElem>../src</pElem>
-            <pElem>F:/SDK/zlib-bin/include</pElem>
-            <pElem>F:/SDK/boost_1_55_0</pElem>
           </incDir>
           <commandLine>-std=gnu++1y</commandLine>
         </ccTool>
@@ -119,15 +117,14 @@
         <linkerTool>
           <linkerAddLib>
             <pElem>F:/SDK/gtest-bin/lib</pElem>
-            <pElem>F:/SDK/zlib-bin/lib</pElem>
-            <pElem>../dist/Release/MinGW-Windows</pElem>
+            <pElem>../dist/${CND_CONF}/${CND_PLATFORM}</pElem>
           </linkerAddLib>
           <stripSymbols>true</stripSymbols>
           <linkerLibItems>
             <linkerLibLibItem>gtest_main</linkerLibLibItem>
             <linkerLibLibItem>gtest</linkerLibLibItem>
             <linkerLibLibItem>esx-reader</linkerLibLibItem>
-            <linkerLibLibItem>zlibstatic</linkerLibLibItem>
+            <linkerLibLibItem>z</linkerLibLibItem>
           </linkerLibItems>
           <commandLine>-static</commandLine>
         </linkerTool>

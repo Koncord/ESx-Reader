@@ -55,16 +55,16 @@ uint8_t *Reader::ReadData(uint8_t *data, size_t size)
 
 void Reader::Load(std::string path)
 {
-    
+
     if(file.is_open()) throw std::runtime_error("At one point in the ESx-Reader time may read only one file");
     file.open(path, ifstream::binary);
-    
+
     if(!file.is_open()) throw std::runtime_error("file can\'t be opened!");
-    
+
     auto head = Record::ReadHeader();
-    
+
     std::string type(head.type, 4);
-    
+
     if(type == "TES4")
     {
         RecordTES4 tes4(head);
@@ -72,7 +72,7 @@ void Reader::Load(std::string path)
     }
     else
         throw runtime_error("unkown file type: " + type);
-    
+
     while(!file.eof())
     {
         GroupHeader ghead = Group::ReadHeader();
@@ -130,13 +130,12 @@ void Reader::Load(std::string path)
             PARSE_GROUP(RecordCREA, "CREA", creatures);
             PARSE_GROUP(RecordREGN, "REGN", regions);
             PARSE_GROUP(RecordWATR, "WATR", water);
-                    
-            todo(RecordPACK)
-            
+            PARSE_GROUP(RecordPACK, "PACK", packages);
+
             NOTE(long term)
             todo(RecordNAVI)
             todo(RecordNAVM)
-            
+
             NOTE(-----------------------------------------------------------)
             NOTE(the following records may not be needed for multiplayer)
             todo(RecordWTHR)
@@ -163,14 +162,14 @@ void Reader::Load(std::string path)
             todo(RecordLSCR)
             todo(RecordMUSC)
             todo(RecordSOUN)
-        
+
             NOTE(controversial records)
             todo(RecordDIAL)
             todo(RecordTREE)
             todo(RecordMESG)
             todo(RecordDEBR)
             NOTE(-----------------------------------------------------------)
-                    
+
             if(string(ghead.label,4) == "CELL")
             {
                 WHILE_BY_GRUP(ghead, endBlockGroup)
@@ -178,12 +177,15 @@ void Reader::Load(std::string path)
                     GroupHeader gBlockHead = Group::ReadHeader();
                     if(gBlockHead.groupType == GroupHeader::Type::InteriorCellBlock)
                     {
+                        //uint32_t cellBlock = *(reinterpret_cast<uint32_t*> (gBlockHead.label));
+
                         WHILE_BY_GRUP(gBlockHead, endSubBlockGroup)
                         {
                             GroupHeader gSubBlockHead = Group::ReadHeader();
                             if(gSubBlockHead.groupType == GroupHeader::Type::InteriorCellSubBlock)
                             {
-                                
+                                //uint32_t cellSubBlock = *(reinterpret_cast<uint32_t*> (gSubBlockHead.label));
+
                                 WHILE_BY_GRUP(gSubBlockHead, gSubEnd)
                                 {
                                     RecHeader head = Record::ReadHeader();
@@ -193,30 +195,25 @@ void Reader::Load(std::string path)
                                         file.ignore(head.dataSize);
                                         continue;
                                     }
-                                    else
+
+                                    FIXME(ugly hack)
+                                    GroupHeader h = *(reinterpret_cast<GroupHeader*>(&head));
+                                    switch(h.groupType)
                                     {
-                                        FIXME(ugly hack)
-                                        GroupHeader h = *(reinterpret_cast<GroupHeader*>(&head));
-                                        if(h.groupType == GroupHeader::Type::CellPersistentChildren)
-                                        {
-                                           todo(CellPersistentChildren)
-                                           file.ignore(h.size - sizeof(GroupHeader));
-                                        }
-                                        else if(h.groupType == GroupHeader::Type::CellTemporaryChildren)
-                                        {
-                                            todo(CellTemporaryChildren)
-                                            file.ignore(h.size - sizeof(GroupHeader));
-                                        }
-                                        else if(h.groupType == GroupHeader::Type::CellChildren)
-                                        {
-                                            todo(CellChildren)
-                                            file.ignore(h.size - sizeof(GroupHeader));
-                                        }
-                                        else
-                                        {
-                                            throw runtime_error (to_string(file.tellg()) + " Unknown type: " + to_string(h.groupType));
-                                        }
-                                        continue;
+                                    case GroupHeader::Type::CellPersistentChildren:
+                                        todo(CellPersistentChildren)
+                                        file.ignore(h.size - sizeof(GroupHeader));
+                                        break;
+                                    case GroupHeader::Type::CellTemporaryChildren:
+                                        todo(CellTemporaryChildren)
+                                        file.ignore(h.size - sizeof(GroupHeader));
+                                        break;
+                                    case GroupHeader::Type::CellChildren:
+                                        todo(CellChildren)
+                                        file.ignore(h.size - sizeof(GroupHeader));
+                                        break;
+                                    default:
+                                        throw runtime_error (to_string(file.tellg()) + " Unknown type: " + to_string(h.groupType));
                                     }
                                 }
                             }

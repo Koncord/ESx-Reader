@@ -42,6 +42,7 @@
         <itemPath>src/Records/MISC.cpp</itemPath>
         <itemPath>src/Records/MSTT.cpp</itemPath>
         <itemPath>src/Records/NPC_.cpp</itemPath>
+        <itemPath>src/Records/PACK.cpp</itemPath>
         <itemPath>src/Records/PERK.cpp</itemPath>
         <itemPath>src/Records/PROJ.cpp</itemPath>
         <itemPath>src/Records/PWAT.cpp</itemPath>
@@ -70,7 +71,6 @@
         <itemPath>src/Subrecords/subEDID.cpp</itemPath>
       </logicalFolder>
       <itemPath>src/Group.cpp</itemPath>
-      <itemPath>src/Records/PACK.cpp</itemPath>
       <itemPath>src/Reader.cpp</itemPath>
       <itemPath>src/Record.cpp</itemPath>
       <itemPath>src/SubRecord.cpp</itemPath>
@@ -116,6 +116,7 @@
         <itemPath>src/Records/MISC.hpp</itemPath>
         <itemPath>src/Records/MSTT.hpp</itemPath>
         <itemPath>src/Records/NPC_.hpp</itemPath>
+        <itemPath>src/Records/PACK.hpp</itemPath>
         <itemPath>src/Records/PERK.hpp</itemPath>
         <itemPath>src/Records/PROJ.hpp</itemPath>
         <itemPath>src/Records/PWAT.hpp</itemPath>
@@ -152,7 +153,7 @@
       <itemPath>src/ActorValues.hpp</itemPath>
       <itemPath>src/Animations.hpp</itemPath>
       <itemPath>src/Group.hpp</itemPath>
-      <itemPath>src/Records/PACK.hpp</itemPath>
+      <itemPath>H:/RWA Studio/ESx-Reader/src/ObjectTypes.hpp</itemPath>
       <itemPath>src/Reader.hpp</itemPath>
       <itemPath>src/Record.hpp</itemPath>
       <itemPath>src/SubRecord.hpp</itemPath>
@@ -208,6 +209,11 @@
         <archiverTool>
         </archiverTool>
       </compileType>
+      <item path="H:/RWA Studio/ESx-Reader/src/ObjectTypes.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="src/ActorValues.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Animations.hpp" ex="false" tool="3" flavor2="0">
@@ -529,9 +535,6 @@
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
-          <incDir>
-            <pElem>F:/SDK/boost_1_55_0</pElem>
-          </incDir>
           <commandLine>-pedantic-errors -pedantic -Wfatal-errors -Wextra -Wall -std=gnu++1y</commandLine>
         </ccTool>
         <fortranCompilerTool>
@@ -543,6 +546,11 @@
         <archiverTool>
         </archiverTool>
       </compileType>
+      <item path="H:/RWA Studio/ESx-Reader/src/ObjectTypes.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="src/ActorValues.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Animations.hpp" ex="false" tool="3" flavor2="0">

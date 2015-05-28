@@ -60,6 +60,7 @@
 #include "Records/CREA.hpp"
 #include "Records/REGN.hpp"
 #include "Records/WATR.hpp"
+#include "Records/PACK.hpp"
 
 class Reader
 {
@@ -144,6 +145,7 @@ public:
     IDHash<RecordCREA::DATA> creatures;
     IDHash<RecordREGN::DATA> regions;
     IDHash<RecordWATR::DATA> water;
+    IDHash<RecordPACK::DATA> packages;
 };
 
 #endif // READER_HPP
