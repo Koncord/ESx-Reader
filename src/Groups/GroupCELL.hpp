@@ -27,7 +27,7 @@ public:
             IDHash<RecordREFR::DATA> placedObjects;
             /*IDHash<RecordPGRE::DATA> placedGrenades;
             IDHash<RecordPMIS::DATA> placedMissiles;*/
-        };
+        } persistent;
         using Temporary = Persistent;
         Temporary temporary;
     };

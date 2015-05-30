@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <cstring>
+#include <fstream>
 using namespace std;
 
 static Reader *reader = nullptr;
@@ -185,36 +186,58 @@ void Reader::Load(std::string path)
                             {
                                 uint32_t cellSubBlock = *(reinterpret_cast<uint32_t*> (gSubBlockHead.label));
                                 
-                                IDHash<GroupCELL::DATA> gcells;
+                                IDHash<GroupCELL::DATA> gcells = mapCells[Block(cellBlock, cellSubBlock)];
                                 WHILE_BY_GRUP(gSubBlockHead, gSubEnd)
                                 {
+                                    static formid id = 0;
                                     RecHeader head = Record::ReadHeader();
                                     
                                     if(string(head.type, 4) == "CELL")
                                     {
                                         RecordCELL rec(head);
                                         gcells[rec.head.id].cell = rec.data;
+                                        id = rec.head.id;
                                         continue;
                                     }
 
                                     FIXME(ugly hack)
                                     GroupHeader h = *(reinterpret_cast<GroupHeader*>(&head));
-                                    switch(h.groupType)
+                                    if(h.groupType == GroupHeader::Type::CellChildren) // so slow
                                     {
-                                    case GroupHeader::Type::CellPersistentChildren:
-                                        todo(CellPersistentChildren)
-                                        file.ignore(h.size - sizeof(GroupHeader));
-                                        break;
-                                    case GroupHeader::Type::CellTemporaryChildren:
-                                        todo(CellTemporaryChildren)
-                                        file.ignore(h.size - sizeof(GroupHeader));
-                                        break;
-                                    case GroupHeader::Type::CellChildren:
-                                        todo(CellChildren)
-                                        file.ignore(h.size - sizeof(GroupHeader));
-                                        break;
-                                    default:
-                                        throw runtime_error (to_string(file.tellg()) + " Unknown type: " + to_string(h.groupType));
+                                        WHILE_BY_GRUP(h, gChildrenEnd)
+                                        {
+                                            GroupHeader gChildrenHead = Group::ReadHeader();
+                                            if(gChildrenHead.groupType == GroupHeader::Type::CellPersistentChildren)
+                                            {
+                                                WHILE_BY_GRUP(gChildrenHead, gRecEnd)
+                                                {
+                                                    RecHeader rhead = Record::ReadHeader();
+                                                    if(string(rhead.type,4) == "REFR")
+                                                    {
+                                                        RecordREFR rec(rhead);
+                                                        gcells[id].persistent.placedObjects[rec.head.id] = rec.data;
+                                                        continue;
+                                                    }
+                                                    file.ignore(rhead.dataSize);
+                                                }
+                                            }
+                                            else if(gChildrenHead.groupType == GroupHeader::Type::CellTemporaryChildren)
+                                            {
+                                                WHILE_BY_GRUP(gChildrenHead, gRecEnd)
+                                                {
+                                                    RecHeader rhead = Record::ReadHeader();
+                                                    if(string(rhead.type,4) == "REFR")
+                                                    {
+                                                        RecordREFR rec(rhead);
+                                                        gcells[id].temporary.placedObjects[rec.head.id] = rec.data;
+                                                        continue;
+                                                    }
+                                                    file.ignore(rhead.dataSize);
+                                                }
+                                            }
+                                            else 
+                                                break;
+                                        }
                                     }
                                 }
                                 mapCells[Block(cellBlock, cellSubBlock)] = gcells;

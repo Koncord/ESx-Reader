@@ -24,11 +24,13 @@ GroupCELL::DATA GroupCELL::Helper::get(Block block, formid id) const
 
 GroupCELL::DATA GroupCELL::Helper::get(formid id) const
 {
-
     for (MapHash<DATA>::iterator it = cellCols->begin(); it != cellCols->end(); ++it)
     {
-        return it->second.find(id)->second;
+        IDHash<DATA>::const_iterator data = it->second.find(id);
+        if( data != it->second.end())
+            return data->second;
     }
+    throw std::invalid_argument("Id is not valid or Reader is not initialized.");
 }
 
 Block GroupCELL::Helper::getBlock(formid id) const
@@ -45,5 +47,5 @@ Block GroupCELL::Helper::getBlock(formid id) const
 
 void GroupCELL::Helper::insert(Block block, IDHash<GroupCELL::DATA> cells)
 {
-    cellCols->at(block) = cells;
+    (*cellCols)[block] = cells;
 }
