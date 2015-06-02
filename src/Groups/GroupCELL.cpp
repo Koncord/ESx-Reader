@@ -43,6 +43,7 @@ Block GroupCELL::Helper::getBlock(formid id) const
                 return it->first;
         }
     }
+    throw std::invalid_argument("Id is not valid or Reader is not initialized.");
 }
 
 void GroupCELL::Helper::insert(Block block, IDHash<GroupCELL::DATA> cells)

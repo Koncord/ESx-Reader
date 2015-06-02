@@ -25,7 +25,8 @@ public:
         formid topicId; // DIAL record, or null.
         formid ownerId; // Ownership data. FormID of a FACT, ACHR or NPC_ record.
         formid ammoTypeId; // AMMO record, or null.
-        formid litWaterId; // REFR record.
+        std::vector<formid> litWaterIds; // REFR record.
+        std::vector<formid> portalRooms; // REFR record.
         formid linkedRefId; // REFR, ACRE, ACHR, PGRE or PMIS record.
         formid emittanceId; // LIGH or REGN record.
         formid multiBoundRefId; // REFR record.
@@ -33,7 +34,7 @@ public:
         // XRGB
         int32_t levelModifier;
         float idleTime;
-        uint32_t CollisionLayer;
+        uint32_t collisionLayer;
         uint8_t mapMarkerFlags;
         int32_t factionRank;
         int32_t count;
@@ -47,13 +48,49 @@ public:
         uint32_t actionFlag;
         
         Script script;
+        
+        uint32_t linkedRoomCount;
+        formid linkedRoom;
+        struct OcclusionPlaneData
+        {
+            float width, height;
+            float xPos, yPos, zPos;
+            float quaternion1Rot;
+            float quaternion2Rot;
+            float quaternion3Rot;
+            float quaternion4Rot;
+        } occlusionPlaneData;
+        struct LinkedOcclusionPlanes
+        {
+            formid rightId, leftId, bottomId, topId;
+        } linkedOcclusionPlanes;
+        float scale;
+        struct PositionRotation
+        {
+            float xPos, yPos, zPos;
+            float xRot, yRot, zRot;
+        } positionRotation;
+        
         // XPWR
-        struct XNDP
+        struct WaterReflectionOrRefraction
+        {
+            formid reference;
+            uint32_t type;
+            enum Type
+            {
+                Reflection = 0x01,
+                Refraction = 0x02
+            };
+        };
+        std::vector<WaterReflectionOrRefraction> waterReflectionsOrRefractions;
+        
+        
+        struct NavDoorLink
         {
             formid navMeshId; // NAVM record.
             uint8_t unknown[4];
         } navigationDoorLink;
-        struct XESP
+        struct EnableParent
         {
             formid refId;
             uint8_t flags;
@@ -64,13 +101,13 @@ public:
                 PopIn = 0x02
             };
         } enableParent;
-        struct XAPR
+        struct ActivateParentRef
         {
             formid refId; // REFR, ACRE, ACHR, PGRE or PMIS record.
             float delay;
         };
-        std::vector<XAPR> activateParentRefs; // Activate parents
-        struct XLOC
+        std::vector<ActivateParentRef> activateParentRefs; // Activate parents
+        struct LockData
         {
             uint8_t level;
             uint8_t unused[3];
@@ -85,7 +122,7 @@ public:
                 OpenByDefault = 0x00000008
             };
         } lockData;
-        struct XRDO
+        struct RadioData
         {
             float rangeRadius;
             uint32_t broadcastRangeType;
@@ -100,11 +137,11 @@ public:
                 CurrentCellOnly
             };
         } radioData;
-        struct TNAM
+        struct MapMarkerData
         {
             uint8_t type;
             uint8_t unused;
-            enum TYPE
+            enum Type
             {
                 None = 0,
                 City,
@@ -123,7 +160,7 @@ public:
                 Vault
             };
         } mapMarkerData;
-        struct XTEL
+        struct TeleportDestination
         {
             formid door; // REFR record.
             float xPos;
@@ -138,13 +175,13 @@ public:
                 NoAlarm = 0x00000001
             };
         } teleportDestination;
-        struct XMBO
+        struct BoundHalfExtents
         {
             float x;
             float y;
             float z;
         } boundHalfExtents;
-        struct XPRM
+        struct Primitive
         {
             float xBound;
             float yBound;
@@ -163,16 +200,11 @@ public:
                 PortalBox
             };
         } primitive;
-        struct RCLR
+        struct LinkedReferenceColor
         {
             rgba linkStartColor;
             rgba linkEndColor;
-        };
-        struct XCLP
-        {
-            rgba linkStartColor;
-            rgba linkEndColor;
-        };
+        } linkedReferenceColor[2];
     } data;
 
     explicit RecordREFR(const RecHeader &head) : Record(head) { Parse(); }

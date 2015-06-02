@@ -38,7 +38,7 @@ TEST(ReaderTest, testReaderESM)
     GroupCELL::DATA cell = chelp.get(0x00003A34);
     cout << cell.cell.edid << endl;
     cout << cell.persistent.placedObjects.size() << endl;
-    cout << cell.persistent.placedObjects[0x00003DE3].edid << endl;
+    cout << cell.persistent.placedObjects[0x00003DE3].positionRotation.xPos << endl;
     
     
     /*for (const auto data : reader->gameSettings)
