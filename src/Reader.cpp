@@ -10,8 +10,8 @@ using namespace std;
 
 static Reader *reader = nullptr;
 
-#define GRUP_SIZE(group, varname) uint32_t varname = static_cast<uint32_t>(file.tellg()) + group.size - sizeof(GroupHeader)
-#define WHILE_BY_GRUP(group, varname) GRUP_SIZE(group, varname); while(file.tellg() < varname && !file.eof())
+#define GRUP_SIZE(group, varname) uint32_t varname = static_cast<uint32_t>(reader->file.tellg()) + group.size - sizeof(GroupHeader)
+#define WHILE_BY_GRUP(group, varname) GRUP_SIZE(group, varname); while(reader->file.tellg() < varname && !reader->file.eof())
 #define PARSE_GROUP(_ClassOfRecord, _label, _IDHashData)                                        \
 if(string(ghead.label,4) == _label)                                                             \
 {                                                                                               \
@@ -21,6 +21,8 @@ if(string(ghead.label,4) == _label)                                             
     }                                                                                           \
     continue;                                                                                   \
 }
+
+bool ParsingClildren(const GroupHeader header, GroupCELL::DATA *cell);
 
 Reader::Reader()
 {
@@ -186,7 +188,7 @@ void Reader::Load(std::string path)
                             {
                                 uint32_t cellSubBlock = *(reinterpret_cast<uint32_t*> (gSubBlockHead.label));
                                 
-                                IDHash<GroupCELL::DATA> gcells = mapCells[Block(cellBlock, cellSubBlock)];
+                                IDHash<GroupCELL::DATA> gcells = treeCells[Block(cellBlock, cellSubBlock)];
                                 WHILE_BY_GRUP(gSubBlockHead, gSubEnd)
                                 {
                                     static formid id = 0;
@@ -202,93 +204,87 @@ void Reader::Load(std::string path)
 
                                     FIXME(ugly hack)
                                     GroupHeader h = *(reinterpret_cast<GroupHeader*>(&head));
-                                    if(h.groupType == GroupHeader::Type::CellChildren) // so slow
-                                    {
-                                        WHILE_BY_GRUP(h, gChildrenEnd)
-                                        {
-                                            GroupHeader gChildrenHead = Group::ReadHeader();
-                                            if(gChildrenHead.groupType == GroupHeader::Type::CellPersistentChildren)
-                                            {
-                                                WHILE_BY_GRUP(gChildrenHead, gRecEnd)
-                                                {
-                                                    RecHeader rhead = Record::ReadHeader();
-                                                    if(string(rhead.type,4) == "REFR")
-                                                    {
-                                                        RecordREFR rec(rhead);
-                                                        gcells[id].persistent.placedObjects[rec.head.id] = rec.data;
-                                                    }
-                                                    else if(string(rhead.type,4) == "ACRE")
-                                                    {
-                                                        RecordACRE rec(rhead);
-                                                        gcells[id].persistent.placedCreatures[rec.head.id] = rec.data;
-                                                    }
-                                                    else if(string(rhead.type,4) == "ACHR")
-                                                    {
-                                                        RecordACHR rec(rhead);
-                                                        gcells[id].persistent.placedNPCs[rec.head.id] = rec.data;
-                                                    }
-                                                    else if(string(rhead.type,4) == "PGRE")
-                                                    {
-                                                        RecordPGRE rec(rhead);
-                                                        gcells[id].persistent.placedGrenades[rec.head.id] = rec.data;
-                                                    }
-                                                    else if(string(rhead.type,4) == "PMIS")
-                                                    {
-                                                        RecordPMIS rec(rhead);
-                                                        gcells[id].persistent.placedMissiles[rec.head.id] = rec.data;
-                                                    }
-                                                    else file.ignore(rhead.dataSize);
-                                                    continue;
-                                                }
-                                            }
-                                            else if(gChildrenHead.groupType == GroupHeader::Type::CellTemporaryChildren)
-                                            {
-                                                WHILE_BY_GRUP(gChildrenHead, gRecEnd)
-                                                {
-                                                    RecHeader rhead = Record::ReadHeader();
-                                                    if(string(rhead.type,4) == "REFR")
-                                                    {
-                                                        RecordREFR rec(rhead);
-                                                        gcells[id].temporary.placedObjects[rec.head.id] = rec.data;
-                                                    }
-                                                    else if(string(rhead.type,4) == "ACRE")
-                                                    {
-                                                        RecordACRE rec(rhead);
-                                                        gcells[id].temporary.placedCreatures[rec.head.id] = rec.data;
-                                                    }
-                                                    else if(string(rhead.type,4) == "ACHR")
-                                                    {
-                                                        RecordACHR rec(rhead);
-                                                        gcells[id].temporary.placedNPCs[rec.head.id] = rec.data;
-                                                    }
-                                                    else if(string(rhead.type,4) == "PGRE")
-                                                    {
-                                                        RecordPGRE rec(rhead);
-                                                        gcells[id].temporary.placedGrenades[rec.head.id] = rec.data;
-                                                    }
-                                                    else if(string(rhead.type,4) == "PMIS")
-                                                    {
-                                                        RecordPMIS rec(rhead);
-                                                        gcells[id].temporary.placedMissiles[rec.head.id] = rec.data;
-                                                    }
-                                                    else file.ignore(rhead.dataSize);
-                                                    continue;
-                                                }
-                                            }
-                                            else 
-                                                break;
-                                        }
-                                    }
+                                    if(ParsingClildren(h, &gcells[id])) continue;
                                 }
-                                mapCells[Block(cellBlock, cellSubBlock)] = gcells;
+                                treeCells[Block(cellBlock, cellSubBlock)] = gcells;
                             }
                         }
                     }
                 }
                 continue;
             }
-            TODO(WRLD Parser)
-            todo(RecordWRLD)
+            
+            if(string(ghead.label,4) == "WRLD")
+            {
+                static formid wrld_id;
+                WHILE_BY_GRUP(ghead, endBlockGroup)
+                {
+                    RecHeader head = Record::ReadHeader();
+                    
+                    if(string(head.type, 4) == "WRLD")
+                    {
+                        RecordWRLD rec(head);
+                        wrld_id = rec.head.id;
+                        worldspace[wrld_id].wrld = rec.data;
+                        continue;
+                    }
+                    
+                    
+                    
+                    GroupHeader gWorldChildren = *(reinterpret_cast<GroupHeader*>(&head));
+                    
+                    if(gWorldChildren.groupType == GroupHeader::Type::WorldChildren)
+                    {
+                        WHILE_BY_GRUP(gWorldChildren, endChildrenGroup)
+                        {
+                            head = Record::ReadHeader();
+                            if(string(head.type, 4) == "CELL")
+                            {
+                                RecordCELL rec(head);
+                                worldspace[wrld_id].cell.cell = rec.data;
+                                continue;
+                            }
+                            
+                            GroupHeader gExteriorCellBlock = *(reinterpret_cast<GroupHeader*>(&head));
+                            if(ParsingClildren(gExteriorCellBlock, &worldspace[wrld_id].cell)) continue;
+                            
+                            if(gExteriorCellBlock.groupType == GroupHeader::Type::ExteriorCellBlock)
+                            {
+                                int8_t *block = static_cast<int8_t*>(static_cast<void*>(&gExteriorCellBlock.label));
+                                
+                                GroupWRLD::MapCELL *mapCell = &worldspace[wrld_id].treeCells[Block(block[0], block[1])];
+                                
+                                WHILE_BY_GRUP(gExteriorCellBlock, endExteriorCellBlock)
+                                {
+                                    GroupHeader gExteriorSubCellBlock = Group::ReadHeader();
+                                    WHILE_BY_GRUP(gExteriorSubCellBlock, endExteriorSubCellBlock)
+                                    {
+                                        GroupHeader h = Group::ReadHeader();
+                                        head = *(reinterpret_cast<RecHeader*>(&h));
+
+                                        uint8_t *subBlock = static_cast<uint8_t*>(static_cast<void*>(&gExteriorSubCellBlock.label));
+
+                                        static formid id = 0;
+
+                                        IDHash<GroupCELL::DATA> *gcells = &((*mapCell)[Block(subBlock[0], subBlock[1])]);
+
+                                        if(string(head.type, 4) == "CELL")
+                                        {
+                                            RecordCELL rec(head);
+                                            id = rec.head.id;
+                                            (*gcells)[id].cell = rec.data;
+                                            continue;
+                                        }
+                                        if(ParsingClildren(h, &(*gcells)[id])) continue;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                continue;
+            }
+            
             // if unhandled group ---------------------------------------------+
             #ifdef DEBUG                                                    // |
             cerr << "WARNING! Unhandled group: " << string(ghead.label, 4)  // |
@@ -304,4 +300,88 @@ void Reader::Load(std::string path)
 Reader::~Reader()
 {
 
+}
+
+bool ParsingClildren(const GroupHeader head, GroupCELL::DATA *cell)
+{
+    if(head.groupType == GroupHeader::Type::CellChildren) // so slow
+    {
+        WHILE_BY_GRUP(head, gChildrenEnd)
+        {
+            GroupHeader gChildrenHead = Group::ReadHeader();
+            if (gChildrenHead.groupType == GroupHeader::Type::CellPersistentChildren)
+            {
+                WHILE_BY_GRUP(gChildrenHead, gRecEnd)
+                {
+                    RecHeader rhead = Record::ReadHeader();
+                    if (string(rhead.type, 4) == "REFR")
+                    {
+                        RecordREFR rec(rhead);
+                        cell->persistent.placedObjects[rec.head.id] = rec.data;
+                    }
+                    else if (string(rhead.type, 4) == "ACRE")
+                    {
+                        RecordACRE rec(rhead);
+                        cell->persistent.placedCreatures[rec.head.id] = rec.data;
+                    }
+                    else if (string(rhead.type, 4) == "ACHR")
+                    {
+                        RecordACHR rec(rhead);
+                        cell->persistent.placedNPCs[rec.head.id] = rec.data;
+                    }
+                    else if (string(rhead.type, 4) == "PGRE")
+                    {
+                        RecordPGRE rec(rhead);
+                        cell->persistent.placedGrenades[rec.head.id] = rec.data;
+                    }
+                    else if (string(rhead.type, 4) == "PMIS")
+                    {
+                        RecordPMIS rec(rhead);
+                        cell->persistent.placedMissiles[rec.head.id] = rec.data;
+                    }
+                    else reader->file.ignore(rhead.dataSize);
+                    continue;
+                }
+            }
+            else if (gChildrenHead.groupType == GroupHeader::Type::CellTemporaryChildren)
+            {
+
+                WHILE_BY_GRUP(gChildrenHead, gRecEnd)
+                {
+                    RecHeader rhead = Record::ReadHeader();
+                    if (string(rhead.type, 4) == "REFR")
+                    {
+                        RecordREFR rec(rhead);
+                        cell->temporary.placedObjects[rec.head.id] = rec.data;
+                    }
+                    else if (string(rhead.type, 4) == "ACRE")
+                    {
+                        RecordACRE rec(rhead);
+                        cell->temporary.placedCreatures[rec.head.id] = rec.data;
+                    }
+                    else if (string(rhead.type, 4) == "ACHR")
+                    {
+                        RecordACHR rec(rhead);
+                        cell->temporary.placedNPCs[rec.head.id] = rec.data;
+                    }
+                    else if (string(rhead.type, 4) == "PGRE")
+                    {
+                        RecordPGRE rec(rhead);
+                        cell->temporary.placedGrenades[rec.head.id] = rec.data;
+                    }
+                    else if (string(rhead.type, 4) == "PMIS")
+                    {
+                        RecordPMIS rec(rhead);
+                        cell->temporary.placedMissiles[rec.head.id] = rec.data;
+                    }
+                    else reader->file.ignore(rhead.dataSize);
+                    continue;
+                }
+            }
+            else
+                break;
+        }
+        return true;
+    }
+    return false;
 }

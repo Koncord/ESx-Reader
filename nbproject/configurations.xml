@@ -6,6 +6,7 @@
                    projectFiles="true">
       <logicalFolder name="f3" displayName="Groups" projectFiles="true">
         <itemPath>H:/RWA Studio/ESx-Reader/src/Groups/GroupCELL.cpp</itemPath>
+        <itemPath>H:/RWA Studio/ESx-Reader/src/Groups/GroupWRLD.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Records" projectFiles="true">
         <itemPath>H:/RWA Studio/ESx-Reader/src/Records/ACHR.cpp</itemPath>
@@ -65,6 +66,7 @@
         <itemPath>src/Records/TES4.cpp</itemPath>
         <itemPath>src/Records/WATR.cpp</itemPath>
         <itemPath>src/Records/WEAP.cpp</itemPath>
+        <itemPath>H:/RWA Studio/ESx-Reader/src/Records/WRLD.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="SubRecords" projectFiles="true">
         <itemPath>src/Subrecords/CollectionEffect.cpp</itemPath>
@@ -85,6 +87,7 @@
                    projectFiles="true">
       <logicalFolder name="f3" displayName="Groups" projectFiles="true">
         <itemPath>H:/RWA Studio/ESx-Reader/src/Groups/GroupCELL.hpp</itemPath>
+        <itemPath>H:/RWA Studio/ESx-Reader/src/Groups/GroupWRLD.hpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="Records" projectFiles="true">
         <itemPath>H:/RWA Studio/ESx-Reader/src/Records/ACHR.hpp</itemPath>
@@ -145,6 +148,7 @@
         <itemPath>src/Records/TES4.hpp</itemPath>
         <itemPath>src/Records/WATR.hpp</itemPath>
         <itemPath>src/Records/WEAP.hpp</itemPath>
+        <itemPath>H:/RWA Studio/ESx-Reader/src/Records/WRLD.hpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="SubRecords" projectFiles="true">
         <itemPath>src/Subrecords/CollectionEffect.hpp</itemPath>
@@ -230,6 +234,16 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="H:/RWA Studio/ESx-Reader/src/Groups/GroupWRLD.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="H:/RWA Studio/ESx-Reader/src/Groups/GroupWRLD.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="H:/RWA Studio/ESx-Reader/src/ObjectTypes.hpp"
             ex="false"
             tool="3"
@@ -256,6 +270,16 @@
             flavor2="0">
       </item>
       <item path="H:/RWA Studio/ESx-Reader/src/Records/PGRE_PMIS.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="H:/RWA Studio/ESx-Reader/src/Records/WRLD.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="H:/RWA Studio/ESx-Reader/src/Records/WRLD.hpp"
             ex="false"
             tool="3"
             flavor2="0">
@@ -602,6 +626,16 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="H:/RWA Studio/ESx-Reader/src/Groups/GroupWRLD.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="H:/RWA Studio/ESx-Reader/src/Groups/GroupWRLD.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="H:/RWA Studio/ESx-Reader/src/ObjectTypes.hpp"
             ex="false"
             tool="3"
@@ -628,6 +662,16 @@
             flavor2="0">
       </item>
       <item path="H:/RWA Studio/ESx-Reader/src/Records/PGRE_PMIS.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="H:/RWA Studio/ESx-Reader/src/Records/WRLD.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="H:/RWA Studio/ESx-Reader/src/Records/WRLD.hpp"
             ex="false"
             tool="3"
             flavor2="0">

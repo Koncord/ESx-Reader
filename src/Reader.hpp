@@ -65,6 +65,7 @@
 
 
 #include "Groups/GroupCELL.hpp"
+#include "Groups/GroupWRLD.hpp"
 
 class Reader
 {
@@ -151,7 +152,8 @@ public:
     IDHash<RecordWATR::DATA> water;
     IDHash<RecordPACK::DATA> packages;
     
-    MapHash<GroupCELL::DATA> mapCells;
+    MapHash<GroupCELL::DATA> treeCells;
+    IDHash<GroupWRLD::DATA> worldspace;
 };
 
 #endif // READER_HPP
