@@ -8,6 +8,8 @@
         <itemPath>H:/RWA Studio/ESx-Reader/src/Groups/GroupCELL.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Records" projectFiles="true">
+        <itemPath>H:/RWA Studio/ESx-Reader/src/Records/ACHR.cpp</itemPath>
+        <itemPath>H:/RWA Studio/ESx-Reader/src/Records/ACRE.cpp</itemPath>
         <itemPath>src/Records/ACTI.cpp</itemPath>
         <itemPath>src/Records/ALCH.cpp</itemPath>
         <itemPath>src/Records/AMMO.cpp</itemPath>
@@ -85,6 +87,8 @@
         <itemPath>H:/RWA Studio/ESx-Reader/src/Groups/GroupCELL.hpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="Records" projectFiles="true">
+        <itemPath>H:/RWA Studio/ESx-Reader/src/Records/ACHR.hpp</itemPath>
+        <itemPath>H:/RWA Studio/ESx-Reader/src/Records/ACRE.hpp</itemPath>
         <itemPath>src/Records/ACTI.hpp</itemPath>
         <itemPath>src/Records/ALCH.hpp</itemPath>
         <itemPath>src/Records/AMMO.hpp</itemPath>
@@ -226,6 +230,26 @@
             flavor2="0">
       </item>
       <item path="H:/RWA Studio/ESx-Reader/src/ObjectTypes.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="H:/RWA Studio/ESx-Reader/src/Records/ACHR.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="H:/RWA Studio/ESx-Reader/src/Records/ACHR.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="H:/RWA Studio/ESx-Reader/src/Records/ACRE.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="H:/RWA Studio/ESx-Reader/src/Records/ACRE.hpp"
             ex="false"
             tool="3"
             flavor2="0">
@@ -573,6 +597,26 @@
             flavor2="0">
       </item>
       <item path="H:/RWA Studio/ESx-Reader/src/ObjectTypes.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="H:/RWA Studio/ESx-Reader/src/Records/ACHR.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="H:/RWA Studio/ESx-Reader/src/Records/ACHR.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="H:/RWA Studio/ESx-Reader/src/Records/ACRE.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="H:/RWA Studio/ESx-Reader/src/Records/ACRE.hpp"
             ex="false"
             tool="3"
             flavor2="0">

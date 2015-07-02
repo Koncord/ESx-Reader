@@ -1,15 +1,15 @@
 /* 
- * File:   ACRE.cpp
+ * File:   ACHR.cpp
  * Author: Koncord <koncord at rwa.su>
  * 
- * Created on 2 Июль 2015 г., 12:12
+ * Created on 2 Июль 2015 г., 13:01
  */
 
-#include "ACRE.hpp"
+#include "ACHR.hpp"
 
 using namespace std;
 
-bool RecordACRE::DoParse()
+bool RecordACHR::DoParse()
 {
     string subType = GetLabel();
     if(subType == "EDID")
@@ -31,10 +31,6 @@ bool RecordACRE::DoParse()
         data.topicId = GetData<formid>();
     else if(subType == "XLCM")
         data.levelModifier = GetData<int32_t>();
-    else if(subType == "XOWN")
-        data.ownerId = GetData<formid>();
-    else if(subType == "XRNK")
-        data.factionRank = GetData<int32_t>();
     else if(subType == "XMRC")
         data.merchantContainerId = GetData<formid>();
     else if(subType == "XCNT")

@@ -36,6 +36,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/_ext/1169888464/GroupCELL.o \
+	${OBJECTDIR}/_ext/1598995770/ACHR.o \
+	${OBJECTDIR}/_ext/1598995770/ACRE.o \
 	${OBJECTDIR}/src/Group.o \
 	${OBJECTDIR}/src/Reader.o \
 	${OBJECTDIR}/src/Record.o \
@@ -134,6 +136,16 @@ ${OBJECTDIR}/_ext/1169888464/GroupCELL.o: /H/RWA\ Studio/ESx-Reader/src/Groups/G
 	${MKDIR} -p ${OBJECTDIR}/_ext/1169888464
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1169888464/GroupCELL.o /H/RWA\ Studio/ESx-Reader/src/Groups/GroupCELL.cpp
+
+${OBJECTDIR}/_ext/1598995770/ACHR.o: /H/RWA\ Studio/ESx-Reader/src/Records/ACHR.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1598995770
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1598995770/ACHR.o /H/RWA\ Studio/ESx-Reader/src/Records/ACHR.cpp
+
+${OBJECTDIR}/_ext/1598995770/ACRE.o: /H/RWA\ Studio/ESx-Reader/src/Records/ACRE.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1598995770
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1598995770/ACRE.o /H/RWA\ Studio/ESx-Reader/src/Records/ACRE.cpp
 
 ${OBJECTDIR}/src/Group.o: src/Group.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

@@ -12,6 +12,7 @@
 #include "../Records/CELL.hpp"
 #include "../Records/REFR.hpp"
 #include "../Records/ACRE.hpp"
+#include "../Records/ACHR.hpp"
 
 class GroupCELL
 {
@@ -24,7 +25,7 @@ public:
         struct Persistent
         {
             IDHash<RecordACRE::DATA> placedCreatures;
-            //IDHash<RecordACHR::DATA> placedNPCs;
+            IDHash<RecordACHR::DATA> placedNPCs;
             IDHash<RecordREFR::DATA> placedObjects;
             /*IDHash<RecordPGRE::DATA> placedGrenades;
             IDHash<RecordPMIS::DATA> placedMissiles;*/

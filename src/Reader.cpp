@@ -224,6 +224,12 @@ void Reader::Load(std::string path)
                                                         gcells[id].persistent.placedCreatures[rec.head.id] = rec.data;
                                                         continue;
                                                     }
+                                                    else if(string(rhead.type,4) == "ACHR")
+                                                    {
+                                                        RecordACHR rec(rhead);
+                                                        gcells[id].persistent.placedNPCs[rec.head.id] = rec.data;
+                                                        continue;
+                                                    }
                                                     
                                                     file.ignore(rhead.dataSize);
                                                 }
@@ -243,6 +249,12 @@ void Reader::Load(std::string path)
                                                     {
                                                         RecordACRE rec(rhead);
                                                         gcells[id].temporary.placedCreatures[rec.head.id] = rec.data;
+                                                        continue;
+                                                    }
+                                                    else if(string(rhead.type,4) == "ACHR")
+                                                    {
+                                                        RecordACHR rec(rhead);
+                                                        gcells[id].temporary.placedNPCs[rec.head.id] = rec.data;
                                                         continue;
                                                     }
                                                     
