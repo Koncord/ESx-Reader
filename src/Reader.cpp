@@ -218,6 +218,13 @@ void Reader::Load(std::string path)
                                                         gcells[id].persistent.placedObjects[rec.head.id] = rec.data;
                                                         continue;
                                                     }
+                                                    else if(string(rhead.type,4) == "ACRE")
+                                                    {
+                                                        RecordACRE rec(rhead);
+                                                        gcells[id].persistent.placedCreatures[rec.head.id] = rec.data;
+                                                        continue;
+                                                    }
+                                                    
                                                     file.ignore(rhead.dataSize);
                                                 }
                                             }
@@ -232,6 +239,13 @@ void Reader::Load(std::string path)
                                                         gcells[id].temporary.placedObjects[rec.head.id] = rec.data;
                                                         continue;
                                                     }
+                                                    else if(string(rhead.type,4) == "ACRE")
+                                                    {
+                                                        RecordACRE rec(rhead);
+                                                        gcells[id].temporary.placedCreatures[rec.head.id] = rec.data;
+                                                        continue;
+                                                    }
+                                                    
                                                     file.ignore(rhead.dataSize);
                                                 }
                                             }
