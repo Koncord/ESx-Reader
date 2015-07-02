@@ -13,6 +13,7 @@
 #include "../Records/REFR.hpp"
 #include "../Records/ACRE.hpp"
 #include "../Records/ACHR.hpp"
+#include "../Records/PGRE_PMIS.hpp"
 
 class GroupCELL
 {
@@ -27,8 +28,8 @@ public:
             IDHash<RecordACRE::DATA> placedCreatures;
             IDHash<RecordACHR::DATA> placedNPCs;
             IDHash<RecordREFR::DATA> placedObjects;
-            /*IDHash<RecordPGRE::DATA> placedGrenades;
-            IDHash<RecordPMIS::DATA> placedMissiles;*/
+            IDHash<RecordPGRE::DATA> placedGrenades;
+            IDHash<RecordPMIS::DATA> placedMissiles;
         } persistent;
         using Temporary = Persistent;
         Temporary temporary;

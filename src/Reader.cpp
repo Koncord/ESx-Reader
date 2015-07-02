@@ -216,22 +216,29 @@ void Reader::Load(std::string path)
                                                     {
                                                         RecordREFR rec(rhead);
                                                         gcells[id].persistent.placedObjects[rec.head.id] = rec.data;
-                                                        continue;
                                                     }
                                                     else if(string(rhead.type,4) == "ACRE")
                                                     {
                                                         RecordACRE rec(rhead);
                                                         gcells[id].persistent.placedCreatures[rec.head.id] = rec.data;
-                                                        continue;
                                                     }
                                                     else if(string(rhead.type,4) == "ACHR")
                                                     {
                                                         RecordACHR rec(rhead);
                                                         gcells[id].persistent.placedNPCs[rec.head.id] = rec.data;
-                                                        continue;
                                                     }
-                                                    
-                                                    file.ignore(rhead.dataSize);
+                                                    else if(string(rhead.type,4) == "PGRE")
+                                                    {
+                                                        RecordPGRE rec(rhead);
+                                                        gcells[id].persistent.placedGrenades[rec.head.id] = rec.data;
+                                                    }
+                                                    else if(string(rhead.type,4) == "PMIS")
+                                                    {
+                                                        RecordPMIS rec(rhead);
+                                                        gcells[id].persistent.placedMissiles[rec.head.id] = rec.data;
+                                                    }
+                                                    else file.ignore(rhead.dataSize);
+                                                    continue;
                                                 }
                                             }
                                             else if(gChildrenHead.groupType == GroupHeader::Type::CellTemporaryChildren)
@@ -243,22 +250,29 @@ void Reader::Load(std::string path)
                                                     {
                                                         RecordREFR rec(rhead);
                                                         gcells[id].temporary.placedObjects[rec.head.id] = rec.data;
-                                                        continue;
                                                     }
                                                     else if(string(rhead.type,4) == "ACRE")
                                                     {
                                                         RecordACRE rec(rhead);
                                                         gcells[id].temporary.placedCreatures[rec.head.id] = rec.data;
-                                                        continue;
                                                     }
                                                     else if(string(rhead.type,4) == "ACHR")
                                                     {
                                                         RecordACHR rec(rhead);
                                                         gcells[id].temporary.placedNPCs[rec.head.id] = rec.data;
-                                                        continue;
                                                     }
-                                                    
-                                                    file.ignore(rhead.dataSize);
+                                                    else if(string(rhead.type,4) == "PGRE")
+                                                    {
+                                                        RecordPGRE rec(rhead);
+                                                        gcells[id].temporary.placedGrenades[rec.head.id] = rec.data;
+                                                    }
+                                                    else if(string(rhead.type,4) == "PMIS")
+                                                    {
+                                                        RecordPMIS rec(rhead);
+                                                        gcells[id].temporary.placedMissiles[rec.head.id] = rec.data;
+                                                    }
+                                                    else file.ignore(rhead.dataSize);
+                                                    continue;
                                                 }
                                             }
                                             else 

@@ -128,6 +128,7 @@
         <itemPath>src/Records/NPC_.hpp</itemPath>
         <itemPath>src/Records/PACK.hpp</itemPath>
         <itemPath>src/Records/PERK.hpp</itemPath>
+        <itemPath>H:/RWA Studio/ESx-Reader/src/Records/PGRE_PMIS.hpp</itemPath>
         <itemPath>src/Records/PROJ.hpp</itemPath>
         <itemPath>src/Records/PWAT.hpp</itemPath>
         <itemPath>src/Records/QUST.hpp</itemPath>
@@ -250,6 +251,11 @@
             flavor2="0">
       </item>
       <item path="H:/RWA Studio/ESx-Reader/src/Records/ACRE.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="H:/RWA Studio/ESx-Reader/src/Records/PGRE_PMIS.hpp"
             ex="false"
             tool="3"
             flavor2="0">
@@ -617,6 +623,11 @@
             flavor2="0">
       </item>
       <item path="H:/RWA Studio/ESx-Reader/src/Records/ACRE.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="H:/RWA Studio/ESx-Reader/src/Records/PGRE_PMIS.hpp"
             ex="false"
             tool="3"
             flavor2="0">
