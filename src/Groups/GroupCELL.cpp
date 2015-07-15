@@ -24,7 +24,7 @@ GroupCELL::DATA GroupCELL::Helper::get(Block block, formid id) const
 
 GroupCELL::DATA GroupCELL::Helper::get(formid id) const
 {
-    for (MapHash<DATA>::iterator it = cellCols->begin(); it != cellCols->end(); ++it)
+    for (MapHash<DATA>::const_iterator it = cellCols->begin(); it != cellCols->end(); ++it)
     {
         IDHash<DATA>::const_iterator data = it->second.find(id);
         if( data != it->second.end())
@@ -35,9 +35,9 @@ GroupCELL::DATA GroupCELL::Helper::get(formid id) const
 
 Block GroupCELL::Helper::getBlock(formid id) const
 {
-    for (MapHash<DATA>::iterator it = cellCols->begin(); it != cellCols->end(); ++it)
+    for (MapHash<DATA>::const_iterator it = cellCols->begin(); it != cellCols->end(); ++it)
     {
-        for (IDHash<DATA>::iterator it2 = it->second.begin(); it2 != it->second.end(); ++it2)
+        for (IDHash<DATA>::const_iterator it2 = it->second.begin(); it2 != it->second.end(); ++it2)
         {
             if (it2->first == id)
                 return it->first;

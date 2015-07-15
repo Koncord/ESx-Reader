@@ -10,7 +10,7 @@ using namespace std;
 bool RecordTES4::DoParse()
 {
 
-    std::string subType = GetLabel();
+    const std::string subType = GetLabel();
     
     if (subType == "HEDR")
     {

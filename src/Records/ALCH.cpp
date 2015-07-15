@@ -10,7 +10,7 @@
 
 bool RecordALCH::DoParse()
 {
-    std::string subType = GetLabel();
+    const std::string subType = GetLabel();
     
     if(subType == "EDID")
         data.edid = GetString();

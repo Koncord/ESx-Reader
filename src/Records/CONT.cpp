@@ -9,7 +9,7 @@
 
 bool RecordCONT::DoParse()
 {
-    std::string subType = GetLabel();
+    const std::string subType = GetLabel();
     if (subType == "EDID")
         this->data.edid = this->GetString();
     else if (subType == "OBND")

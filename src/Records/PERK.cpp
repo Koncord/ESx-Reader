@@ -14,7 +14,7 @@ bool RecordPERK::DoParse()
 {
     static bool subCol_parsing = false;
     CTDA condition;
-    string subType = GetLabel();
+    const string subType = GetLabel();
     if(!subCol_parsing)
     {
         if(subType == "EDID")

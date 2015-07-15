@@ -12,7 +12,7 @@ using namespace std;
 bool RecordCPTH::DoParse()
 {
     CTDA condition;
-    string subType = GetLabel();
+    const string subType = GetLabel();
     if(subType == "EDID")
         data.edid = GetString();
     else if(ConditionsData(&condition))

@@ -10,7 +10,7 @@
 
 bool Record::EffectCollection(Effect* effect)
 {
-    std::string subType = GetLabel();
+    const std::string subType = GetLabel();
     if(subType == "EFID")
         effect->baseEffectId = GetData<formid>();
     else if(subType == "EFIT")

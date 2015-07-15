@@ -13,7 +13,7 @@ bool RecordINGR::DoParse()
 {
     static Effect effect;
     TODO( need to implement the Effect collection )
-    string subType = GetLabel();
+    const string subType = GetLabel();
     if(subType == "EDID")
         data.edid = GetString();
     else if(subType == "FULL")

@@ -40,7 +40,7 @@ void Record::ParseHead(const RecHeader &head)
     {
         // unpack
         std::unique_ptr <uint8_t[]> compData(new uint8_t[head.dataSize - 4]);
-        uint32_t decompSize = reader->ReadRaw<std::uint32_t>();
+        const uint32_t decompSize = reader->ReadRaw<std::uint32_t>();
         rawdata.data.reset(new uint8_t[decompSize]);
 
         reader->ReadData (compData.get(), head.dataSize - 4);

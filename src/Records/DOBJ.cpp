@@ -11,7 +11,7 @@ using namespace std;
 
 bool RecordDOBJ::DoParse()
 {
-    string subType = GetLabel();
+    const string subType = GetLabel();
     if(subType == "EDID")
         data.edid = GetString();
     else if(subType == "DATA")

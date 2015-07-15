@@ -10,7 +10,7 @@
 
 bool Record::ConditionsData(CTDA* cond)
 {
-    std::string subType = GetLabel();
+    const std::string subType = GetLabel();
     if(subType == "CTDA")
     {
         #ifdef DEBUG

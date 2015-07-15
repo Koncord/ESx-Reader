@@ -11,7 +11,7 @@ using namespace std;
 
 bool RecordMISC::DoParse()
 {
-    string subType = GetLabel();
+    const string subType = GetLabel();
     
     if(subType == "EDID")
         data.edid = GetString();

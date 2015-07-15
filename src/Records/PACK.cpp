@@ -13,7 +13,7 @@ bool RecordPACK::DoParse()
 {
     static bool magicFlag = 0;
     static int level = 0;
-    string subType = GetLabel();
+    const string subType = GetLabel();
     static CTDA condition;
     
     if (level == -1) // markers level

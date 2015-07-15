@@ -15,7 +15,7 @@ bool RecordQUST::DoParse()
 {
     static int level = 0;
     static CTDA condition;
-    string subType = GetLabel();
+    const string subType = GetLabel();
     if(subType == "EDID")
     {
         data.edid = GetString();

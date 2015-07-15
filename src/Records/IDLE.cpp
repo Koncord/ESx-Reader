@@ -12,7 +12,7 @@ using namespace std;
 bool RecordIDLE::DoParse()
 {
     static CTDA condition;
-    string subType = GetLabel();
+    const string subType = GetLabel();
     if(subType == "EDID")
         data.edid = GetString();
     else if(subType == "OBND")

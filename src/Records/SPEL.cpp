@@ -12,7 +12,7 @@ using namespace std;
 bool RecordSPEL::DoParse()
 {
     Effect effect;
-    string subType = GetLabel();
+    const string subType = GetLabel();
     if(subType == "EDID")
         data.edid = GetString();
     else if(subType == "FULL")

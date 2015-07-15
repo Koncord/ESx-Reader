@@ -10,7 +10,7 @@
 bool RecordREFR::DoParse()
 {
     static int magic_flag = 0;
-    std::string subType = GetLabel();
+    const std::string subType = GetLabel();
     if(subType == "EDID")
         data.edid = GetString();
     else if(subType == "RCLR")

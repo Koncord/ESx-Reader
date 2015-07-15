@@ -9,7 +9,7 @@
 #include <stdexcept>
 bool RecordTERM::DoParse()
 {
-    std::string subType = GetLabel();
+    const std::string subType = GetLabel();
     if(subType == "EDID")
         data.edid = GetString();
     else if(subType == "OBND")

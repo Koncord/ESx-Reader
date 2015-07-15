@@ -8,11 +8,11 @@
 #include "DestructionCollection.hpp"
 #include "../Record.hpp"
 
-uint32_t damageCounter;
-
 bool Record::DestructionData(Destruction *destruction)
 {
-    std::string subType = GetLabel();
+    const std::string subType = GetLabel();
+    static uint32_t damageCounter;
+    
     if(subType == "DEST")
     {
         #ifdef DEBUG

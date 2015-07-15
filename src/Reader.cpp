@@ -75,7 +75,7 @@ void Reader::Load(std::string path)
 
     if(!file.is_open()) throw std::runtime_error("file can\'t be opened!");
 
-    auto head = Record::ReadHeader();
+    const RecHeader head = Record::ReadHeader();
 
     std::string type(head.type, 4);
 
@@ -89,7 +89,7 @@ void Reader::Load(std::string path)
 
     while(!file.eof())
     {
-        GroupHeader ghead = Group::ReadHeader();
+        const GroupHeader ghead = Group::ReadHeader();
         if(ghead.groupType != GroupHeader::Type::TopLevel)
             continue;
         
@@ -193,23 +193,23 @@ if (ParseGroup<_ClassOfRecord, _ClassOfRecord::DATA>(ghead, _label, &_IDHashData
         {
             WhileByGroup(ghead, [&]() mutable
             {
-                GroupHeader gBlockHead = Group::ReadHeader();
+                const GroupHeader gBlockHead = Group::ReadHeader();
                 if(gBlockHead.groupType == GroupHeader::Type::InteriorCellBlock)
                 {
-                    uint32_t cellBlock = *(reinterpret_cast<uint32_t*> (gBlockHead.label));
+                    const uint32_t cellBlock = *(reinterpret_cast<const uint32_t*> (gBlockHead.label));
 
                     WhileByGroup(gBlockHead, [&]() mutable
                     {
-                        GroupHeader gSubBlockHead = Group::ReadHeader();
+                        const GroupHeader gSubBlockHead = Group::ReadHeader();
                         if(gSubBlockHead.groupType == GroupHeader::Type::InteriorCellSubBlock)
                         {
-                            uint32_t cellSubBlock = *(reinterpret_cast<uint32_t*> (gSubBlockHead.label));
+                            const uint32_t cellSubBlock = *(reinterpret_cast<const uint32_t*> (gSubBlockHead.label));
 
                             IDHash<GroupCELL::DATA> gcells = treeCells[Block(cellBlock, cellSubBlock)];
                             WhileByGroup(gSubBlockHead, [&]() mutable
                             {
                                 static formid id = 0;
-                                RecHeader head = Record::ReadHeader();
+                                const RecHeader head = Record::ReadHeader();
 
                                 if(string(head.type, 4) == "CELL")
                                 {
@@ -220,7 +220,7 @@ if (ParseGroup<_ClassOfRecord, _ClassOfRecord::DATA>(ghead, _label, &_IDHashData
                                 }
 
                                 FIXME(ugly hack)
-                                GroupHeader h = *(reinterpret_cast<GroupHeader*>(&head));
+                                const GroupHeader h = *(reinterpret_cast<const GroupHeader*>(&head));
                                 if(ParsingClildren(h, &gcells[id])) return;
                             });
                             treeCells[Block(cellBlock, cellSubBlock)] = gcells;
@@ -236,7 +236,7 @@ if (ParseGroup<_ClassOfRecord, _ClassOfRecord::DATA>(ghead, _label, &_IDHashData
             static formid wrld_id;
             WhileByGroup(ghead, [&]() mutable
             {
-                RecHeader head = Record::ReadHeader();
+                const RecHeader head = Record::ReadHeader();
 
                 if(string(head.type, 4) == "WRLD")
                 {
@@ -248,13 +248,13 @@ if (ParseGroup<_ClassOfRecord, _ClassOfRecord::DATA>(ghead, _label, &_IDHashData
 
 
 
-                GroupHeader gWorldChildren = *(reinterpret_cast<GroupHeader*>(&head));
+                const GroupHeader gWorldChildren = *(reinterpret_cast<const GroupHeader*>(&head));
 
                 if(gWorldChildren.groupType == GroupHeader::Type::WorldChildren)
                 {
                     WhileByGroup(gWorldChildren, [&]() mutable
                     {
-                        head = Record::ReadHeader();
+                        const RecHeader head = Record::ReadHeader();
                         if(string(head.type, 4) == "CELL")
                         {
                             RecordCELL rec(head);
@@ -262,13 +262,13 @@ if (ParseGroup<_ClassOfRecord, _ClassOfRecord::DATA>(ghead, _label, &_IDHashData
                             return;
                         }
 
-                        GroupHeader gExteriorCellBlock = *(reinterpret_cast<GroupHeader*>(&head));
+                        const GroupHeader gExteriorCellBlock = *(reinterpret_cast<const GroupHeader*>(&head));
                         if(ParsingClildren(gExteriorCellBlock, &worldspace[wrld_id].cell)) 
                             return;
 
                         if(gExteriorCellBlock.groupType == GroupHeader::Type::ExteriorCellBlock)
                         {
-                            int8_t *block = static_cast<int8_t*>(static_cast<void*>(&gExteriorCellBlock.label));
+                            const int8_t *block = static_cast<const int8_t*>(static_cast<const void*>(&gExteriorCellBlock.label));
 
                             GroupWRLD::MapCELL *mapCell = &worldspace[wrld_id].treeCells[Block(block[0], block[1])];
 
@@ -277,10 +277,10 @@ if (ParseGroup<_ClassOfRecord, _ClassOfRecord::DATA>(ghead, _label, &_IDHashData
                                 GroupHeader gExteriorSubCellBlock = Group::ReadHeader();
                                 WhileByGroup(gExteriorSubCellBlock, [&]() mutable
                                 {
-                                    GroupHeader h = Group::ReadHeader();
-                                    head = *(reinterpret_cast<RecHeader*>(&h));
+                                    const GroupHeader h = Group::ReadHeader();
+                                    const RecHeader head = *(reinterpret_cast<const RecHeader*>(&h));
 
-                                    uint8_t *subBlock = static_cast<uint8_t*>(static_cast<void*>(&gExteriorSubCellBlock.label));
+                                    const uint8_t *subBlock = static_cast<const uint8_t*>(static_cast<const void*>(&gExteriorSubCellBlock.label));
 
                                     static formid id = 0;
 
@@ -331,8 +331,8 @@ bool ParsingClildren(GroupHeader head, GroupCELL::DATA *cell)
         {
             WhileByGroup(gChildrenHead, [&]() mutable
             {
-                RecHeader rhead = Record::ReadHeader();
-                string type = string(rhead.type, 4);
+                const RecHeader rhead = Record::ReadHeader();
+                const string type = string(rhead.type, 4);
                 if (type == "REFR")
                 {
                     RecordREFR rec(rhead);
@@ -366,8 +366,8 @@ bool ParsingClildren(GroupHeader head, GroupCELL::DATA *cell)
         {
             WhileByGroup(gChildrenHead, [&]() mutable
             {
-                RecHeader rhead = Record::ReadHeader();
-                string type = string(rhead.type, 4);
+                const RecHeader rhead = Record::ReadHeader();
+                const string type = string(rhead.type, 4);
                 if (type == "REFR")
                 {
                     RecordREFR rec(rhead);

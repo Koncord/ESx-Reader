@@ -11,7 +11,7 @@
 
 bool Record::ModelCollection()
 {
-    std::string subType = GetLabel();
+    const std::string subType = GetLabel();
     if (
             subType == "MODL" || subType == "MODB" ||
             subType == "MODT" || subType == "MODS" ||

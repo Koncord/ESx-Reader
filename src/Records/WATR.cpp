@@ -12,7 +12,7 @@ using namespace std;
 bool RecordWATR::DoParse()
 {
     static bool fData = true;
-    string subType = GetLabel();
+    const string subType = GetLabel();
     if(subType == "EDID")
     {
         fData = true;

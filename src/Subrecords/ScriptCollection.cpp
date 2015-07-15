@@ -9,7 +9,7 @@
 #include "../Record.hpp"
 bool Record::ScriptCollection(Script* scr)
 {
-    std::string subType = GetLabel();
+    const std::string subType = GetLabel();
     if(subType == "SCHR")
         scr->main = GetData<Script::SCHR>();
     else if(subType == "SCDA")

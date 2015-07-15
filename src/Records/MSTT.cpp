@@ -11,7 +11,7 @@ using namespace std;
 
 bool RecordMSTT::DoParse()
 {
-    string subType = GetLabel();
+    const string subType = GetLabel();
     if(subType == "EDID")
         data.edid = GetString();
     else if(subType == "FULL")

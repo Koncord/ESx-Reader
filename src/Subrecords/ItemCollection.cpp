@@ -11,7 +11,7 @@
 
 bool Record::ItemCollection(Items* items)
 {
-    std::string subType = GetLabel();
+    const std::string subType = GetLabel();
     if(subType == "COED")
     {
         items->back().extra = GetData<Item::COED>(); 
