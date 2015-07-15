@@ -20,19 +20,23 @@ public:
         #pragma pack(push, 1)
         struct EffectData
         {
-            TODO(Check this)
-            int32_t value;
-            uint8_t flags;
-            uint8_t unused[3];
-            formid withdrawlEffect; // SPEL record, or null.
-            float addictionChance;
-            formid soundConsume;
+            uint32_t type;
+            uint8_t unused0[8];
+            uint8_t Flag;
+            uint8_t unused1[3];
             
+            enum TYPE
+            {
+                Unknown0 = 0x00,
+                Unknown1 = 0x01,
+                Weapon = 0x02,
+                Apparel = 0x03
+            };
+
             enum FLAGS
             {
-                NoAutoCalc = 0x01,
-                FoodItem = 0x02,
-                Medicine = 0x04
+                NoAutoCalculate = 0x01,
+                HideEffect = 0x04
             };
         } effectData;
         #pragma pack(pop)

@@ -28,7 +28,8 @@ public:
                 float posX, posY, posZ;
                 float rotX, rotY, rotZ;
                 float scale;
-            } placement;
+            };
+            std::vector<Placement> placements;
         };
         std::vector<Part> parts;
         #pragma pack(pop)

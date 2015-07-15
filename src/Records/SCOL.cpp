@@ -24,7 +24,12 @@ bool RecordSCOL::DoParse()
         data.parts.back()._static = GetData<formid>();
     }
     else if(subType == "DATA")
-        data.parts.back().placement = GetData<DATA::Part::Placement>();
+    {
+        uint16_t tmp = subhead.dataSize;
+        do
+            data.parts.back().placements.push_back(GetData<DATA::Part::Placement>());
+        while(tmp -= sizeof(DATA::Part::Placement));
+    }
     // -------------------------------------------------------------------------
     else return false;
     return true;

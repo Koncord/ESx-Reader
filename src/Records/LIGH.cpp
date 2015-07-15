@@ -23,7 +23,7 @@ bool RecordLIGH::DoParse()
         data.script = GetData<formid>();
     else if(subType == "ICON" || subType == "MICO")
         IgnoreSubRecord();
-    else if(subType == "FMAM")
+    else if(subType == "FNAM")
         data.fadeValue = GetData<float>();
     else if (subType == "SNAM")
         data.sound = GetData<formid>();
