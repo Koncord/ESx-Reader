@@ -27,24 +27,35 @@ bool RecordRACE::DoParse()
     else if(subType == "YNAM")
         data.younger = GetData<formid>();
     else if(subType == "VTCK")
-        data.voices.push_back(GetData<formid>());
+        data.voices = GetData<DATA::SexIds>();
     else if(subType == "DNAM")
-        data.defaultHairStyles.push_back(GetData<formid>());
+        data.defaultHairStyles = GetData<DATA::SexIds>();
     else if(subType == "CNAM")
-        data.defaultHairColors.push_back(GetData<uint8_t>());
+        data.defaultHairColors = GetData<DATA::DefaultHairColors>();
     else if(subType == "PNAM")
         data.faceGenMainClamp = GetData<float>();
     else if(subType == "UNAM")
         data.faceGenFaceClamp = GetData<float>();
     else if(subType == "HNAM")
-        data.hairs.push_back(GetData<formid>());
+    {
+        uint16_t tmp = subhead.dataSize;
+        do
+            data.hairs.push_back(GetData<formid>());
+        while(tmp -= sizeof(formid));
+    }
     else if(subType == "ENAM")
-         data.eyes.push_back(GetData<formid>());
+    {
+        uint16_t tmp = subhead.dataSize;
+        do
+            data.eyes.push_back(GetData<formid>());
+        while(tmp -= sizeof(formid));
+    }
     
     else if(subType == "ATTR" || subType == "NAM0" || subType == "MNAM" ||
             subType == "INDX" || subType == "ICON" || subType == "MICO" ||
             subType == "FNAM" || subType == "FGGS" || subType == "FGGA" ||
-            subType == "FGTS" || subType == "SNAM")
+            subType == "FGTS" || subType == "SNAM" || 
+            subType == "NAM1" || subType == "NAM2" /* markers*/)
         IgnoreSubRecord();
     else if(ModelCollection()) {}
     else return false;

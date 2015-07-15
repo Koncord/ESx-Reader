@@ -23,13 +23,40 @@ public:
         std::vector<Relation> relations;
         formid older;
         formid younger;
-        std::vector<formid> voices;
-        std::vector<formid> defaultHairStyles;
-        std::vector<uint8_t> defaultHairColors;
         float faceGenMainClamp;
         float faceGenFaceClamp;
         std::vector<formid> hairs;
         std::vector<formid> eyes;
+        struct SexIds
+        {
+            formid male;
+            formid female;
+        }voices, defaultHairStyles;
+        struct DefaultHairColors
+        {
+            uint8_t male;
+            uint8_t female;
+            enum DefaultHairColor
+            {
+                Bleached = 0,
+                Brown,
+                Chocolate,
+                Platinum,
+                Cornsilk,
+                Suede,
+                Pecan,
+                Auburn,
+                Ginger,
+                Honey,
+                Gold,
+                Rosewood,
+                Black,
+                Chestnut,
+                Steel,
+                Champagne
+
+            };
+        } defaultHairColors;
         #pragma pack(push, 1)
         struct _DATA
         {
@@ -37,11 +64,12 @@ public:
             {
                 int8_t skill;
                 int8_t boost;
-            }   skillBoost1, skillBoost2, skillBoost3, 
-                skillBoost4, skillBoost5, skillBoost6, skillBoost7;
+            }   skillBoost[7];
             int8_t unused0[2];
             float maleHeight;
             float femaleHeight;
+            float maleWeight;
+            float femaleWeight;
             uint32_t flags;
             enum Flag
             {
@@ -51,26 +79,7 @@ public:
             };
         } data;
         #pragma pack(pop)
-        enum DefaultHairColor
-        {
-            Bleached = 0,
-            Brown,
-            Chocolate,
-            Platinum,
-            Cornsilk,
-            Suede,
-            Pecan,
-            Auburn,
-            Ginger,
-            Honey,
-            Gold,
-            Rosewood,
-            Black,
-            Chestnut,
-            Steel,
-            Champagne
-            
-        };
+        
         NOTE(we need FaceGen geometric?)
     } data;
 
