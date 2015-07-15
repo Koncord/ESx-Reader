@@ -35,14 +35,13 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/_ext/1169888464/GroupCELL.o \
-	${OBJECTDIR}/_ext/1169888464/GroupWRLD.o \
-	${OBJECTDIR}/_ext/1598995770/ACHR.o \
-	${OBJECTDIR}/_ext/1598995770/ACRE.o \
-	${OBJECTDIR}/_ext/1598995770/WRLD.o \
 	${OBJECTDIR}/src/Group.o \
+	${OBJECTDIR}/src/Groups/GroupCELL.o \
+	${OBJECTDIR}/src/Groups/GroupWRLD.o \
 	${OBJECTDIR}/src/Reader.o \
 	${OBJECTDIR}/src/Record.o \
+	${OBJECTDIR}/src/Records/ACHR.o \
+	${OBJECTDIR}/src/Records/ACRE.o \
 	${OBJECTDIR}/src/Records/ACTI.o \
 	${OBJECTDIR}/src/Records/ALCH.o \
 	${OBJECTDIR}/src/Records/AMMO.o \
@@ -98,6 +97,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/Records/TES4.o \
 	${OBJECTDIR}/src/Records/WATR.o \
 	${OBJECTDIR}/src/Records/WEAP.o \
+	${OBJECTDIR}/src/Records/WRLD.o \
 	${OBJECTDIR}/src/SubRecord.o \
 	${OBJECTDIR}/src/Subrecords/CollectionEffect.o \
 	${OBJECTDIR}/src/Subrecords/ConditionCollection.o \
@@ -134,35 +134,20 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libesx-reader.a: ${OBJECTFILES}
 	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libesx-reader.a ${OBJECTFILES} 
 	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libesx-reader.a
 
-${OBJECTDIR}/_ext/1169888464/GroupCELL.o: /H/RWA\ Studio/ESx-Reader/src/Groups/GroupCELL.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/1169888464
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -D_DEVMESSAGES -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1169888464/GroupCELL.o /H/RWA\ Studio/ESx-Reader/src/Groups/GroupCELL.cpp
-
-${OBJECTDIR}/_ext/1169888464/GroupWRLD.o: /H/RWA\ Studio/ESx-Reader/src/Groups/GroupWRLD.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/1169888464
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -D_DEVMESSAGES -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1169888464/GroupWRLD.o /H/RWA\ Studio/ESx-Reader/src/Groups/GroupWRLD.cpp
-
-${OBJECTDIR}/_ext/1598995770/ACHR.o: /H/RWA\ Studio/ESx-Reader/src/Records/ACHR.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/1598995770
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -D_DEVMESSAGES -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1598995770/ACHR.o /H/RWA\ Studio/ESx-Reader/src/Records/ACHR.cpp
-
-${OBJECTDIR}/_ext/1598995770/ACRE.o: /H/RWA\ Studio/ESx-Reader/src/Records/ACRE.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/1598995770
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -D_DEVMESSAGES -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1598995770/ACRE.o /H/RWA\ Studio/ESx-Reader/src/Records/ACRE.cpp
-
-${OBJECTDIR}/_ext/1598995770/WRLD.o: /H/RWA\ Studio/ESx-Reader/src/Records/WRLD.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/1598995770
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -D_DEVMESSAGES -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1598995770/WRLD.o /H/RWA\ Studio/ESx-Reader/src/Records/WRLD.cpp
-
 ${OBJECTDIR}/src/Group.o: src/Group.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -D_DEVMESSAGES -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Group.o src/Group.cpp
+
+${OBJECTDIR}/src/Groups/GroupCELL.o: src/Groups/GroupCELL.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Groups
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -D_DEVMESSAGES -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Groups/GroupCELL.o src/Groups/GroupCELL.cpp
+
+${OBJECTDIR}/src/Groups/GroupWRLD.o: src/Groups/GroupWRLD.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Groups
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -D_DEVMESSAGES -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Groups/GroupWRLD.o src/Groups/GroupWRLD.cpp
 
 ${OBJECTDIR}/src/Reader.o: src/Reader.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
@@ -173,6 +158,16 @@ ${OBJECTDIR}/src/Record.o: src/Record.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -D_DEVMESSAGES -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Record.o src/Record.cpp
+
+${OBJECTDIR}/src/Records/ACHR.o: src/Records/ACHR.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Records
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -D_DEVMESSAGES -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/ACHR.o src/Records/ACHR.cpp
+
+${OBJECTDIR}/src/Records/ACRE.o: src/Records/ACRE.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Records
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -D_DEVMESSAGES -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/ACRE.o src/Records/ACRE.cpp
 
 ${OBJECTDIR}/src/Records/ACTI.o: src/Records/ACTI.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Records
@@ -448,6 +443,11 @@ ${OBJECTDIR}/src/Records/WEAP.o: src/Records/WEAP.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/Records
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -D_DEVMESSAGES -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/WEAP.o src/Records/WEAP.cpp
+
+${OBJECTDIR}/src/Records/WRLD.o: src/Records/WRLD.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Records
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -D_DEVMESSAGES -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Records/WRLD.o src/Records/WRLD.cpp
 
 ${OBJECTDIR}/src/SubRecord.o: src/SubRecord.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
