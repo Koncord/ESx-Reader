@@ -1,10 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="95">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
-    <logicalFolder name="SourceFiles"
-                   displayName="Исходные файлы"
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
                    projectFiles="true">
+      <logicalFolder name="f3" displayName="Groups" projectFiles="true">
+        <itemPath>src/Groups/GroupCELL.hpp</itemPath>
+        <itemPath>src/Groups/GroupWRLD.hpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f1" displayName="Records" projectFiles="true">
+        <itemPath>src/Records/ACHR.hpp</itemPath>
+        <itemPath>src/Records/ACRE.hpp</itemPath>
+        <itemPath>src/Records/ACTI.hpp</itemPath>
+        <itemPath>src/Records/ALCH.hpp</itemPath>
+        <itemPath>src/Records/AMMO.hpp</itemPath>
+        <itemPath>src/Records/ANIO.hpp</itemPath>
+        <itemPath>src/Records/ARMA.hpp</itemPath>
+        <itemPath>src/Records/ARMO.hpp</itemPath>
+        <itemPath>src/Records/BOOK.hpp</itemPath>
+        <itemPath>src/Records/BPTD.hpp</itemPath>
+        <itemPath>src/Records/CAMS.hpp</itemPath>
+        <itemPath>src/Records/CELL.hpp</itemPath>
+        <itemPath>src/Records/CLAS.hpp</itemPath>
+        <itemPath>src/Records/COBJ.hpp</itemPath>
+        <itemPath>src/Records/CONT.hpp</itemPath>
+        <itemPath>src/Records/CPTH.hpp</itemPath>
+        <itemPath>src/Records/CREA.hpp</itemPath>
+        <itemPath>src/Records/CSTY.hpp</itemPath>
+        <itemPath>src/Records/DOBJ.hpp</itemPath>
+        <itemPath>src/Records/DOOR.hpp</itemPath>
+        <itemPath>src/Records/ECZN.hpp</itemPath>
+        <itemPath>src/Records/ENCH.hpp</itemPath>
+        <itemPath>src/Records/EXPL.hpp</itemPath>
+        <itemPath>src/Records/FACT.hpp</itemPath>
+        <itemPath>src/Records/FLST.hpp</itemPath>
+        <itemPath>src/Records/FURN.hpp</itemPath>
+        <itemPath>src/Records/GLOB.hpp</itemPath>
+        <itemPath>src/Records/GMST.hpp</itemPath>
+        <itemPath>src/Records/IDLE.hpp</itemPath>
+        <itemPath>src/Records/IDLM.hpp</itemPath>
+        <itemPath>src/Records/INGR.hpp</itemPath>
+        <itemPath>src/Records/KEYM.hpp</itemPath>
+        <itemPath>src/Records/LIGH.hpp</itemPath>
+        <itemPath>src/Records/LVLI.hpp</itemPath>
+        <itemPath>src/Records/LVLN_LVLC.hpp</itemPath>
+        <itemPath>src/Records/MGEF.hpp</itemPath>
+        <itemPath>src/Records/MISC.hpp</itemPath>
+        <itemPath>src/Records/MSTT.hpp</itemPath>
+        <itemPath>src/Records/NPC_.hpp</itemPath>
+        <itemPath>src/Records/PACK.hpp</itemPath>
+        <itemPath>src/Records/PERK.hpp</itemPath>
+        <itemPath>src/Records/PGRE_PMIS.hpp</itemPath>
+        <itemPath>src/Records/PROJ.hpp</itemPath>
+        <itemPath>src/Records/PWAT.hpp</itemPath>
+        <itemPath>src/Records/QUST.hpp</itemPath>
+        <itemPath>src/Records/RACE.hpp</itemPath>
+        <itemPath>src/Records/RADS.hpp</itemPath>
+        <itemPath>src/Records/REFR.hpp</itemPath>
+        <itemPath>src/Records/REGN.hpp</itemPath>
+        <itemPath>src/Records/SCOL.hpp</itemPath>
+        <itemPath>src/Records/SCPT.hpp</itemPath>
+        <itemPath>src/Records/SPEL.hpp</itemPath>
+        <itemPath>src/Records/STAT.hpp</itemPath>
+        <itemPath>src/Records/TACT.hpp</itemPath>
+        <itemPath>src/Records/TERM.hpp</itemPath>
+        <itemPath>src/Records/TES4.hpp</itemPath>
+        <itemPath>src/Records/WATR.hpp</itemPath>
+        <itemPath>src/Records/WEAP.hpp</itemPath>
+        <itemPath>src/Records/WRLD.hpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="SubRecords" projectFiles="true">
+        <itemPath>src/Subrecords/CollectionEffect.hpp</itemPath>
+        <itemPath>src/Subrecords/ConditionCollection.hpp</itemPath>
+        <itemPath>src/Subrecords/DestructionCollection.hpp</itemPath>
+        <itemPath>src/Subrecords/ItemCollection.hpp</itemPath>
+        <itemPath>src/Subrecords/ModelCollection.hpp</itemPath>
+        <itemPath>src/Subrecords/ScriptCollection.hpp</itemPath>
+        <itemPath>src/Subrecords/subACBS.hpp</itemPath>
+        <itemPath>src/Subrecords/subAIDT.hpp</itemPath>
+        <itemPath>src/Subrecords/subBMDT.hpp</itemPath>
+        <itemPath>src/Subrecords/subEDID.hpp</itemPath>
+        <itemPath>src/Subrecords/subETYP.hpp</itemPath>
+        <itemPath>src/Subrecords/subSNAM.hpp</itemPath>
+        <itemPath>src/Subrecords/subXNAM.hpp</itemPath>
+      </logicalFolder>
+      <itemPath>src/ActorValues.hpp</itemPath>
+      <itemPath>src/Animations.hpp</itemPath>
+      <itemPath>src/Group.hpp</itemPath>
+      <itemPath>src/ObjectTypes.hpp</itemPath>
+      <itemPath>src/Reader.hpp</itemPath>
+      <itemPath>src/Record.hpp</itemPath>
+      <itemPath>src/SubRecord.hpp</itemPath>
+      <itemPath>src/Types.hpp</itemPath>
+      <itemPath>src/debug_macros.hpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="f3" displayName="Groups" projectFiles="true">
+        <itemPath>src/Groups/GroupCELL.cpp</itemPath>
+        <itemPath>src/Groups/GroupWRLD.cpp</itemPath>
+      </logicalFolder>
       <logicalFolder name="f2" displayName="Records" projectFiles="true">
+        <itemPath>src/Records/ACHR.cpp</itemPath>
+        <itemPath>src/Records/ACRE.cpp</itemPath>
         <itemPath>src/Records/ACTI.cpp</itemPath>
         <itemPath>src/Records/ALCH.cpp</itemPath>
         <itemPath>src/Records/AMMO.cpp</itemPath>
@@ -60,6 +159,7 @@
         <itemPath>src/Records/TES4.cpp</itemPath>
         <itemPath>src/Records/WATR.cpp</itemPath>
         <itemPath>src/Records/WEAP.cpp</itemPath>
+        <itemPath>src/Records/WRLD.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="SubRecords" projectFiles="true">
         <itemPath>src/Subrecords/CollectionEffect.cpp</itemPath>
@@ -75,120 +175,23 @@
       <itemPath>src/Record.cpp</itemPath>
       <itemPath>src/SubRecord.cpp</itemPath>
     </logicalFolder>
-    <logicalFolder name="HeaderFiles"
-                   displayName="Файлы заголовков"
-                   projectFiles="true">
-      <logicalFolder name="f1" displayName="Records" projectFiles="true">
-        <itemPath>src/Records/ACTI.hpp</itemPath>
-        <itemPath>src/Records/ALCH.hpp</itemPath>
-        <itemPath>src/Records/AMMO.hpp</itemPath>
-        <itemPath>src/Records/ANIO.hpp</itemPath>
-        <itemPath>src/Records/ARMA.hpp</itemPath>
-        <itemPath>src/Records/ARMO.hpp</itemPath>
-        <itemPath>src/Records/BOOK.hpp</itemPath>
-        <itemPath>src/Records/BPTD.hpp</itemPath>
-        <itemPath>src/Records/CAMS.hpp</itemPath>
-        <itemPath>src/Records/CELL.hpp</itemPath>
-        <itemPath>src/Records/CLAS.hpp</itemPath>
-        <itemPath>src/Records/COBJ.hpp</itemPath>
-        <itemPath>src/Records/CONT.hpp</itemPath>
-        <itemPath>src/Records/CPTH.hpp</itemPath>
-        <itemPath>src/Records/CREA.hpp</itemPath>
-        <itemPath>src/Records/CSTY.hpp</itemPath>
-        <itemPath>src/Records/DOBJ.hpp</itemPath>
-        <itemPath>src/Records/DOOR.hpp</itemPath>
-        <itemPath>src/Records/ECZN.hpp</itemPath>
-        <itemPath>src/Records/ENCH.hpp</itemPath>
-        <itemPath>src/Records/EXPL.hpp</itemPath>
-        <itemPath>src/Records/FACT.hpp</itemPath>
-        <itemPath>src/Records/FLST.hpp</itemPath>
-        <itemPath>src/Records/FURN.hpp</itemPath>
-        <itemPath>src/Records/GLOB.hpp</itemPath>
-        <itemPath>src/Records/GMST.hpp</itemPath>
-        <itemPath>src/Records/IDLE.hpp</itemPath>
-        <itemPath>src/Records/IDLM.hpp</itemPath>
-        <itemPath>src/Records/INGR.hpp</itemPath>
-        <itemPath>src/Records/KEYM.hpp</itemPath>
-        <itemPath>src/Records/LIGH.hpp</itemPath>
-        <itemPath>src/Records/LVLI.hpp</itemPath>
-        <itemPath>src/Records/LVLN_LVLC.hpp</itemPath>
-        <itemPath>src/Records/MGEF.hpp</itemPath>
-        <itemPath>src/Records/MISC.hpp</itemPath>
-        <itemPath>src/Records/MSTT.hpp</itemPath>
-        <itemPath>src/Records/NPC_.hpp</itemPath>
-        <itemPath>src/Records/PACK.hpp</itemPath>
-        <itemPath>src/Records/PERK.hpp</itemPath>
-        <itemPath>src/Records/PROJ.hpp</itemPath>
-        <itemPath>src/Records/PWAT.hpp</itemPath>
-        <itemPath>src/Records/QUST.hpp</itemPath>
-        <itemPath>src/Records/RACE.hpp</itemPath>
-        <itemPath>src/Records/RADS.hpp</itemPath>
-        <itemPath>src/Records/REFR.hpp</itemPath>
-        <itemPath>src/Records/REGN.hpp</itemPath>
-        <itemPath>src/Records/SCOL.hpp</itemPath>
-        <itemPath>src/Records/SCPT.hpp</itemPath>
-        <itemPath>src/Records/SPEL.hpp</itemPath>
-        <itemPath>src/Records/STAT.hpp</itemPath>
-        <itemPath>src/Records/TACT.hpp</itemPath>
-        <itemPath>src/Records/TERM.hpp</itemPath>
-        <itemPath>src/Records/TES4.hpp</itemPath>
-        <itemPath>src/Records/WATR.hpp</itemPath>
-        <itemPath>src/Records/WEAP.hpp</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f2" displayName="SubRecords" projectFiles="true">
-        <itemPath>src/Subrecords/CollectionEffect.hpp</itemPath>
-        <itemPath>src/Subrecords/ConditionCollection.hpp</itemPath>
-        <itemPath>src/Subrecords/DestructionCollection.hpp</itemPath>
-        <itemPath>src/Subrecords/ItemCollection.hpp</itemPath>
-        <itemPath>src/Subrecords/ModelCollection.hpp</itemPath>
-        <itemPath>src/Subrecords/ScriptCollection.hpp</itemPath>
-        <itemPath>src/Subrecords/subACBS.hpp</itemPath>
-        <itemPath>src/Subrecords/subAIDT.hpp</itemPath>
-        <itemPath>src/Subrecords/subBMDT.hpp</itemPath>
-        <itemPath>src/Subrecords/subEDID.hpp</itemPath>
-        <itemPath>src/Subrecords/subETYP.hpp</itemPath>
-        <itemPath>src/Subrecords/subSNAM.hpp</itemPath>
-        <itemPath>src/Subrecords/subXNAM.hpp</itemPath>
-      </logicalFolder>
-      <itemPath>src/ActorValues.hpp</itemPath>
-      <itemPath>src/Animations.hpp</itemPath>
-      <itemPath>src/Group.hpp</itemPath>
-      <itemPath>H:/RWA Studio/ESx-Reader/src/ObjectTypes.hpp</itemPath>
-      <itemPath>src/Reader.hpp</itemPath>
-      <itemPath>src/Record.hpp</itemPath>
-      <itemPath>src/SubRecord.hpp</itemPath>
-      <itemPath>src/Types.hpp</itemPath>
-      <itemPath>src/debug_macros.hpp</itemPath>
-    </logicalFolder>
     <logicalFolder name="ResourceFiles"
-                   displayName="Файлы ресурсов"
+                   displayName="Resource Files"
                    projectFiles="true">
     </logicalFolder>
     <logicalFolder name="TestFiles"
-                   displayName="Файлы тестов"
+                   displayName="Test Files"
                    projectFiles="false"
                    kind="TEST_LOGICAL_FOLDER">
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
-                   displayName="Важные файлы"
-                   projectFiles="false"
-                   kind="IMPORTANT_FILES_FOLDER">
-      <itemPath>Makefile</itemPath>
-    </logicalFolder>
-    <logicalFolder name="TestFiles"
-                   displayName="Файлы тестов"
-                   projectFiles="false"
-                   kind="TEST_LOGICAL_FOLDER">
-    </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Важные файлы"
+                   displayName="External Files"
                    projectFiles="false"
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>src</Elem>
     <Elem>src</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
@@ -201,15 +204,70 @@
       </toolsSet>
       <compileType>
         <ccTool>
-          <incDir>
-            <pElem>F:/SDK/boost_1_55_0</pElem>
-          </incDir>
           <commandLine>-pedantic-errors -pedantic -Wfatal-errors -Wextra -Wall -std=gnu++1y -m32 -DDEBUG</commandLine>
+          <preprocessorList>
+            <Elem>_DEVMESSAGES</Elem>
+          </preprocessorList>
         </ccTool>
         <archiverTool>
         </archiverTool>
       </compileType>
-      <item path="H:/RWA Studio/ESx-Reader/src/ObjectTypes.hpp"
+      <item path="src/Groups/GroupCELL.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/Groups/GroupCELL.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/Groups/GroupWRLD.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/Groups/GroupWRLD.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/ObjectTypes.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/Records/ACHR.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/Records/ACHR.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/Records/ACRE.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/Records/ACRE.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/Records/PGRE_PMIS.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/Records/WRLD.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/Records/WRLD.hpp"
             ex="false"
             tool="3"
             flavor2="0">
@@ -525,7 +583,7 @@
     </conf>
     <conf name="Release" type="3">
       <toolsSet>
-        <compilerSet>MinGW|MinGW</compilerSet>
+        <compilerSet>default</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
@@ -536,6 +594,9 @@
         <ccTool>
           <developmentMode>5</developmentMode>
           <commandLine>-pedantic-errors -pedantic -Wfatal-errors -Wextra -Wall -std=gnu++1y</commandLine>
+          <preprocessorList>
+            <Elem>_DEVMESSAGES</Elem>
+          </preprocessorList>
         </ccTool>
         <fortranCompilerTool>
           <developmentMode>5</developmentMode>
@@ -546,7 +607,62 @@
         <archiverTool>
         </archiverTool>
       </compileType>
-      <item path="H:/RWA Studio/ESx-Reader/src/ObjectTypes.hpp"
+      <item path="src/Groups/GroupCELL.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/Groups/GroupCELL.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/Groups/GroupWRLD.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/Groups/GroupWRLD.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/ObjectTypes.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/Records/ACHR.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/Records/ACHR.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/Records/ACRE.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/Records/ACRE.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/Records/PGRE_PMIS.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/Records/WRLD.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/Records/WRLD.hpp"
             ex="false"
             tool="3"
             flavor2="0">

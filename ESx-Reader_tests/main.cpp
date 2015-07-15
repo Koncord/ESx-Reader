@@ -5,6 +5,7 @@
  * Created on 27 Январь 2015 г., 19:16
  */
 
+#include <Groups/GroupCell.hpp>
 #include <Reader.hpp>
 #include <iostream>
 #include <Record.hpp>
@@ -32,6 +33,13 @@ TEST(ReaderTest, testReaderESM)
     ASSERT_EQ (reader->weapons.size(), 160);
     ASSERT_EQ (reader->npcs.size(), 1647);
     ASSERT_EQ (reader->armors.size(), 237);
+    
+    /*GroupCELL::Helper chelp(&reader->treeCells);
+    GroupCELL::DATA cell = chelp.get(0x00003A34);
+    cout << cell.cell.edid << endl;
+    cout << cell.persistent.placedObjects.size() << endl;
+    cout << cell.persistent.placedObjects[0x00003DE3].positionRotation.xPos << endl;*/
+    
     
     /*for (const auto data : reader->gameSettings)
     {

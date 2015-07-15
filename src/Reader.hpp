@@ -62,6 +62,11 @@
 #include "Records/WATR.hpp"
 #include "Records/PACK.hpp"
 
+
+
+#include "Groups/GroupCELL.hpp"
+#include "Groups/GroupWRLD.hpp"
+
 class Reader
 {
 public:
@@ -146,6 +151,9 @@ public:
     IDHash<RecordREGN::DATA> regions;
     IDHash<RecordWATR::DATA> water;
     IDHash<RecordPACK::DATA> packages;
+    
+    MapHash<GroupCELL::DATA> treeCells;
+    IDHash<GroupWRLD::DATA> worldspace;
 };
 
 #endif // READER_HPP
