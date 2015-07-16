@@ -3,7 +3,9 @@
 
 GroupHeader Group::ReadHeader()
 {
-    return Reader::GetSelf()->ReadRaw<GroupHeader>();
+    GroupHeader header;
+    Reader::GetSelf()->ReadData((uint8_t*)&header, sizeof(GroupHeader));
+    return header;
 }
 
 

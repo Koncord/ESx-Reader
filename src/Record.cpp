@@ -3,6 +3,7 @@
 #include <iostream>
 #include <zlib.h>
 
+#include <fstream>
 #include <sstream>
 #include <iomanip>
 
