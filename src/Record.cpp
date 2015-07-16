@@ -2,6 +2,10 @@
 #include "Reader.hpp"
 #include <iostream>
 #include <zlib.h>
+
+#include <sstream>
+#include <iomanip>
+
 using namespace std;
 
 int32_t uncompressRecord(uint8_t *dest, uint32_t dsize, uint8_t *source, uint32_t ssize)
@@ -72,21 +76,40 @@ void Record::Parse()
 {
     while (rawdata.pos < rawdata.size)
     {
+#ifdef _DEVMESSAGES
+        const SubRecHeader prevSubHead = subhead;
+        const uint32_t prevOffset = rawdata.pos - sizeof (SubRecHeader) - subhead.dataSize;
+        const uint32_t prevPos = rawdata.pos;
+#endif
+        
         ReadSubHeader();
-        if(!DoParse())
+        if(string(subhead.type, 4) == "XXXX")
+            IgnoreSubRecord();
+        else if (!DoParse())
         {
-            #ifdef DEBUG
-            ofstream frec("failed.rec");
-            frec.write((char*)rawdata.data.get(), rawdata.size);
+            stringstream sstr;
+            sstr << std::uppercase << std::setfill('0') << std::setw(4) << head.id;
+            string filename = string(head.type, 4) + "_" + sstr.str();
+            sstr.str("");
+            ofstream frec(filename + ".rec");
+            frec.write((char*) rawdata.data.get(), rawdata.size);
             frec.close();
-                Reader *reader = Reader::GetSelf();
-                std::cerr << "WARNING! ";
-                cerr << "Record: " << string(head.type, 4) <<  " unknown subrecord: " << string(subhead.type, 4);
-                if(!GetFlag(Flag::isCompressed))
-                    std::cerr << " global position: " << ((uint32_t)(reader->file.tellg())- head.dataSize  + rawdata.pos - sizeof(SubRecHeader));
-                std::cerr << " local position: " << (rawdata.pos - sizeof(SubRecHeader)) << endl;
-            #endif
-                IgnoreSubRecord();
+            ofstream log(filename + ".txt", ofstream::ate);
+            
+            sstr << "In record: " + string(head.type, 4)
+                    << " detected an unknown subrecord: " << string(subhead.type, 4) << endl
+                    << "Size of subrecord: " << subhead.dataSize << endl
+                    << "Global offset: "
+                    << to_string((uint32_t) (Reader::GetSelf()->file.tellg()) - head.dataSize + rawdata.pos - sizeof (SubRecHeader)) << endl
+                    << "Offset in record: " << to_string(rawdata.pos - sizeof (SubRecHeader)) << endl;
+#ifdef _DEVMESSAGES
+                    sstr << "Previous subrecord: " << string(prevSubHead.type, 4) << endl
+                    << "Size of subrecord: " << prevSubHead.dataSize <<  " expected: " << rawdata.pos -  prevPos << endl
+                    << "Offset in record: " << prevOffset << endl;
+#endif
+            log << sstr.str();
+            log.close();
+            throw runtime_error(sstr.str());
         }
     }
 }
