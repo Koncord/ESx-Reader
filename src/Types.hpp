@@ -8,7 +8,11 @@
 #include <boost/functional/hash.hpp>
 
 typedef uint32_t formid;
-typedef uint32_t rgba;
+
+struct rgba
+{
+    uint8_t r,g,b,a;
+};
 
 template <typename V>
 using IDHash = std::unordered_map<formid, V>;

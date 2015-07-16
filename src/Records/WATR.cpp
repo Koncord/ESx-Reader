@@ -11,13 +11,9 @@ using namespace std;
 
 bool RecordWATR::DoParse()
 {
-    static bool fData = true;
     const string subType = GetLabel();
     if(subType == "EDID")
-    {
-        fData = true;
         data.edid = GetString();
-    }
     else if(subType == "FULL")
         data.name = GetString();
     else if(subType == "FNAM")
@@ -26,13 +22,14 @@ bool RecordWATR::DoParse()
         data.sound = GetData<formid>();
     else if(subType == "XNAM")
         data.actorEffect = GetData<formid>();
-    else if(subType == "DATA" && fData)
+    else if(subType == "DATA" || subType == "DNAM")
     {
-        fData = false;
+        if(subhead.dataSize > sizeof(uint16_t))
+            IgnoreBytes(subhead.dataSize -  sizeof(uint16_t));
         data.actorEffect = GetData<uint16_t>();
     }
     else if(subType == "NNAM" || subType == "ANAM" || subType == "MNAM" ||
-            subType == "DATA" || subType == "DNAM" || subType == "GNAM")
+            subType == "DATA" || subType == "GNAM")
         IgnoreSubRecord();
     else return false;
     return true;

@@ -113,7 +113,7 @@ public:
             uint8_t unused[3];
             formid key;
             uint8_t flags;
-            uint8_t unknown[11];
+            uint8_t unknown[3];
             enum FLAGS
             {
                 UseDefault =    0x00000001,
@@ -140,7 +140,6 @@ public:
         struct MapMarkerData
         {
             uint8_t type;
-            uint8_t unused;
             enum Type
             {
                 None = 0,

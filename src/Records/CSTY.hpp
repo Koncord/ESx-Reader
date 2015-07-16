@@ -23,6 +23,7 @@ public:
             uint8_t maneuverDecision_DodgeChance; // in Percent
             uint8_t maneuverDecision_LeftOrRightChance; // in percent
             uint8_t unused0[2];
+            
             float maneuverDecision_DodgeRightOrLeftTimerMin;
             float maneuverDecision_DodgeRightOrLeftTimerMax;
             float maneuverDecision_DodgeForwardTimerMin;
@@ -35,11 +36,13 @@ public:
             uint8_t meleeDecision_BlockChance; // in percent
             uint8_t meleeDecision_AttackChance; // in percent;
             uint8_t unused1[2];
+            
             float meleeDecision_RecoilOrStaggerBonusToAttack;
             float meleeDecision_UnconsciousBonusToAttack;
             float meleeDecision_HandToHandBonusToAttack;
             
            uint8_t meleeDecision_PowerAttacks_PowerAttackChance;
+           uint8_t unused2[3];
            float meleeDecision_PowerAttacks_RecoilOrStaggerBonusToPower;
            float meleeDecision_PowerAttacks_UnconsciousBonusToPowerAttack;
            uint8_t meleeDecision_PowerAttacks_Normal;
@@ -47,16 +50,16 @@ public:
            uint8_t meleeDecision_PowerAttacks_Back;
            uint8_t meleeDecision_PowerAttacks_Left;
            uint8_t meleeDecision_PowerAttacks_Right;
-           uint8_t unused2[3];
+           uint8_t unused3[3];
            
            float meleeDecision_HoldTimerMin;
            float meleeDecision_HoldTimerMax;
            
            uint16_t flags;
-           uint8_t unused3[2];
+           uint8_t unused4[2];
            uint8_t maneuverDecision_AcrobaticDodgeAndChance;
            uint8_t MeleeDecision_PowerAttacks_RushingAttackChance; // in percent
-           uint8_t unused4[2];
+           uint8_t unused5[2];
            float meleeDecision_PowerAttacks_RushingAttackDistanceMult;
            
            enum Flag

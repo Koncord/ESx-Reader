@@ -25,7 +25,11 @@ public:
             ShotList = 2,
         };
         std::vector<CTDA> conditions;
-        std::vector<formid> relatedCameraPath; // FormID of a CPTH record, or null. The first relatedCameraPath subrecord maps to the parent, the second maps to the previous sibling.
+        struct RelatedIdleAnimations
+        {
+            formid parent;
+            formid previousSibling;
+        } releatedIdleAnimations;
         std::vector<formid> cameraShot; // FormID of a CAMS record.
     } data;
 

@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/_ext/1598995770/PGRE_PMIS.o \
 	${OBJECTDIR}/src/Group.o \
 	${OBJECTDIR}/src/Groups/GroupCELL.o \
 	${OBJECTDIR}/src/Groups/GroupWRLD.o \
@@ -133,6 +134,11 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libesx-reader.a: ${OBJECTFILES}
 	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libesx-reader.a
 	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libesx-reader.a ${OBJECTFILES} 
 	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libesx-reader.a
+
+${OBJECTDIR}/_ext/1598995770/PGRE_PMIS.o: /H/RWA\ Studio/ESx-Reader/src/Records/PGRE_PMIS.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1598995770
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -D_DEVMESSAGES -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1598995770/PGRE_PMIS.o /H/RWA\ Studio/ESx-Reader/src/Records/PGRE_PMIS.cpp
 
 ${OBJECTDIR}/src/Group.o: src/Group.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

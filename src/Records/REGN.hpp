@@ -41,7 +41,7 @@ public:
             {
                 uint32_t type;
                 uint8_t flags;
-                uint8_t unused;
+                uint8_t unused[3];
                 enum Type
                 {
                     Unknown0 = 0,

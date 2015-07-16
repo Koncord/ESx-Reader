@@ -18,7 +18,7 @@ bool RecordCPTH::DoParse()
     else if(ConditionsData(&condition))
         data.conditions.push_back(condition);
     else if(subType == "ANAM")
-        data.relatedCameraPath.push_back(GetData<formid>());
+        data.releatedIdleAnimations = GetData<DATA::RelatedIdleAnimations>();
     else if(subType == "DATA")
         data.cameraZoom = GetData<uint8_t>();
     else if(subType == "SNAM")

@@ -16,7 +16,7 @@ bool Record::ConditionsData(CTDA* cond)
         #ifdef DEBUG
             //cerr << "WARNING! CTDA is not fully implemented yet." << endl;
         #endif
-        (*cond) = GetData<CTDA>(); 
+        (*cond) = GetData<CTDA>(subhead.dataSize); 
     }
     else
         return false;

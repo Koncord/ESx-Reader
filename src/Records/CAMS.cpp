@@ -16,7 +16,7 @@ bool RecordCAMS::DoParse()
     if(subType == "EDID")
         data.edid = GetString();
     else if(subType == "DATA")
-        data.data = GetData<DATA::_DATA>();
+        data.data = GetData<DATA::_DATA>(subhead.dataSize);
     else if(ModelCollection()) {}
     else if(subType == "MNAM")
         data.imageSpaceModifier = GetData<formid>();

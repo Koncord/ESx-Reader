@@ -28,7 +28,7 @@ bool RecordQUST::DoParse()
     else if(subType == "ICON" || subType == "MICO")
         IgnoreSubRecord();
     else if(subType == "DATA")
-        data.data = GetData<DATA::_DATA>();
+        data.data = GetData<DATA::_DATA>(subhead.dataSize);
     else if(level == 0 && ConditionsData(&condition))
         data.conditions.push_back(condition);
     //-------------------------Stage collection---------------------------------

@@ -32,7 +32,7 @@ public:
         };
         
         float waterHeight;
-        std::vector<formid> region;
+        std::vector<formid> regions;
         formid encounterZone;
         formid climate;
         formid water;
@@ -70,9 +70,9 @@ public:
         } grid;
         struct Lighting
         {
-            uint32_t ambientColor;
-            uint32_t directionalColor;
-            uint32_t fogColor;
+            rgba ambientColor;
+            rgba directionalColor;
+            rgba fogColor;
             float fogNear;
             float fogFar;
             int32_t directionalRotationXY;

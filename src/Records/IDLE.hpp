@@ -18,7 +18,11 @@ public:
         std::string edid;
         ObjectBounds objectBounds;
         std::vector<CTDA> conditions;
-        std::vector<formid> releatedIdleAnimations;
+        struct RelatedIdleAnimations
+        {
+            formid parent;
+            formid previousSibling;
+        } releatedIdleAnimations;
 #pragma pack(push, 1)
         struct _DATA
         {

@@ -27,7 +27,12 @@ bool RecordREGN::DoParse()
         data.regionArea.back().edgeFallOff = GetData<uint32_t>();
     }
     else if(subType == "RPLD")
-        data.regionArea.back().regionPointListData.push_back(GetData<DATA::RegionArea::RegionPointListData>());
+    {
+        uint16_t tmp = subhead.dataSize;
+        do
+            data.regionArea.back().regionPointListData.push_back(GetData<DATA::RegionArea::RegionPointListData>());
+        while(tmp -= sizeof(DATA::RegionArea::RegionPointListData));
+    }
     //---------------------------- Region Data Entry Collection ----------------
     else if(subType == "RDAT")
     {
@@ -35,17 +40,39 @@ bool RecordREGN::DoParse()
         data.regionDataEntrys.back().dataHeader = GetData<DATA::RegionDataEntry::DataHeader>();
     }
     else if(subType == "RDOT")
-        data.regionDataEntrys.back().objects.push_back(GetData<DATA::RegionDataEntry::Object>());
+    {
+        uint16_t tmp = subhead.dataSize;
+        do
+            data.regionDataEntrys.back().objects.push_back(GetData<DATA::RegionDataEntry::Object>());
+        while(tmp -= sizeof(DATA::RegionDataEntry::Object));
+    }
     else if(subType == "RDMP")
-        data.regionDataEntrys.back().grass.push_back(GetData<DATA::RegionDataEntry::Grass>());
+        data.regionDataEntrys.back().mapName = GetString();
+    else if(subType == "RDGS")
+    {
+        uint16_t tmp = subhead.dataSize;
+        do
+            data.regionDataEntrys.back().grass.push_back(GetData<DATA::RegionDataEntry::Grass>());
+        while(tmp -= sizeof(DATA::RegionDataEntry::Grass));
+    }
     else if(subType == "RDMD")
         data.regionDataEntrys.back().musicType = GetData<uint32_t>();
     else if(subType == "RDMO")
-        data.regionDataEntrys.back().music = GetData<formid>();
+            data.regionDataEntrys.back().music = GetData<formid>();
     else if(subType == "RDSD")
-        data.regionDataEntrys.back().sounds.push_back(GetData<DATA::RegionDataEntry::Sound>());
+    {
+        uint16_t tmp = subhead.dataSize;
+        do
+            data.regionDataEntrys.back().sounds.push_back(GetData<DATA::RegionDataEntry::Sound>());
+        while(tmp -= sizeof(DATA::RegionDataEntry::Sound));
+    }
     else if(subType == "RDWT")
-        data.regionDataEntrys.back().weatherTypes.push_back(GetData<DATA::RegionDataEntry::WeatherType>());
+    {
+        uint16_t tmp = subhead.dataSize;
+        do
+            data.regionDataEntrys.back().weatherTypes.push_back(GetData<DATA::RegionDataEntry::WeatherType>());
+        while(tmp -= sizeof(DATA::RegionDataEntry::WeatherType));
+    }
     //--------------------------------------------------------------------------
     else return false;
     return true;

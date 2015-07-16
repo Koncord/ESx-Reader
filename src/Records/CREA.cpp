@@ -67,6 +67,8 @@ bool RecordCREA::DoParse()
         data.soundLevel = GetData<uint32_t>();
     else if(subType == "CSCR")
         data.inheritsSoundsFrom = GetData<formid>();
+    else if(subType == "CNAM")
+        data.impactDataset =  GetData<formid>();
     else if(subType == "LNAM")
         data.MeleeWeaponList = GetData<formid>();
     //-------------------------- Sound Type Collection -------------------------

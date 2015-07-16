@@ -26,11 +26,14 @@ bool RecordWRLD::DoParse()
         data.climateId = GetData<formid>();
     else if(subType == "NAM2")
         data.waterId = GetData<formid>();
-    else if(subType == "NAM2")
+    else if(subType == "DATA")
         data.flags = GetData<uint8_t>();
     else if(subType == "NAM3" || subType == "NAM4" || subType == "DNAM" || subType == "ICON" || subType == "MICO" || subType == "ONAM" || 
             subType == "INAM" || subType == "NAM0" || subType == "NAM9" || subType == "ZNAM" || subType == "NNAM" || subType == "XNAM" ||
-            subType == "IMPS" || subType == "IMPF" || subType == "OFST" || subType == "MNAM");
+            subType == "IMPS" || subType == "IMPF" || subType == "MNAM")
+        IgnoreSubRecord();
+    else if(subType == "OFST") // WUUT IS IT?!
+        rawdata.pos = rawdata.size; // hack
     else return false;
     return true;
 }

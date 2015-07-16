@@ -9,6 +9,7 @@
 
 bool RecordREFR::DoParse()
 {
+    TODO (CHECK THIS!!);
     static int magic_flag = 0;
     const std::string subType = GetLabel();
     if(subType == "EDID")
@@ -48,8 +49,8 @@ bool RecordREFR::DoParse()
         data.mapMarkerFlags = GetData<uint8_t>();
     else if(subType == "FULL")
         data.mapMarkerName = GetString();
-    else if(subType == "TNAM")
-        data.mapMarkerData =  GetData<DATA::MapMarkerData>();
+    else if(subType == "TNAM" && magic_flag != 3)
+        data.mapMarkerData =  GetData<DATA::MapMarkerData>(2); // 2nd byte unused.
     else if(subType == "XTRG")
         data.targetId =  GetData<formid>();
     else if(subType == "XLCM")
@@ -73,7 +74,11 @@ bool RecordREFR::DoParse()
     else if(subType == "XRNK")
         data.factionRank = GetData<int32_t>();
     else if(subType == "XLOC")
+    {
+        const uint32_t tmp = rawdata.pos;
         data.lockData = GetData<DATA::LockData>();
+        GetData<uint8_t>(subhead.dataSize - (rawdata.pos - tmp));
+    }
     else if(subType == "XCNT")
         data.count = GetData<int32_t>();
     else if(subType == "XRDS")
@@ -110,7 +115,7 @@ bool RecordREFR::DoParse()
         data.multiBoundRefId = GetData<formid>();
     else if(subType == "XACT")
         data.actionFlag = GetData<uint32_t>();
-    else if(subType == "ONAM" && subType == "XIBS")
+    else if(subType == "ONAM" || subType == "XIBS")
     {
         magic_flag = 4;
         IgnoreSubRecord();
@@ -118,7 +123,12 @@ bool RecordREFR::DoParse()
     else if(subType == "XNDP")
         data.navigationDoorLink = GetData<DATA::NavDoorLink>();
     else if(subType == "XPOD")
-        data.portalRooms.push_back(GetData<formid>());
+    {
+        uint32_t tmp = subhead.dataSize;
+        do
+            data.portalRooms.push_back(GetData<formid>());
+        while (tmp -= sizeof(formid));
+    }
     else if(subType == "XPLT") // portal data. incomplete
         IgnoreSubRecord();
     else if(subType == "XSED") // speed tree seed

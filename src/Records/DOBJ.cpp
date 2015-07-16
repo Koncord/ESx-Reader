@@ -15,7 +15,7 @@ bool RecordDOBJ::DoParse()
     if(subType == "EDID")
         data.edid = GetString();
     else if(subType == "DATA")
-        data.defaultObject[obj_counter++] = GetData<formid>();
+        data.defaultObjects = GetData<DATA::DefaultObjects>();
     else return false;
     return true;
 }

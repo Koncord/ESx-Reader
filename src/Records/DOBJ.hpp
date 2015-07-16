@@ -19,29 +19,30 @@ public:
     {
         std::string edid;
         formid defaultObject[21];
-        enum ObjectMap
+        struct DefaultObjects
         {
-            Stimpack = 0,
-            SuperStimpack,
-            RadX,
-            RadAway,
-            Morphine,
-            PerkParalysis,
-            PlayerFaction,
-            MysteriousStrangerNPC,
-            MysteriousStrangerFaction,
-            DefaultMusic,
-            BattleMusic,
-            DeathMusic,
-            SuccessMusic,
-            PlayerVoiceMale,
-            PlayerVoiceMaleChild,
-            PlayerVoiceFemale,
-            PlayerVoiceFemaleChild,
-            EatPackageDefaultFood,
-            EveryActorAbility,
-            DrugWearsOffImageSpace
-        };
+            formid stimpack;
+            formid superStimpack;
+            formid radX;
+            formid radAway;
+            formid morphine;
+            formid perkParalysis;
+            formid playerFaction;
+            formid mysteriousStrangerNPC;
+            formid mysteriousStrangerFaction;
+            formid defaultMusic;
+            formid battleMusic;
+            formid deathMusic;
+            formid successMusic;
+            formid levelUpMusic;
+            formid playerVoiceMale;
+            formid playerVoiceMaleChild;
+            formid playerVoiceFemale;
+            formid playerVoiceFemaleChild;
+            formid eatPackageDefaultFood;
+            formid everyActorAbility;
+            formid DrugWearsOffImageSpace;
+        } defaultObjects;
     } data;
 
     explicit RecordDOBJ(const RecHeader &head) : Record(head), obj_counter(0) { Parse(); }

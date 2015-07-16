@@ -24,7 +24,7 @@ public:
             Unknown = 0x02,
             DoOnce = 0x04
         };
-        uint32_t animationCount;
+        uint8_t animationCount;
         float idleTimerSetting;
         std::vector<formid> animation; // FormID of a IDLE record, or null.
         ObjectBounds objectBounds;

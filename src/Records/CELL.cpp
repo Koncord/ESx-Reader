@@ -19,9 +19,9 @@ bool RecordCELL::DoParse()
     else if(subType == "DATA")
         data.flags = GetData<uint8_t>();
     else if(subType == "XCLC")
-        data.grid = GetData<DATA::Grid>();
+        data.grid = GetData<DATA::Grid>(subhead.dataSize);
     else if(subType == "XCLL")
-        data.lighting = GetData<DATA::Lighting>();
+        data.lighting = GetData<DATA::Lighting>(subhead.dataSize);
     else if(subType == "IMPF") // Unknown format
         IgnoreSubRecord();
     else if(subType == "LTMP")
@@ -33,7 +33,12 @@ bool RecordCELL::DoParse()
     else if(subType == "XNAM")
         IgnoreSubRecord();
     else if(subType == "XCLR")
-        data.region.push_back(GetData<formid>());
+    {
+        uint16_t tmp = subhead.dataSize;
+        do
+            data.regions.push_back(GetData<formid>());
+        while(tmp -= sizeof(formid));
+    }
     else if(subType == "XCIM")
         IgnoreSubRecord();
     else if(subType == "XCET") // Unknown
