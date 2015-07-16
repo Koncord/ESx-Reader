@@ -44,7 +44,8 @@ void Record::ParseHead(const RecHeader &head)
     {
         // unpack
         std::unique_ptr <uint8_t[]> compData(new uint8_t[head.dataSize - 4]);
-        const uint32_t decompSize = reader->ReadRaw<std::uint32_t>();
+        uint32_t decompSize;
+        reader->ReadData((uint8_t*)&decompSize, 4);
         rawdata.data.reset(new uint8_t[decompSize]);
 
         reader->ReadData (compData.get(), head.dataSize - 4);
@@ -69,7 +70,9 @@ Record::~Record()
 
 RecHeader Record::ReadHeader()
 {
-    return Reader::GetSelf()->ReadRaw<RecHeader>();
+    RecHeader head;
+    Reader::GetSelf()->ReadData((uint8_t*)&head, sizeof(RecHeader));
+    return head;
 }
 
 void Record::Parse()
@@ -99,8 +102,8 @@ void Record::Parse()
             sstr << "In record: " + string(head.type, 4)
                     << " detected an unknown subrecord: " << string(subhead.type, 4) << endl
                     << "Size of subrecord: " << subhead.dataSize << endl
-                    << "Global offset: "
-                    << to_string((uint32_t) (Reader::GetSelf()->file.tellg()) - head.dataSize + rawdata.pos - sizeof (SubRecHeader)) << endl
+                    /*<< "Global offset: "
+                    << to_string((uint32_t) (Reader::GetSelf()->file.tellg()) - head.dataSize + rawdata.pos - sizeof (SubRecHeader)) << endl*/
                     << "Offset in record: " << to_string(rawdata.pos - sizeof (SubRecHeader)) << endl;
 #ifdef _DEVMESSAGES
                     sstr << "Previous subrecord: " << string(prevSubHead.type, 4) << endl

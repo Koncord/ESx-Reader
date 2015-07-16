@@ -1,8 +1,6 @@
 #ifndef READER_HPP
 #define READER_HPP
 
-#include <fstream>
-
 #include "Types.hpp"
 
 #include "debug_macros.hpp"
@@ -70,27 +68,16 @@
 class Reader
 {
 public:
-    template<class T>
-    T ReadRaw()
-    {
-        T tmp;
-        file.read((char*)&tmp, sizeof(T));
-        return tmp;
-    }
-    
     uint8_t *ReadData(uint8_t *data, size_t size);
     void Load(std::string file);
-    ~Reader();
     float GetFileVersion() { return data.hedr.version; }
     std::string GetFileAuthor() { return data.author; }
     std::string GetFileDescription() { return data.description; }
-
+    
 private:
     Reader();
     RecordTES4::DATA data;
-    
-public:
-    std::ifstream file;
+    virtual ~Reader();
 public:
     static Reader *GetSelf();
     static Reader *Create();

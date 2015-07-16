@@ -9,11 +9,12 @@
 using namespace std;
 
 static Reader *reader = nullptr;
+static std::ifstream file;
 
 inline void WhileByGroup(GroupHeader group, std::function<void()> func)
 {
-    const unsigned var = static_cast<uint32_t>(reader->file.tellg()) + group.size - sizeof(GroupHeader);
-    while(reader->file.tellg() < var && !reader->file.eof())
+    const unsigned var = static_cast<uint32_t>(file.tellg()) + group.size - sizeof(GroupHeader);
+    while(file.tellg() < var && !file.eof())
     {
         func();
     }
@@ -317,7 +318,7 @@ if (ParseGroup<_ClassOfRecord, _ClassOfRecord::DATA>(ghead, _label, &_IDHashData
 
 Reader::~Reader()
 {
-
+    file.close();
 }
 
 bool ParsingClildren(GroupHeader head, GroupCELL::DATA *cell)
@@ -359,7 +360,7 @@ bool ParsingClildren(GroupHeader head, GroupCELL::DATA *cell)
                     cell->persistent.placedMissiles[rec.head.id] = rec.data;
                 }
                 else  if(type == "LAND" || type == "NAVM")
-                    reader->file.ignore(rhead.dataSize);
+                    file.ignore(rhead.dataSize);
             });
         }
         else if (gChildrenHead.groupType == GroupHeader::Type::CellTemporaryChildren)
@@ -394,11 +395,11 @@ bool ParsingClildren(GroupHeader head, GroupCELL::DATA *cell)
                     cell->temporary.placedMissiles[rec.head.id] = rec.data;
                 }
                 else  if(type == "LAND" || type == "NAVM")
-                    reader->file.ignore(rhead.dataSize);
+                    file.ignore(rhead.dataSize);
             });
         }
         else
-            throw runtime_error("Fail read CellChildren on pos: " + to_string(reader->file.tellg()));
+            throw runtime_error("Fail read CellChildren on pos: " + to_string(file.tellg()));
     });
     return true;
 }
